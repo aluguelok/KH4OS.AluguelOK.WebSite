@@ -1,0 +1,18 @@
+{
+  "name": "aluguelok-tailwind",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "tw-install": "npm install -D tailwindcss",
+    "tw-init": "npx tailwindcss init",
+    "tw-build": "npx tailwindcss -i ./css/tailwind.css -o ./css/main.css --watch",
+    "tw-minify": "npx tailwindcss -o ./css/main.min.css --minify"
+  },
+  "keywords": ["company", "landing page"],
+  "author": "Ranyeh",
+  "license": "MIT",
+  "description": "Tailwind CSS Company Landing Page Template by Ranyeh.",
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  }
+}
