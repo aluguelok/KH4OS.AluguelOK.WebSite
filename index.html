@@ -12,26 +12,31 @@
     <meta name="rating" content="general" />
     <meta name="language" content="Portuguese" />
     <meta name="application-name" content="AluguelOK" />
-    <meta name="description" content="Analise seu contrato de aluguel em minutos. A AluguelOK usa Inteligência Artificial para encontrar cláusulas abusivas e proteger você." />
-    <meta name="keywords" content="aluguel, contrato, locação, inquilino, locador, ia, inteligência artificial, análise de contrato, lei do inquilinato" />
-    <meta name="twitter:title" content="AluguelOK | Análise de Contratos de Aluguel com IA" />
-    <meta name="twitter:description" content="Analise seu contrato de aluguel em minutos. A AluguelOK usa Inteligência Artificial para encontrar cláusulas abusivas e proteger você." />
+
+    <!-- SEO Básico Otimizado -->
+    <meta name="description" content="A AluguelOK é o app de gestão imobiliária simplificada que conecta proprietários, inquilinos e imobiliárias. Autonomia, transparência financeira e split de pagamentos." />
+    <meta name="keywords" content="gestão imobiliária, app para aluguel, administrar imóveis, proprietário, inquilino, imobiliária, split de pagamento, repasse de aluguel, dimob, software imobiliário" />
+
+    <!-- Open Graph & Twitter Cards -->
+    <meta name="twitter:title" content="AluguelOK | Gestão Imobiliária Simplificada" />
+    <meta name="twitter:description" content="A AluguelOK democratiza a gestão de locações. Transparência financeira e autonomia para inquilinos, proprietários e corretores em um só app." />
     <meta name="twitter:image" content="./img/aluguelok-cover.png" />
-    <meta content="AluguelOK | Análise de Contratos de Aluguel com IA" property="og:title" />
+    <meta content="AluguelOK | Gestão Imobiliária Simplificada" property="og:title" />
     <meta content="AluguelOK" property="og:site_name" />
-    <meta content="Analise seu contrato de aluguel em minutos. A AluguelOK usa Inteligência Artificial para encontrar cláusulas abusivas e proteger você." property="og:description" />
+    <meta content="A AluguelOK democratiza a gestão de locações. Transparência financeira e autonomia para inquilinos, proprietários e corretores em um só app." property="og:description" />
     <meta content="./img/aluguelok-cover.png" property="og:image" />
     <meta content="https://www.aluguelok.com.br" property="og:url" />
     <meta content="website" property="og:type" />
+
+    <!-- Tema e PWA -->
     <meta name="msapplication-TileColor" content="#3d63dd" />
     <meta name="msapplication-TileImage" content="./favicon/mstile-144x144.png" />
     <meta name="theme-color" content="#3d63dd" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    
-    <title>AluguelOK | Análise de Contratos de Aluguel com IA</title>
-    
+
+    <title>AluguelOK | O App de Gestão Imobiliária Simplificada</title>
+
     <link rel="canonical" href="https://www.aluguelok.com.br" />
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
@@ -42,29 +47,39 @@
     <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
     <link rel="stylesheet" href="./css/main.css" />
 
+    <!-- Schema.org / JSON-LD para IA e Motores de Busca -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "AluguelOK",
+          "operatingSystem": "Web, iOS, Android",
+          "applicationCategory": "BusinessApplication",
+          "description": "Plataforma de gestão imobiliária simplificada para proprietários autônomos, inquilinos e imobiliárias, oferecendo split de pagamentos, relatórios financeiros e gestão de manutenção.",
+          "url": "https://www.aluguelok.com.br",
+          "publisher": {
+            "@type": "Organization",
+            "name": "AluguelOK"
+          }
+        }
+    </script>
+
     <!-- AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6059759279861580" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="page-loading fixed top-0 bottom-0 left-0 right-0 z-[99999] flex items-center justify-center bg-primary-light-1 dark:bg-primary-dark-1 opacity-100 visible pointer-events-auto" role="status" aria-live="polite" aria-atomic="true" aria-label="Loading...">
+    <div class="page-loading fixed top-0 bottom-0 left-0 right-0 z-[99999] flex items-center justify-center bg-primary-light-1 dark:bg-primary-dark-1 opacity-100 visible pointer-events-auto" role="status" aria-live="polite" aria-atomic="true" aria-label="Carregando...">
         <div class="grid-loader">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
         </div>
     </div>
+
     <header class="ic-navbar absolute left-0 top-0 z-40 flex w-full items-center bg-transparent" role="banner" aria-label="Barra de Navegação">
         <div class="container">
             <div class="ic-navbar-container relative -mx-5 flex items-center justify-between">
                 <div class="w-60 lg:w-56 max-w-full px-5">
                     <a href="." class="ic-navbar-logo block w-full py-5 text-primary-color">
-                        <img src="img/logo/aluguelok-white.png" width="256" />
+                        <img src="img/logo/aluguelok-white.png" width="256" alt="Logo AluguelOK" />
                     </a>
                 </div>
                 <div class="flex w-full items-center justify-between px-5">
@@ -74,47 +89,33 @@
                         </button>
                         <nav id="navbarMenu"
                              class="ic-navbar-collapse absolute right-4 top-[80px] w-full max-w-[250px] rounded-lg hidden bg-primary-light-1 py-5 shadow-lg dark:bg-primary-dark-1 lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:py-0 lg:shadow-none dark:lg:bg-transparent xl:px-6">
-                            <ul class="block lg:flex"
-                                role="menu"
-                                aria-label="Menu de Navegação">
+                            <ul class="block lg:flex" role="menu" aria-label="Menu de Navegação">
                                 <li class="group relative">
-                                    <a href="#home"
-                                       class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-body-light-12 group-hover:text-primary dark:text-body-dark-12 lg:mx-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-primary-color lg:dark:text-primary-color lg:group-hover:text-primary-color lg:group-hover:opacity-70 active"
-                                       role="menuitem">Início</a>
+                                    <a href="#home" class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-body-light-12 group-hover:text-primary dark:text-body-dark-12 lg:mx-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-primary-color lg:dark:text-primary-color lg:group-hover:text-primary-color lg:group-hover:opacity-70 active" role="menuitem">Início</a>
                                 </li>
                                 <li class="group relative">
-                                    <a href="#services"
-                                       class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-body-light-12 group-hover:text-primary dark:text-body-dark-12 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-primary-color lg:dark:text-primary-color lg:group-hover:text-primary-color lg:group-hover:opacity-70"
-                                       role="menuitem">Como Funciona</a>
+                                    <a href="#services" class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-body-light-12 group-hover:text-primary dark:text-body-dark-12 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-primary-color lg:dark:text-primary-color lg:group-hover:text-primary-color lg:group-hover:opacity-70" role="menuitem">Como Funciona</a>
                                 </li>
                                 <li class="group relative">
-                                    <a href="#pricing"
-                                       class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-body-light-12 group-hover:text-primary dark:text-body-dark-12 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-primary-color lg:dark:text-primary-color lg:group-hover:text-primary-color lg:group-hover:opacity-70"
-                                       role="menuitem">Preços</a>
+                                    <a href="#about" class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-body-light-12 group-hover:text-primary dark:text-body-dark-12 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-primary-color lg:dark:text-primary-color lg:group-hover:text-primary-color lg:group-hover:opacity-70" role="menuitem">Vantagens</a>
                                 </li>
                                 <li class="group relative">
-                                    <a href="#faq"
-                                       class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-body-light-12 group-hover:text-primary dark:text-body-dark-12 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-primary-color lg:dark:text-primary-color lg:group-hover:text-primary-color lg:group-hover:opacity-70"
-                                       role="menuitem">Dúvidas</a>
+                                    <a href="#faq" class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-body-light-12 group-hover:text-primary dark:text-body-dark-12 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-primary-color lg:dark:text-primary-color lg:group-hover:text-primary-color lg:group-hover:opacity-70" role="menuitem">Dúvidas</a>
                                 </li>
                             </ul>
                         </nav>
                     </div>
                     <div class="flex items-center justify-end pr-[52px] lg:pr-0">
-                        <button type="button"
-                                class="inline-flex items-center text-primary-color text-[24px]/none"
-                                aria-label="Alternar tema"
-                                data-web-trigger="web-theme"></button>
+                        <button type="button" class="inline-flex items-center text-primary-color text-[24px]/none" aria-label="Alternar tema" data-web-trigger="web-theme"></button>
                         <div class="hidden sm:flex">
-                            <a href="/Home/Index"
-                               class="btn-navbar ml-5 px-6 py-3 rounded-md bg-primary-color bg-opacity-20 text-base font-medium text-primary-color hover:bg-opacity-100 hover:text-primary"
-                               role="button">Analisar Agora</a>
+                            <a href="/Home/Index" class="btn-navbar ml-5 px-6 py-3 rounded-md bg-primary-color bg-opacity-20 text-base font-medium text-primary-color hover:bg-opacity-100 hover:text-primary" role="button">Acessar App</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+
     <main class="main relative">
         <section id="home" class="relative overflow-hidden bg-primary text-primary-color pt-[120px] md:pt-[130px] lg:pt-[160px]">
             <div class="container">
@@ -122,29 +123,23 @@
                     <div class="w-full px-5">
                         <div class="scroll-revealed mx-auto max-w-[780px] text-center">
                             <h1 class="mb-6 text-3xl font-bold leading-snug text-primary-color sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-tight">
-                                Não assine seu contrato de aluguel no escuro.
+                                A gestão do seu aluguel,<br> finalmente descomplicada.
                             </h1>
                             <p class="mx-auto mb-9 max-w-[600px] text-base text-primary-color sm:text-lg sm:leading-normal">
-                                A AluguelOK usa Inteligência Artificial para ler e traduzir
-                                o "advoguês" para você. Saiba o que você está assinando
-                                em menos de 3 minutos.
+                                Esqueça as planilhas e as mensagens perdidas. A AluguelOK conecta proprietários, inquilinos e imobiliárias em um só lugar, com total transparência e automação financeira.
                             </p>
                             <ul class="mb-10 flex flex-wrap items-center justify-center gap-4 md:gap-5">
                                 <li>
-                                    <a href="/Home/Index"
-                                       class="inline-flex items-center justify-center rounded-md bg-primary-color text-primary px-5 py-3 text-center text-base font-medium shadow-md hover:bg-primary-light-5 md:px-7 md:py-[14px]"
-                                       role="button">Analisar Meu Contrato</a>
+                                    <a href="/Home/Index" class="inline-flex items-center justify-center rounded-md bg-primary-color text-primary px-5 py-3 text-center text-base font-medium shadow-md hover:bg-primary-light-5 md:px-7 md:py-[14px]" role="button">Criar Conta Grátis</a>
                                 </li>
                                 <li>
-                                    <a href="#intro"
-                                       class="ic-page-scroll flex items-center gap-4 rounded-md bg-primary-color/[0.15] px-5 py-3 text-base font-medium text-primary-color hover:bg-primary-color hover:text-primary md:px-7 md:py-[14px]"
-                                       role="button"><i class="lni lni-play text-lg/none"></i> Veja Como Funciona</a>
+                                    <a href="#intro" class="ic-page-scroll flex items-center gap-4 rounded-md bg-primary-color/[0.15] px-5 py-3 text-base font-medium text-primary-color hover:bg-primary-color hover:text-primary md:px-7 md:py-[14px]" role="button"><i class="lni lni-play text-lg/none"></i> Veja Como Funciona</a>
                                 </li>
                             </ul>
                             <div>
-                                <p class="mb-4 text-center text-primary-color">Uma ferramenta que protege</p>
-                                <div class="scroll-revealed flex items-center justify-center gap-4 text-center">
-                                    <span class="text-primary-color/60">Inquilinos e Proprietários</span>
+                                <p class="mb-4 text-center text-primary-color">O ecossistema perfeito para</p>
+                                <div class="scroll-revealed flex items-center justify-center gap-4 text-center font-medium">
+                                    <span class="text-primary-color/90">Inquilinos &middot; Proprietários &middot; Imobiliárias</span>
                                 </div>
                             </div>
                         </div>
@@ -152,112 +147,75 @@
                     <div class="w-full px-5">
                         <div class="scroll-revealed relative z-10 mx-auto max-w-[845px]">
                             <figure class="mt-16">
-                                <img src="./img/hero.png" alt="Demonstração da plataforma AluguelOK" class="mx-auto max-w-full rounded-t-xl rounded-tr-xl" />
+                                <img src="./img/hero.png" alt="Painel do App AluguelOK mostrando transparência nos aluguéis" class="mx-auto max-w-full rounded-t-xl rounded-tr-xl shadow-xl" />
                             </figure>
                             <div class="absolute -left-9 bottom-0 z-[-1]">
-                                <img src="./img/dots.svg" class="w-[120px] opacity-75" />
+                                <img src="./img/dots.svg" class="w-[120px] opacity-75" alt="" aria-hidden="true" />
                             </div>
                             <div class="absolute -right-6 -top-6 z-[-1]">
-                                <img src="./img/dots.svg" class="w-[120px] opacity-75" />
+                                <img src="./img/dots.svg" class="w-[120px] opacity-75" alt="" aria-hidden="true" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
         <section id="about" class="section-area">
             <div class="container">
                 <div class="grid grid-cols-1 gap-14 lg:grid-cols-2">
                     <div class="w-full">
                         <figure class="scroll-revealed max-w-[480px] mx-auto">
-                            <img src="./img/about-img.jpg"
-                                 alt="Pessoa analisando contrato com tranquilidade"
-                                 class="rounded-xl" />
+                            <img src="./img/about-img.jpg" alt="Pessoa utilizando o App AluguelOK pelo celular com tranquilidade" class="rounded-xl shadow-lg" />
                         </figure>
                     </div>
                     <div class="w-full">
                         <div class="scroll-revealed">
-                            <h6 class="mb-2 block text-lg font-semibold text-primary">
-                                Nossa Missão
-                            </h6>
-                            <h2 class="mb-6">
-                                Democratizar a segurança jurídica no aluguel.
-                            </h2>
+                            <h2 class="text-lg font-semibold text-primary mb-2">Nosso Propósito</h2>
+                            <h3 class="text-3xl font-bold mb-6 text-body-light-12 dark:text-body-dark-12">
+                                Democratizar a gestão de locações no Brasil.
+                            </h3>
                         </div>
                         <div class="tabs scroll-revealed">
-                            <nav class="tabs-nav flex flex-wrap gap-4 my-8"
-                                 role="tablist"
-                                 aria-label="Abas sobre nós">
-                                <button type="button"
-                                        class="tabs-link inline-block py-2 px-4 rounded-md text-body-light-12 dark:text-body-dark-12 bg-body-light-12/10 dark:bg-body-dark-12/10 text-inherit font-medium hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color"
-                                        data-web-toggle="tabs"
-                                        data-web-target="tabs-panel-inquilinos"
-                                        id="tabs-list-inquilinos"
-                                        role="tab"
-                                        aria-controls="tabs-panel-inquilinos">
-                                    Para Inquilinos
-                                </button>
-                                <button type="button"
-                                        class="tabs-link inline-block py-2 px-4 rounded-md text-body-light-12 dark:text-body-dark-12 bg-body-light-12/10 dark:bg-body-dark-12/10 text-inherit font-medium hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color"
-                                        data-web-toggle="tabs"
-                                        data-web-target="tabs-panel-proprietarios"
-                                        id="tabs-list-proprietarios"
-                                        role="tab"
-                                        aria-controls="tabs-panel-proprietarios">
+                            <nav class="tabs-nav flex flex-wrap gap-4 my-8" role="tablist" aria-label="Vantagens por perfil de usuário">
+                                <button type="button" class="tabs-link inline-block py-2 px-4 rounded-md text-body-light-12 dark:text-body-dark-12 bg-body-light-12/10 dark:bg-body-dark-12/10 text-inherit font-medium hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color active" data-web-toggle="tabs" data-web-target="tabs-panel-proprietarios" id="tabs-list-proprietarios" role="tab" aria-controls="tabs-panel-proprietarios">
                                     Para Proprietários
                                 </button>
-                                <button type="button"
-                                        class="tabs-link inline-block py-2 px-4 rounded-md text-body-light-12 dark:text-body-dark-12 bg-body-light-12/10 dark:bg-body-dark-12/10 text-inherit font-medium hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color"
-                                        data-web-toggle="tabs"
-                                        data-web-target="tabs-panel-tecnologia"
-                                        id="tabs-list-tecnologia"
-                                        role="tab"
-                                        aria-controls="tabs-panel-tecnologia">
-                                    Nossa Tecnologia
+                                <button type="button" class="tabs-link inline-block py-2 px-4 rounded-md text-body-light-12 dark:text-body-dark-12 bg-body-light-12/10 dark:bg-body-dark-12/10 text-inherit font-medium hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color" data-web-toggle="tabs" data-web-target="tabs-panel-inquilinos" id="tabs-list-inquilinos" role="tab" aria-controls="tabs-panel-inquilinos">
+                                    Para Inquilinos
+                                </button>
+                                <button type="button" class="tabs-link inline-block py-2 px-4 rounded-md text-body-light-12 dark:text-body-dark-12 bg-body-light-12/10 dark:bg-body-dark-12/10 text-inherit font-medium hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color" data-web-toggle="tabs" data-web-target="tabs-panel-imobiliarias" id="tabs-list-imobiliarias" role="tab" aria-controls="tabs-panel-imobiliarias">
+                                    Para Imobiliárias
                                 </button>
                             </nav>
-                            <div class="tabs-content mt-4"
-                                 id="tabs-panel-inquilinos"
-                                 tabindex="-1"
-                                 role="tabpanel"
-                                 aria-labelledby="tabs-list-inquilinos">
-                                <p>
-                                    Para quem vai alugar, a AluguelOK é sua principal defesa. Nossa IA
-                                    identifica cláusulas abusivas, multas de rescisão desproporcionais
-                                    e taxas ilegais (como a dupla garantia).
+
+                            <div class="tabs-content mt-4" id="tabs-panel-proprietarios" tabindex="0" role="tabpanel" aria-labelledby="tabs-list-proprietarios">
+                                <h4 class="text-xl font-semibold mb-3">Autonomia e Visibilidade Total</h4>
+                                <p class="mb-3">
+                                    Cadastre seu imóvel, convide o inquilino e nós cuidamos do resto. Fim da cobrança manual: o app atua como o intermediador que organiza os recebimentos via Pix ou boleto.
                                 </p>
                                 <p>
-                                    Garantimos que seus direitos como locatário estejam protegidos
-                                    antes que você assine e se comprometa por anos.
+                                    Tenha acesso a um painel financeiro transparente mostrando exatamente quando o aluguel foi pago, quais taxas foram descontadas e o valor líquido exato repassado à sua conta.
                                 </p>
                             </div>
-                            <div class="tabs-content mt-4"
-                                 id="tabs-panel-proprietarios"
-                                 tabindex="-1"
-                                 role="tabpanel"
-                                 aria-labelledby="tabs-list-proprietarios">
-                                <p>
-                                    Para quem é proprietário, a plataforma é uma blindagem para o
-                                    seu patrimônio. Verificamos a validade das garantias (fiador, caução),
-                                    a clareza das cláusulas de rescisão e a proteção do seu imóvel.
+
+                            <div class="tabs-content mt-4 hidden" id="tabs-panel-inquilinos" tabindex="-1" role="tabpanel" aria-labelledby="tabs-list-inquilinos">
+                                <h4 class="text-xl font-semibold mb-3">Sua casa, na palma da mão</h4>
+                                <p class="mb-3">
+                                    Acesse um portal exclusivo onde você encontra todos os seus boletos, códigos Pix copiáveis, contratos assinados e recibos organizados em um só lugar.
                                 </p>
                                 <p>
-                                    Evite brechas legais e alugue seu imóvel com a máxima segurança.
+                                    Problemas no imóvel? Abra chamados de manutenção direto pelo app com envio de fotos. O pedido é formalizado e você acompanha o status até a resolução.
                                 </p>
                             </div>
-                            <div class="tabs-content mt-4"
-                                 id="tabs-panel-tecnologia"
-                                 tabindex="-1"
-                                 role="tabpanel"
-                                 aria-labelledby="tabs-list-tecnologia">
-                                <p>
-                                    Nossa IA foi treinada por advogados especialistas e com milhares
-                                    de contratos reais. Ela é especializada na Lei do Inquilinato
-                                    (Lei nº 8.245/91) e suas atualizações.
+
+                            <div class="tabs-content mt-4 hidden" id="tabs-panel-imobiliarias" tabindex="-1" role="tabpanel" aria-labelledby="tabs-list-imobiliarias">
+                                <h4 class="text-xl font-semibold mb-3">Escala e Profissionalismo</h4>
+                                <p class="mb-3">
+                                    O coração da AluguelOK automatiza o <strong>Split de Pagamento</strong>. O inquilino paga e o sistema retém automaticamente a comissão do corretor e envia a fração exata para cada proprietário do imóvel.
                                 </p>
                                 <p>
-                                    A plataforma não apenas lê o texto, mas *interpreta* o contexto
-                                    jurídico para identificar riscos que passariam despercebidos.
+                                    Reduza semanas de trabalho contábil com nossa inteligência fiscal que compila os repasses e gera os arquivos anuais padronizados para a DIMOB.
                                 </p>
                             </div>
                         </div>
@@ -265,32 +223,28 @@
                 </div>
             </div>
         </section>
+
         <section id="services" class="section-area">
             <div class="container">
                 <div class="scroll-revealed text-center max-w-[550px] mx-auto mb-12">
-                    <h6 class="mb-2 block text-lg font-semibold text-primary">
-                        Como Funciona
-                    </h6>
-                    <h2 class="mb-6">Uma Análise em 3 Passos Simples</h2>
+                    <h2 class="mb-2 block text-lg font-semibold text-primary">A Jornada</h2>
+                    <h3 class="text-3xl font-bold mb-6 text-body-light-12 dark:text-body-dark-12">Gestão em 3 Passos Simples</h3>
                     <p>
-                        Nosso processo é desenhado para ser rápido, intuitivo e 100% digital.
-                        Tenha seu relatório em minutos.
+                        Nosso ecossistema foi desenhado para ser intuitivo. Funciona perfeitamente para um proprietário de "kitnet" ou uma imobiliária com centenas de portas.
                     </p>
                 </div>
                 <div class="row">
                     <div class="scroll-revealed col-12 sm:col-6 lg:col-4">
                         <div class="group hover:-translate-y-1">
                             <div class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color">
-                                <i class="lni lni-upload"></i>
+                                <i class="lni lni-home"></i>
                             </div>
                             <div class="w-full">
                                 <h4 class="text-[1.25rem]/tight font-semibold mb-5">
-                                    1. Envie seu Contrato
+                                    1. Cadastre o Imóvel
                                 </h4>
                                 <p>
-                                    Faça o upload do seu contrato em .pdf, .doc ou .docx. Nossa
-                                    plataforma é 100% segura e seus arquivos são confidenciais
-                                    e criptografados.
+                                    Crie sua conta em segundos. Adicione as informações da propriedade, defina o valor do aluguel e as regras contratuais essenciais.
                                 </p>
                             </div>
                         </div>
@@ -298,20 +252,14 @@
                     <div class="scroll-revealed col-12 sm:col-6 lg:col-4">
                         <div class="group hover:-translate-y-1">
                             <div class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color">
-                                <svg xmlns="http://www.w3.org/2000/svg" 
-                                     width="37" height="37" 
-                                     viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M9 2a5 5 0 0 0-5 5v2.278A4.5 4.5 0 0 0 5.5 18H6a3 3 0 0 0 3 3h1a1 1 0 0 0 1-1v-7H9a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h2V2H9zm6 0a3 3 0 0 0-3 3v2h2a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3h-2v4a1 1 0 0 0 1 1h1a3 3 0 0 0 3-3h.5a4.5 4.5 0 0 0 1.5-8.722V7a5 5 0 0 0-5-5h-1z"/>
-                                </svg>
+                                <i class="lni lni-users"></i>
                             </div>
                             <div class="w-full">
                                 <h4 class="text-[1.25rem]/tight font-semibold mb-5">
-                                    2. A IA Analisa
+                                    2. Convide os Envolvidos
                                 </h4>
                                 <p>
-                                    Nossa Inteligência Artificial processa o documento em segundos,
-                                    identificando pontos de atenção, riscos (altos, médios) e
-                                    informações ausentes.
+                                    Adicione o e-mail do inquilino. Se você for corretor, vincule também o proprietário. O sistema cria os portais de acesso exclusivos para cada um.
                                 </p>
                             </div>
                         </div>
@@ -319,16 +267,14 @@
                     <div class="scroll-revealed col-12 sm:col-6 lg:col-4">
                         <div class="group hover:-translate-y-1">
                             <div class="w-[70px] h-[70px] rounded-2xl mb-6 flex items-center justify-center text-[37px]/none bg-primary text-primary-color">
-                                <i class="lni lni-clipboard"></i>
+                                <i class="lni lni-revenue"></i>
                             </div>
                             <div class="w-full">
                                 <h4 class="text-[1.25rem]/tight font-semibold mb-5">
-                                    3. Receba seu Relatório
+                                    3. Piloto Automático
                                 </h4>
                                 <p>
-                                    Veja um resumo preliminar gratuito. Desbloqueie a análise
-                                    completa via PIX e veja explicações detalhadas para cada
-                                    cláusula.
+                                    O app cobra mensalmente, emite os recibos, realiza a divisão bancária (split) de taxas e centraliza os pedidos de manutenção. Simples assim.
                                 </p>
                             </div>
                         </div>
@@ -336,80 +282,49 @@
                 </div>
             </div>
         </section>
+
         <section id="intro" class="section-area">
             <div class="container">
                 <div class="scroll-revealed text-center max-w-[550px] mx-auto mb-12">
-                    <h6 class="mb-2 block text-lg font-semibold text-primary">
-                        Veja em 60 Segundos
-                    </h6>
-                    <h2 class="mb-6">Como a AluguelOK Protege Você</h2>
+                    <h2 class="mb-2 block text-lg font-semibold text-primary">Veja em 60 Segundos</h2>
+                    <h3 class="text-3xl font-bold mb-6 text-body-light-12 dark:text-body-dark-12">O Aplicativo por Dentro</h3>
                     <p>
-                        Assista ao vídeo e descubra como nossa plataforma transforma um
-                        documento jurídico complicado em um guia simples e seguro.
+                        Assista ao vídeo e descubra como a AluguelOK organiza a vida financeira e a comunicação do seu aluguel de forma elegante.
                     </p>
                 </div>
                 <div class="scroll-revealed relative max-w-[900px] mx-auto">
-                    <img src="./img/intro-video.jpg"
-                         alt="Vídeo de introdução"
-                         class="w-full h-full aspect-video rounded-xl object-cover" />
-                    <a href="https://www.youtube.com/watch?v=SECaI-r-tVE" class="video-popup w-[80px] h-[80px] rounded-full inline-flex items-center justify-center bg-primary text-primary-color text-[1.875rem] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-md hover:bg-primary-color hover:text-primary hover:shadow-xl focus:bg-primary-color focus:text-primary focus:shadow-xl">
+                    <img src="./img/intro-video.jpg" alt="Preview da interface do painel AluguelOK" class="w-full h-full aspect-video rounded-xl object-cover" />
+                    <a href="https://www.youtube.com/watch?v=SECaI-r-tVE" class="video-popup w-[80px] h-[80px] rounded-full inline-flex items-center justify-center bg-primary text-primary-color text-[1.875rem] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-md hover:bg-primary-color hover:text-primary hover:shadow-xl focus:bg-primary-color focus:text-primary focus:shadow-xl" aria-label="Assistir ao vídeo de demonstração">
                         <i class="lni lni-play"></i>
                     </a>
                 </div>
             </div>
         </section>
+
         <section id="portfolio" class="section-area">
             <div class="container">
                 <div class="scroll-revealed text-center max-w-[550px] mx-auto mb-12">
-                    <h6 class="mb-2 block text-lg font-semibold text-primary">
-                        Exemplos de Análise
-                    </h6>
-                    <h2 class="mb-6">O que Nossa IA Encontra</h2>
+                    <h2 class="mb-2 block text-lg font-semibold text-primary">Funcionalidades</h2>
+                    <h3 class="text-3xl font-bold mb-6 text-body-light-12 dark:text-body-dark-12">Tudo o que você precisa</h3>
                     <p>
-                        Veja exemplos reais de cláusulas perigosas que nossa IA
-                        identifica todos os dias.
+                        Explore os recursos que transformaram a relação de locação, garantindo segurança jurídica e agilidade.
                     </p>
                 </div>
-                <nav class="scroll-revealed portfolio-menu mb-[3.750rem] text-center"
-                     aria-label="Filtro de Exemplos">
-                    <button type="button"
-                            class="font-semibold px-5 py-2 rounded-md text-body-light-11 dark:text-body-dark-11 hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color active"
-                            data-filter="all">
-                        Todos
-                    </button>
-                    <button type="button"
-                            class="font-semibold px-5 py-2 rounded-md text-body-light-11 dark:text-body-dark-11 hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color"
-                            data-filter="abusivas">
-                        Cláusulas Abusivas
-                    </button>
-                    <button type="button"
-                            class="font-semibold px-5 py-2 rounded-md text-body-light-11 dark:text-body-dark-11 hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color"
-                            data-filter="financeiro">
-                        Riscos Financeiros
-                    </button>
-                    <button type="button"
-                            class="font-semibold px-5 py-2 rounded-md text-body-light-11 dark:text-body-dark-11 hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color"
-                            data-filter="garantias">
-                        Garantias
-                    </button>
-                    <button type="button"
-                            class="font-semibold px-5 py-2 rounded-md text-body-light-11 dark:text-body-dark-11 hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color"
-                            data-filter="rescisao">
-                        Rescisão
-                    </button>
+                <nav class="scroll-revealed portfolio-menu mb-[3.750rem] text-center" aria-label="Filtro de Funcionalidades">
+                    <button type="button" class="font-semibold px-5 py-2 rounded-md text-body-light-11 dark:text-body-dark-11 hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color active" data-filter="all">Todos</button>
+                    <button type="button" class="font-semibold px-5 py-2 rounded-md text-body-light-11 dark:text-body-dark-11 hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color" data-filter="proprietario">Para o Proprietário</button>
+                    <button type="button" class="font-semibold px-5 py-2 rounded-md text-body-light-11 dark:text-body-dark-11 hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color" data-filter="imobiliaria">Para Corretores</button>
+                    <button type="button" class="font-semibold px-5 py-2 rounded-md text-body-light-11 dark:text-body-dark-11 hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color" data-filter="inquilino">Para o Inquilino</button>
                 </nav>
                 <div class="scroll-revealed portfolio-grid row">
                     <div class="portfolio col-12 sm:col-6 lg:col-4">
-                        <article class="group" data-filter="rescisao">
+                        <article class="group" data-filter="proprietario">
                             <div class="relative overflow-hidden w-full aspect-[4/3] rounded-xl">
-                                <img src="./img/portfolio/portfolio-1.jpg"
-                                     alt="Multa de Rescisão"
-                                     class="w-full h-full object-cover" />
+                                <img src="./img/portfolio/portfolio-1.jpg" alt="Painel exibindo gráfico de rentabilidade e extratos" class="w-full h-full object-cover" />
                                 <div class="absolute top-0 left-0 w-full aspect-[4/3] flex items-center justify-center bg-body-light-1/75 scale-[0.15] rounded-xl opacity-0 invisible group-hover:scale-95 group-hover:opacity-100 group-hover:visible">
                                     <div class="flex flex-wrap gap-2 p-4">
                                         <div class="inline-block relative">
-                                            <a href="./img/portfolio/portfolio-1.jpg"
-                                               class="portfolio-box text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center">
+                                            <a href="./img/portfolio/portfolio-1.jpg" class="portfolio-box text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center" aria-label="Ampliar imagem do painel financeiro">
                                                 <i class="lni lni-zoom-in"></i>
                                             </a>
                                         </div>
@@ -417,28 +332,19 @@
                                 </div>
                             </div>
                             <div class="pt-4">
-                                <h4 class="mb-2">
-                                    <a href="javascript:void(0)"
-                                       class="text-[1.5rem] leading-tight text-inherit">Multa de Rescisão Desproporcional</a>
-                                </h4>
-                                <p>
-                                    A lei exige que a multa seja proporcional ao tempo restante
-                                    do contrato. Identificamos cláusulas que cobram 100% da multa.
-                                </p>
+                                <h4 class="mb-2 text-[1.5rem] leading-tight text-inherit">Extrato Transparente</h4>
+                                <p>Visão clara do que foi recebido, taxas de administração descontadas e o valor líquido repassado, sem surpresas no fim do mês.</p>
                             </div>
                         </article>
                     </div>
                     <div class="portfolio col-12 sm:col-6 lg:col-4">
-                        <article class="group" data-filter="garantias">
+                        <article class="group" data-filter="imobiliaria">
                             <div class="relative overflow-hidden w-full aspect-[4/3] rounded-xl">
-                                <img src="./img/portfolio/portfolio-2.jpg"
-                                     alt="Dupla Garantia"
-                                     class="w-full h-full object-cover" />
+                                <img src="./img/portfolio/portfolio-2.jpg" alt="Fluxo de divisão de dinheiro do Split de Pagamento" class="w-full h-full object-cover" />
                                 <div class="absolute top-0 left-0 w-full aspect-[4/3] flex items-center justify-center bg-body-light-1/75 scale-[0.15] rounded-xl opacity-0 invisible group-hover:scale-95 group-hover:opacity-100 group-hover:visible">
                                     <div class="flex flex-wrap gap-2 p-4">
                                         <div class="inline-block relative">
-                                            <a href="./img/portfolio/portfolio-2.jpg"
-                                               class="portfolio-box text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center">
+                                            <a href="./img/portfolio/portfolio-2.jpg" class="portfolio-box text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center" aria-label="Ampliar imagem do split de pagamento">
                                                 <i class="lni lni-zoom-in"></i>
                                             </a>
                                         </div>
@@ -446,29 +352,19 @@
                                 </div>
                             </div>
                             <div class="pt-4">
-                                <h4 class="mb-2">
-                                    <a href="javascript:void(0)"
-                                       class="text-[1.5rem] leading-tight text-inherit">Exigência de Dupla Garantia (Ilegal)</a>
-                                </h4>
-                                <p>
-                                    A lei proíbe exigir mais de uma modalidade de garantia
-                                    (ex: Fiador e Caução juntos). Nossa IA sinaliza isso
-                                    imediatamente.
-                                </p>
+                                <h4 class="mb-2 text-[1.5rem] leading-tight text-inherit">Split de Pagamentos Automático</h4>
+                                <p>O coração financeiro para imobiliárias. O app retém a taxa do corretor na fonte e divide o restante automaticamente entre múltiplos donos do imóvel.</p>
                             </div>
                         </article>
                     </div>
                     <div class="portfolio col-12 sm:col-6 lg:col-4">
-                        <article class="group" data-filter="abusivas">
+                        <article class="group" data-filter="inquilino">
                             <div class="relative overflow-hidden w-full aspect-[4/3] rounded-xl">
-                                <img src="./img/portfolio/portfolio-3.jpg"
-                                     alt="Benfeitorias"
-                                     class="w-full h-full object-cover" />
+                                <img src="./img/portfolio/portfolio-3.jpg" alt="Tela do celular mostrando o portal do inquilino" class="w-full h-full object-cover" />
                                 <div class="absolute top-0 left-0 w-full aspect-[4/3] flex items-center justify-center bg-body-light-1/75 scale-[0.15] rounded-xl opacity-0 invisible group-hover:scale-95 group-hover:opacity-100 group-hover:visible">
                                     <div class="flex flex-wrap gap-2 p-4">
                                         <div class="inline-block relative">
-                                            <a href="./img/portfolio/portfolio-3.jpg"
-                                               class="portfolio-box text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center">
+                                            <a href="./img/portfolio/portfolio-3.jpg" class="portfolio-box text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center" aria-label="Ampliar imagem do portal do inquilino">
                                                 <i class="lni lni-zoom-in"></i>
                                             </a>
                                         </div>
@@ -476,29 +372,19 @@
                                 </div>
                             </div>
                             <div class="pt-4">
-                                <h4 class="mb-2">
-                                    <a href="javascript:void(0)"
-                                       class="text-[1.5rem] leading-tight text-inherit">Renúncia a Benfeitorias</a>
-                                </h4>
-                                <p>
-                                    Muitos contratos forçam o inquilino a abrir mão da
-                                    indenização por reformas necessárias. Identificamos essa
-                                    renúncia para você.
-                                </p>
+                                <h4 class="mb-2 text-[1.5rem] leading-tight text-inherit">Portal Exclusivo do Morador</h4>
+                                <p>Um ambiente dedicado para o inquilino pagar aluguéis via Pix/Boleto, baixar recibos e manter seu histórico de bom pagador seguro.</p>
                             </div>
                         </article>
                     </div>
                     <div class="portfolio col-12 sm:col-6 lg:col-4">
-                        <article class="group" data-filter="financeiro">
+                        <article class="group" data-filter="imobiliaria">
                             <div class="relative overflow-hidden w-full aspect-[4/3] rounded-xl">
-                                <img src="./img/portfolio/portfolio-4.jpg"
-                                     alt="Reajuste"
-                                     class="w-full h-full object-cover" />
+                                <img src="./img/portfolio/portfolio-4.jpg" alt="Dashboard focado em relatórios da Receita Federal" class="w-full h-full object-cover" />
                                 <div class="absolute top-0 left-0 w-full aspect-[4/3] flex items-center justify-center bg-body-light-1/75 scale-[0.15] rounded-xl opacity-0 invisible group-hover:scale-95 group-hover:opacity-100 group-hover:visible">
                                     <div class="flex flex-wrap gap-2 p-4">
                                         <div class="inline-block relative">
-                                            <a href="./img/portfolio/portfolio-4.jpg"
-                                               class="portfolio-box text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center">
+                                            <a href="./img/portfolio/portfolio-4.jpg" class="portfolio-box text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center" aria-label="Ampliar imagem de relatórios fiscais">
                                                 <i class="lni lni-zoom-in"></i>
                                             </a>
                                         </div>
@@ -506,29 +392,19 @@
                                 </div>
                             </div>
                             <div class="pt-4">
-                                <h4 class="mb-2">
-                                    <a href="javascript:void(0)"
-                                       class="text-[1.5rem] leading-tight text-inherit">Prazo de Reajuste Incorreto</a>
-                                </h4>
-                                <p>
-                                    A lei proíbe reajustes com periodicidade inferior a 12 meses.
-                                    Detectamos qualquer tentativa de reajuste semestral ou
-                                    abusivo.
-                                </p>
+                                <h4 class="mb-2 text-[1.5rem] leading-tight text-inherit">Inteligência Fiscal (DIMOB)</h4>
+                                <p>Geramos o arquivo TXT padronizado da Receita Federal com todos os dados e comissões da sua imobiliária ao final do ano. Adeus digitação manual.</p>
                             </div>
                         </article>
                     </div>
                     <div class="portfolio col-12 sm:col-6 lg:col-4">
-                        <article class="group" data-filter="abusivas">
+                        <article class="group" data-filter="inquilino">
                             <div class="relative overflow-hidden w-full aspect-[4/3] rounded-xl">
-                                <img src="./img/portfolio/portfolio-5.jpg"
-                                     alt="Vistoria"
-                                     class="w-full h-full object-cover" />
+                                <img src="./img/portfolio/portfolio-5.jpg" alt="Ticket de manutenção com upload de imagens de reparos" class="w-full h-full object-cover" />
                                 <div class="absolute top-0 left-0 w-full aspect-[4/3] flex items-center justify-center bg-body-light-1/75 scale-[0.15] rounded-xl opacity-0 invisible group-hover:scale-95 group-hover:opacity-100 group-hover:visible">
                                     <div class="flex flex-wrap gap-2 p-4">
                                         <div class="inline-block relative">
-                                            <a href="./img/portfolio/portfolio-5.jpg"
-                                               class="portfolio-box text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center">
+                                            <a href="./img/portfolio/portfolio-5.jpg" class="portfolio-box text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center" aria-label="Ampliar imagem dos chamados de manutenção">
                                                 <i class="lni lni-zoom-in"></i>
                                             </a>
                                         </div>
@@ -536,29 +412,19 @@
                                 </div>
                             </div>
                             <div class="pt-4">
-                                <h4 class="mb-2">
-                                    <a href="javascript:void(0)"
-                                       class="text-[1.5rem] leading-tight text-inherit">Ausência de Laudo de Vistoria</a>
-                                </h4>
-                                <p>
-                                    O contrato menciona um Laudo de Vistoria que não foi anexado?
-                                    Alertamos sobre isso para evitar que você pague por reparos
-                                    que não causou.
-                                </p>
+                                <h4 class="mb-2 text-[1.5rem] leading-tight text-inherit">Chamados de Manutenção</h4>
+                                <p>Esqueça mensagens soltas no WhatsApp. O inquilino abre tickets de reparo pelo app, enviando fotos, e o proprietário ou agente gerencia tudo de forma organizada.</p>
                             </div>
                         </article>
                     </div>
                     <div class="portfolio col-12 sm:col-6 lg:col-4">
-                        <article class="group" data-filter="rescisao">
+                        <article class="group" data-filter="proprietario">
                             <div class="relative overflow-hidden w-full aspect-[4/3] rounded-xl">
-                                <img src="./img/portfolio/portfolio-6.jpg"
-                                     alt="Rescisão"
-                                     class="w-full h-full object-cover" />
+                                <img src="./img/portfolio/portfolio-6.jpg" alt="Contrato sendo assinado eletronicamente" class="w-full h-full object-cover" />
                                 <div class="absolute top-0 left-0 w-full aspect-[4/3] flex items-center justify-center bg-body-light-1/75 scale-[0.15] rounded-xl opacity-0 invisible group-hover:scale-95 group-hover:opacity-100 group-hover:visible">
                                     <div class="flex flex-wrap gap-2 p-4">
                                         <div class="inline-block relative">
-                                            <a href="./img/portfolio/portfolio-6.jpg"
-                                               class="portfolio-box text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center">
+                                            <a href="./img/portfolio/portfolio-6.jpg" class="portfolio-box text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center" aria-label="Ampliar imagem de assinatura digital">
                                                 <i class="lni lni-zoom-in"></i>
                                             </a>
                                         </div>
@@ -566,52 +432,33 @@
                                 </div>
                             </div>
                             <div class="pt-4">
-                                <h4 class="mb-2">
-                                    <a href="javascript:void(0)"
-                                       class="text-[1.5rem] leading-tight text-inherit">Cláusula de Rescisão Inválida</a>
-                                </h4>
-                                <p>
-                                    Seu contrato de rescisão (distrato) está tentando cobrar
-                                    multas indevidas ou não menciona a devolução da garantia?
-                                    Nós avisamos.
-                                </p>
+                                <h4 class="mb-2 text-[1.5rem] leading-tight text-inherit">Assinatura Digital Nativa</h4>
+                                <p>Gerencie seus leads e envie os contratos de locação para assinatura digital com validade jurídica diretamente pela plataforma, eliminando papel.</p>
                             </div>
                         </article>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="call-action"
-                 class="section-area !bg-primary !text-primary-color">
+
+        <section id="call-action" class="section-area !bg-primary !text-primary-color">
             <div class="container">
                 <div class="scroll-revealed text-center max-w-[550px] mx-auto">
-                    <h2 class="mb-8 text-inherit">
-                        Faça uma pré-análise por nossa conta
-                    </h2>
-                    <p>
-                        Pronto para ter 100% de certeza sobre o seu aluguel?
+                    <h2 class="mb-8 text-3xl font-bold text-inherit">Pronto para modernizar seus aluguéis?</h2>
+                    <p class="mb-4">
+                        Transforme sua relação com imóveis hoje mesmo. Se você quer automatizar suas cobranças ou profissionalizar sua agência, nós temos o espaço de trabalho perfeito para você.
                     </p>
-                    <p>
-                        Seja você inquilino ou proprietário, a tranquilidade de assinar um contrato justo não tem preço.
-                    </p>
-                    <p>
-                        Envie o arquivo e descubra em segundos se existem riscos — antes de pagar por qualquer serviço.
-                    </p>
-                    <a href="/Home/Index"
-                       class="inline-block px-5 py-3 rounded-md mt-11 bg-green-400 text-white hover:bg-green-500 hover:text-white focus:bg-green-500 focus:text-white"
-                       role="button">Quero Analisar Meu Contrato</a>
+                    <a href="/Home/Index" class="inline-block px-8 py-4 text-lg font-medium rounded-md mt-6 bg-green-400 text-white hover:bg-green-500 shadow-lg hover:shadow-xl transition-all" role="button">Criar Minha Conta Agora</a>
                 </div>
             </div>
         </section>
+
         <section id="faq" class="section-area relative">
             <div class="container">
                 <div class="scroll-revealed text-center max-w-[550px] mx-auto mb-12">
-                    <h6 class="mb-2 block text-lg font-semibold text-primary">FAQ</h6>
-                    <h2 class="mb-6">Dúvidas Frequentes</h2>
-                    <p>
-                        Ainda tem dúvidas? Estamos aqui para ajudar. Veja as perguntas
-                        mais comuns.
-                    </p>
+                    <h2 class="mb-2 block text-lg font-semibold text-primary">FAQ</h2>
+                    <h3 class="text-3xl font-bold mb-6 text-body-light-12 dark:text-body-dark-12">Dúvidas Frequentes</h3>
+                    <p>Entenda como a AluguelOK se adapta perfeitamente ao seu modelo de negócio ou moradia.</p>
                 </div>
                 <div class="grid gap-x-8 gap-y-12 grid-cols-1 lg:grid-cols-2">
                     <div class="scroll-revealed flex">
@@ -619,13 +466,11 @@
                             <i class="lni lni-question-circle"></i>
                         </div>
                         <div class="w-full">
-                            <h3 class="mb-6 text-xl font-semibold text-body-light-12 dark:text-body-dark-12 sm:text-2xl lg:text-xl xl:text-2xl">
-                                Que tipo de arquivo posso enviar?
-                            </h3>
+                            <h4 class="mb-4 text-xl font-semibold text-body-light-12 dark:text-body-dark-12">
+                                Posso usar sendo um proprietário autônomo (só 1 imóvel)?
+                            </h4>
                             <p class="text-body-light-11 dark:text-body-dark-11">
-                                Aceitamos os formatos mais comuns: PDF (.pdf), Word (.doc) e
-                                Word (.docx). Basta arrastar ou selecionar o arquivo na nossa
-                                plataforma.
+                                Com certeza! A AluguelOK foi construída para dar poder a todos. Você cria uma conta, gerencia seu próprio imóvel e cobra seu inquilino de forma profissional, sem precisar contratar uma agência para isso.
                             </p>
                         </div>
                     </div>
@@ -634,14 +479,11 @@
                             <i class="lni lni-question-circle"></i>
                         </div>
                         <div class="w-full">
-                            <h3 class="mb-6 text-xl font-semibold text-body-light-12 dark:text-body-dark-12 sm:text-2xl lg:text-xl xl:text-2xl">
-                                A análise da IA substitui um advogado?
-                            </h3>
+                            <h4 class="mb-4 text-xl font-semibold text-body-light-12 dark:text-body-dark-12">
+                                Como funciona o repasse para imobiliárias (Split)?
+                            </h4>
                             <p class="text-body-light-11 dark:text-body-dark-11">
-                                Não. Nossa análise é uma ferramenta de suporte poderosa e
-                                informativa, mas não constitui aconselhamento jurídico.
-                                Sempre recomendamos consultar um advogado para decisões
-                                complexas.
+                                Nós processamos o pagamento do inquilino e dividimos o dinheiro na hora. A sua comissão (taxa administrativa) vai para a conta da imobiliária e o valor líquido vai direto para o proprietário, tudo no mesmo dia.
                             </p>
                         </div>
                     </div>
@@ -650,13 +492,11 @@
                             <i class="lni lni-question-circle"></i>
                         </div>
                         <div class="w-full">
-                            <h3 class="mb-6 text-xl font-semibold text-body-light-12 dark:text-body-dark-12 sm:text-2xl lg:text-xl xl:text-2xl">
-                                Meus dados e contratos estão seguros?
-                            </h3>
+                            <h4 class="mb-4 text-xl font-semibold text-body-light-12 dark:text-body-dark-12">
+                                Por onde o Inquilino paga o aluguel?
+                            </h4>
                             <p class="text-body-light-11 dark:text-body-dark-11">
-                                Sim. Usamos criptografia HTTPS e seus arquivos são
-                                <strong>automaticamente excluídos</strong> de nossos servidores após
-                                30 dias, garantindo sua privacidade total.
+                                O inquilino acessa o próprio aplicativo (Portal do Morador) e realiza o pagamento via código Pix gerado na hora ou através de Boleto Bancário. O sistema faz a baixa automática no sistema do gestor.
                             </p>
                         </div>
                     </div>
@@ -665,13 +505,11 @@
                             <i class="lni lni-question-circle"></i>
                         </div>
                         <div class="w-full">
-                            <h3 class="mb-6 text-xl font-semibold text-body-light-12 dark:text-body-dark-12 sm:text-2xl lg:text-xl xl:text-2xl">
-                                O que é a "Reanálise"?
-                            </h3>
+                            <h4 class="mb-4 text-xl font-semibold text-body-light-12 dark:text-body-dark-12">
+                                Como vocês ajudam com a DIMOB?
+                            </h4>
                             <p class="text-body-light-11 dark:text-body-dark-11">
-                                É um fluxo com desconto onde você envia o contrato original (que
-                                já analisamos) e o novo (negociado). Nossa IA compara os
-                                dois e mostra exatamente o que mudou.
+                                Toda vez que um aluguel passa pela AluguelOK, registramos CPF/CNPJ, valor e retenções. No fim do ano fiscal, você (imobiliária) clica em um botão e faz o download do arquivo TXT pronto para importar no software da Receita Federal.
                             </p>
                         </div>
                     </div>
@@ -679,58 +517,34 @@
             </div>
         </section>
     </main>
+
     <footer class="bg-primary-dark-2 text-white">
         <div class="container py-20 lg:py-[100px]">
             <div class="row">
                 <div class="col-12 order-first lg:col-4">
                     <div class="w-full">
                         <a href="." class="inline-block mb-5">
-                            <img src="img/logo/aluguelok-white.png" width="256" />
+                            <img src="img/logo/aluguelok-white.png" width="256" alt="Logo AluguelOK Branco" />
                         </a>
                         <p class="mb-8 text-body-dark-11">
-                            Analisamos contratos de aluguel usando IA para trazer segurança
-                            e transparência para inquilinos e proprietários.
+                            A plataforma completa que democratiza a gestão de locações. Transparência para inquilinos, autonomia para proprietários e escala para corretoras.
                         </p>
                         <div class="-mx-3 flex items-center">
-                            <a href="javascript:void(0)"
-                               class="px-3 text-body-dark-11 hover:text-primary text-[22px] leading-none">
-                                <i class="lni lni-facebook-fill"></i>
-                            </a>
-                            <a href="javascript:void(0)"
-                               class="px-3 text-body-dark-11 hover:text-primary text-[22px] leading-none">
-                                <i class="lni lni-twitter-original"></i>
-                            </a>
-                            <a href="javascript:void(0)"
-                               class="px-3 text-body-dark-11 hover:text-primary text-[22px] leading-none">
-                                <i class="lni lni-instagram-original"></i>
-                            </a>
-                            <a href="javascript:void(0)"
-                               class="px-3 text-body-dark-11 hover:text-primary text-[22px] leading-none">
-                                <i class="lni lni-linkedin-original"></i>
-                            </a>
+                            <a href="javascript:void(0)" aria-label="Acessar nosso Facebook" class="px-3 text-body-dark-11 hover:text-primary text-[22px] leading-none"><i class="lni lni-facebook-fill"></i></a>
+                            <a href="javascript:void(0)" aria-label="Acessar nosso X / Twitter" class="px-3 text-body-dark-11 hover:text-primary text-[22px] leading-none"><i class="lni lni-twitter-original"></i></a>
+                            <a href="javascript:void(0)" aria-label="Acessar nosso Instagram" class="px-3 text-body-dark-11 hover:text-primary text-[22px] leading-none"><i class="lni lni-instagram-original"></i></a>
+                            <a href="javascript:void(0)" aria-label="Acessar nosso LinkedIn" class="px-3 text-body-dark-11 hover:text-primary text-[22px] leading-none"><i class="lni lni-linkedin-original"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 lg:col-2">
                     <div class="w-full">
-                        <h4 class="mb-9 text-lg font-semibold text-inherit">Soluções</h4>
+                        <h4 class="mb-9 text-lg font-semibold text-inherit">A Plataforma</h4>
                         <ul>
-                            <li>
-                                <a href="/Home/Index"
-                                   class="mb-3 inline-block text-body-dark-11 hover:text-primary">Análise para Inquilinos</a>
-                            </li>
-                            <li>
-                                <a href="/Home/Index"
-                                   class="mb-3 inline-block text-body-dark-11 hover:text-primary">Análise para Proprietários</a>
-                            </li>
-                            <li>
-                                <a href="/Home/Index"
-                                   class="mb-3 inline-block text-body-dark-11 hover:text-primary">Análise de Rescisão</a>
-                            </li>
-                            <li>
-                                <a href="/Home/Index"
-                                   class="mb-3 inline-block text-body-dark-11 hover:text-primary">Reanálise Comparativa</a>
-                            </li>
+                            <li><a href="/Home/Index" class="mb-3 inline-block text-body-dark-11 hover:text-primary">Para Proprietários</a></li>
+                            <li><a href="/Home/Index" class="mb-3 inline-block text-body-dark-11 hover:text-primary">Para Inquilinos</a></li>
+                            <li><a href="/Home/Index" class="mb-3 inline-block text-body-dark-11 hover:text-primary">Para Imobiliárias</a></li>
+                            <li><a href="/Home/Index" class="mb-3 inline-block text-body-dark-11 hover:text-primary">Criar Conta Grátis</a></li>
                         </ul>
                     </div>
                 </div>
@@ -738,22 +552,10 @@
                     <div class="w-full">
                         <h4 class="mb-9 text-lg font-semibold text-inherit">Suporte</h4>
                         <ul>
-                            <li>
-                                <a href="#pricing"
-                                   class="ic-page-scroll mb-3 inline-block text-body-dark-11 hover:text-primary">Preços</a>
-                            </li>
-                            <li>
-                                <a href="#services"
-                                   class="ic-page-scroll mb-3 inline-block text-body-dark-11 hover:text-primary">Como Funciona</a>
-                            </li>
-                            <li>
-                                <a href="#faq"
-                                   class="ic-page-scroll mb-3 inline-block text-body-dark-11 hover:text-primary">Dúvidas (FAQ)</a>
-                            </li>
-                            <li>
-                                <a href="#blog"
-                                   class="ic-page-scroll mb-3 inline-block text-body-dark-11 hover:text-primary">Blog</a>
-                            </li>
+                            <li><a href="#services" class="ic-page-scroll mb-3 inline-block text-body-dark-11 hover:text-primary">Como Funciona</a></li>
+                            <li><a href="#portfolio" class="ic-page-scroll mb-3 inline-block text-body-dark-11 hover:text-primary">Funcionalidades</a></li>
+                            <li><a href="#faq" class="ic-page-scroll mb-3 inline-block text-body-dark-11 hover:text-primary">Dúvidas (FAQ)</a></li>
+                            <li><a href="#blog" class="ic-page-scroll mb-3 inline-block text-body-dark-11 hover:text-primary">Blog de Gestão</a></li>
                         </ul>
                     </div>
                 </div>
@@ -761,16 +563,11 @@
                     <div class="w-full">
                         <h4 class="mb-9 text-lg font-semibold text-inherit">Newsletter</h4>
                         <p class="text-body-dark-11">
-                            Receba dicas e novidades sobre o mercado de aluguéis.
+                            Receba dicas exclusivas sobre o mercado de aluguéis e gestão imobiliária.
                         </p>
                         <form action="#" method="POST" target="_blank" class="mt-8 flex">
-                            <input type="email"
-                                   name="email"
-                                   class="inline-block flex-grow px-5 py-3 rounded-md rounded-e-none border border-solid border-alpha-dark text-inherit text-base focus:border-primary"
-                                   placeholder="Seu melhor e-mail"
-                                   required />
-                            <button type="submit"
-                                    class="inline-block py-3 w-[50px] rounded-md rounded-s-none text-center text-lg/none bg-primary text-primary-color hover:bg-primary-light-10 dark:hover:bg-primary-dark-10 focus:bg-primary-light-10 dark:focus:bg-primary-dark-10">
+                            <input type="email" name="email" class="inline-block flex-grow px-5 py-3 rounded-md rounded-e-none border border-solid border-alpha-dark text-inherit text-base focus:border-primary" placeholder="Seu melhor e-mail" aria-label="Digite seu e-mail" required />
+                            <button type="submit" aria-label="Inscrever-se" class="inline-block py-3 w-[50px] rounded-md rounded-s-none text-center text-lg/none bg-primary text-primary-color hover:bg-primary-light-10 dark:hover:bg-primary-dark-10 focus:bg-primary-light-10 dark:focus:bg-primary-dark-10">
                                 <i class="lni lni-envelope"></i>
                             </button>
                         </form>
@@ -784,29 +581,29 @@
                 <div class="w-full md:w-1/2">
                     <div class="my-1">
                         <div class="flex flex-wrap justify-center gap-x-3 md:justify-start">
-                            <a href="/Home/Policy"
-                               class="text-body-dark-11 hover:text-body-dark-12">Política de Privacidade</a>
-                            <a href="/Home/Help"
-                               class="text-body-dark-11 hover:text-body-dark-12">Ajuda</a>
+                            <a href="/Home/Policy" class="text-body-dark-11 hover:text-body-dark-12">Política de Privacidade</a>
+                            <a href="/Home/Help" class="text-body-dark-11 hover:text-body-dark-12">Central de Ajuda</a>
                         </div>
                     </div>
                 </div>
                 <div class="w-full md:w-1/2">
                     <div class="my-1 flex justify-center md:justify-end">
                         <p class="text-body-dark-11">
-                            © 2025 power of <a href="https://kh4os.io/" target="_blank" rel="noopener noreferrer">kh4os.io</a>
+                            © 2026 AluguelOK. power of <a href="https://kh4os.io/" target="_blank" rel="noopener noreferrer">kh4os.io</a>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <button type="button" class="inline-flex w-12 h-12 rounded-md items-center justify-center text-lg/none bg-primary text-primary-color hover:bg-primary-light-10 dark:hover:bg-primary-dark-10 focus:bg-primary-light-10 dark:focus:bg-primary-dark-10 fixed bottom-[117px] right-[20px] hover:-translate-y-1 opacity-100 visible z-50 is-hided" data-web-trigger="scroll-top" aria-label="Rolar para o topo">
+
+    <button type="button" class="inline-flex w-12 h-12 rounded-md items-center justify-center text-lg/none bg-primary text-primary-color hover:bg-primary-light-10 dark:hover:bg-primary-dark-10 focus:bg-primary-light-10 dark:focus:bg-primary-dark-10 fixed bottom-[117px] right-[20px] hover:-translate-y-1 opacity-100 visible z-50 is-hided" data-web-trigger="scroll-top" aria-label="Rolar para o topo do site">
         <i class="lni lni-chevron-up"></i>
     </button>
-    <button id="btnInstallPwa" class="btn btn-outline-light" style="display:none;">
+    <button id="btnInstallPwa" class="btn btn-outline-light" style="display:none;" aria-label="Instalar o aplicativo AluguelOK">
         Instalar AluguelOK
     </button>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
@@ -820,14 +617,11 @@
             reset: false,
         });
 
-        sr.reveal(`.scroll-revealed`, {
-            cleanup: true,
-        });
+        sr.reveal(`.scroll-revealed`, { cleanup: true });
 
         // GLightBox (Vídeo)
         GLightbox({
             selector: ".video-popup",
-            // href: "https://www.youtube.com/watch?v=r44RKWyfcFw", // Substitua pelo seu vídeo
             type: "video",
             source: "youtube",
             width: 900,
@@ -845,79 +639,37 @@
         const testimonialSwiper = new Swiper(".testimonial-carousel", {
             slidesPerView: 1,
             spaceBetween: 30,
-
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
-
             breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 30,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                },
-                1280: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                },
+                640: { slidesPerView: 2, spaceBetween: 30 },
+                1024: { slidesPerView: 3, spaceBetween: 30 },
+                1280: { slidesPerView: 3, spaceBetween: 30 },
             },
         });
 
-        // ==========================================================
-        // ****** MUDANÇA: LÓGICA PARA TROCAR LOGO NO SCROLL ******
-        // ==========================================================
+        // Lógica de Logo no Scroll
         document.addEventListener("DOMContentLoaded", () => {
-
-            // 1. Seleciona os elementos que vamos usar
             const header = document.querySelector(".ic-navbar");
             const logoImg = document.querySelector(".ic-navbar-logo img");
-
-            // 2. Define os caminhos das duas imagens
             const logoTopo = "img/logo/aluguelok-white.png";
             const logoSticky = "img/logo/aluguelok-blue.png";
 
-            if (!header || !logoImg) {
-                console.error("Header ou Imagem do Logo não encontrados.");
-                return;
-            }
+            if (!header || !logoImg) return;
 
-            // 3. Define a função que será chamada quando o header mudar
             const handleMutation = (mutationsList) => {
                 for (const mutation of mutationsList) {
-                    // Verifica se o atributo 'class' foi modificado
                     if (mutation.type === "attributes" && mutation.attributeName === "class") {
-
-                        // 4. Verifica se o header AGORA TEM a classe "sticky"
                         const isSticky = header.classList.contains("sticky");
-
-                        if (isSticky) {
-                            // 5. Se estiver "sticky" (rolou para baixo), usa o logo azul
-                            logoImg.src = logoSticky;
-                        } else {
-                            // 6. Se NÃO estiver "sticky" (topo), usa o logo branco
-                            logoImg.src = logoTopo;
-                        }
+                        logoImg.src = isSticky ? logoSticky : logoTopo;
                     }
                 }
             };
-
-            // 7. Cria o "Observador" que vai "assistir" o header
             const observer = new MutationObserver(handleMutation);
-
-            // 8. Diz ao Observador para monitorar o elemento 'header'
-            // e nos avisar apenas sobre mudanças no atributo "class"
-            observer.observe(header, {
-                attributes: true, // Queremos saber sobre mudanças de atributos
-                attributeFilter: ["class"] // Estamos interessados APENAS no atributo "class"
-            });
+            observer.observe(header, { attributes: true, attributeFilter: ["class"] });
         });
-        // ==========================================================
-        // ****** FIM DA MUDANÇA ******
-        // ==========================================================
     </script>
     <script src="./js/sw-register.js"></script>
     <script src="./js/install-pwa.js"></script>
