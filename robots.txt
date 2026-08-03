@@ -1,0 +1,34 @@
+# ==========================================
+# ROBOTS.TXT - ALUGUELOK
+# Otimizado para SEO e GEO (Agosto/2026)
+# ==========================================
+
+# 1. Liberação Geral para Motores Tradicionais
+User-agent: *
+Allow: /
+Disallow: /css/
+Disallow: /js/
+Disallow: /font/
+
+# 2. Liberação Explícita para Rastreadores de IA (GEO)
+# Isso garante que seu site seja lido e citado em respostas geradas por IA.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: OmgiliBot
+Allow: /
+
+# 3. Caminho do Mapa do Site
+Sitemap: https://www.aluguelok.com.br/sitemap.xml

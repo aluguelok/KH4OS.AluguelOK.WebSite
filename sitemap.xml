@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- ========================================== -->
+  <!-- SITEMAP - ALUGUELOK                        -->
+  <!-- ========================================== -->
+
+  <!-- Página Inicial -->
+  <url>
+    <loc>https://www.aluguelok.com.br/</loc>
+    <!-- Use a data da última vez que o index.html foi modificado -->
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Artigos do Blog -->
+  <url>
+    <loc>https://www.aluguelok.com.br/artigos/modelos-de-contrato-de-aluguel-na-internet-posso-confiar.html</loc>
+    <!-- Data de publicação/modificação que colocamos na tag <time> e no Schema do artigo -->
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+</urlset>
