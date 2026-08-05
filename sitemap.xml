@@ -66,4 +66,52 @@
     <priority>1.0</priority>
   </url>
 
+  <url>
+    <loc>https://www.aluguelok.com.br/artigos/carteira-assinada-ou-autonomo-como-comprovar-renda-para-alugar-imovel.html</loc>
+    <!-- Data de publicação/modificação que colocamos na tag <time> e no Schema do artigo -->
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.aluguelok.com.br/artigos/como-calcular-a-multa-rescisoria-do-aluguel.html</loc>
+    <!-- Data de publicação/modificação que colocamos na tag <time> e no Schema do artigo -->
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.aluguelok.com.br/artigos/contrato-de-aluguel-de-gaveta-praticidade-ou-bomba-relogio.html</loc>
+    <!-- Data de publicação/modificação que colocamos na tag <time> e no Schema do artigo -->
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.aluguelok.com.br/artigos/contrato-de-aluguel-5-clausulas-que-podem-salvar-sua-pele-em-2026.html</loc>
+    <!-- Data de publicação/modificação que colocamos na tag <time> e no Schema do artigo -->
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.aluguelok.com.br/artigos/inquilino-nao-pagou-como-cobrar-aluguel-atrasado.html</loc>
+    <!-- Data de publicação/modificação que colocamos na tag <time> e no Schema do artigo -->
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.aluguelok.com.br/artigos/tem-como-alugar-imovel-com-nome-sujo.html</loc>
+    <!-- Data de publicação/modificação que colocamos na tag <time> e no Schema do artigo -->
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
 </urlset>
