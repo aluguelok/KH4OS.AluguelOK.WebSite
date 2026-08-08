@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html"],
+  content: ["./index.html", "./artigos/**/*.html"],
   darkMode: ["selector", "[data-web-theme=dark]"],
   theme: {
     container: {
@@ -13,7 +13,7 @@ module.exports = {
       },
       colors: {
         primary: {
-          DEFAULT: "#3d63dd",
+          DEFAULT: "#0d6efd",
           color: "#fff",
           light: {
             1: "#fdfdfe",
@@ -24,7 +24,7 @@ module.exports = {
             6: "#bdd1ff",
             7: "#a6bff9",
             8: "#87a5ef",
-            9: "#3d63dd",
+            9: "#0d6efd",
             10: "#3657c3",
             11: "#395bc7",
             12: "#1d2e5c",
@@ -38,7 +38,7 @@ module.exports = {
             6: "#364d8e",
             7: "#3e58a0",
             8: "#4664b8",
-            9: "#3d63dd",
+            9: "#0d6efd",
             10: "#3154cd",
             11: "#94b5ff",
             12: "#d5e2ff",
