@@ -3,10 +3,10 @@
 const CACHE_NAME = 'aluguelok-v1';
 const URLS_TO_CACHE = [
     '/',
-    '/css/_layout.css',
-    '/lib/bootstrap/dist/css/bootstrap.min.css',
-    '/img/favicon/favicon-194x194.png'
-    // adiciona o que fizer sentido
+    '/css/main.css',
+    '/js/main.js',
+    '/favicon/favicon-32x32.png',
+    '/img/logo/aluguelok-white.png'
 ];
 
 self.addEventListener('install', event => {

@@ -6,9 +6,6 @@
 # 1. Liberação Geral para Motores Tradicionais
 User-agent: *
 Allow: /
-Disallow: /css/
-Disallow: /js/
-Disallow: /font/
 
 # 2. Liberação Explícita para Rastreadores de IA (GEO)
 # Isso garante que seu site seja lido e citado em respostas geradas por IA.

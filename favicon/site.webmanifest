@@ -1,7 +1,7 @@
 {
-  "name": "AluguelOK - Análise de Contratos",
+  "name": "AluguelOK - O App de Gestão Imobiliária Simplificada",
   "short_name": "AluguelOK",
-  "description": "Análise inteligente de contratos de aluguel com IA.",
+  "description": "Plataforma de gestão imobiliária simplificada para proprietários autônomos, inquilinos e imobiliárias.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
