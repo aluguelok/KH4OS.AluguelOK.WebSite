@@ -3238,3 +3238,11 @@ p + p{
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
+
+.\[\&\>\*\:not\(\.col-12\)\]\:\!hidden>*:not(.col-12){
+  display: none !important;
+}
+
+.\[\&\>\*\:not\(article\)\]\:\!hidden>*:not(article){
+  display: none !important;
+}
