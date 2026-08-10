@@ -41,6 +41,8 @@ function toggleNavbarMenu(state) {
 
 // Click event to expand/collapse the navigation menu.
 document.addEventListener("click", function (e) {
+  if (!navbarToggler) return;
+
   var x = e.clientX;
   var y = e.clientY;
   var elementMouseIsOver = document.elementFromPoint(x, y);

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Multa Rescisória de Aluguel (Proporcional) | AluguelOK</title>
+    <meta name="description" content="Calcule a multa exata por quebra de contrato de aluguel. Ferramenta gratuita baseada na Lei do Inquilinato (regra proporcional)." />
+    <meta name="keywords" content="calcular multa rescisoria aluguel, regra de tres multa aluguel, multa proporcional aluguel, lei do inquilinato multa, quebra de contrato aluguel, ferramenta" />
+    <meta name="author" content="AluguelOK" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.aluguelok.com.br/ferramentas/calculadora-multa-rescisoria-aluguel.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Calculadora de Multa Rescisória de Aluguel | AluguelOK" />
+    <meta property="og:description" content="Use nossa calculadora gratuita para descobrir o valor exato (proporcional) da multa por quebra de contrato de aluguel, segundo a Lei do Inquilinato." />
+    <meta property="og:url" content="https://www.aluguelok.com.br/ferramentas/calculadora-multa-rescisoria-aluguel.html" />
+    <meta property="og:site_name" content="AluguelOK" />
+    <meta property="og:image" content="https://www.aluguelok.com.br/img/aluguelok-cover.png" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png" />
+    <link rel="manifest" href="../favicon/site.webmanifest" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    [
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Calculadora de Multa Rescisória de Aluguel",
+          "operatingSystem": "Web",
+          "applicationCategory": "BusinessApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "BRL"
+          },
+          "description": "Ferramenta online gratuita para o cálculo de multa rescisória proporcional em quebras de contrato de aluguel de imóveis, fundamentada no Art. 4º da Lei nº 8.245/91."
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Como calcular a multa rescisória do aluguel?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A multa é calculada de forma proporcional ao tempo restante de contrato (regra de três). Multiplica-se o valor integral da multa pelos meses que faltam e divide-se pelo prazo total em contrato."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "A multa proporcional do aluguel é obrigatória?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim. A Lei do Inquilinato exige que a cobrança da multa por devolução antecipada do imóvel seja sempre proporcional ao tempo restante de contrato, considerando-se abusiva a cobrança integral nesses casos."
+              }
+            }
+          ]
+        }
+    ]
+    </script>
+</head>
+<body class="bg-body-light-1 text-body-light-12">
+
+    <!-- Header -->
+    <header class="ic-navbar absolute left-0 top-0 z-40 flex w-full items-center bg-transparent" role="banner">
+        <div class="container">
+            <div class="ic-navbar-container relative -mx-5 flex items-center justify-between">
+                <div class="w-60 lg:w-56 max-w-full px-5">
+                    <a href="../index.html" class="ic-navbar-logo block w-full py-5 text-primary-color">
+                        <img src="../img/logo/aluguelok-white.png" width="256" alt="Logo AluguelOK" />
+                    </a>
+                </div>
+                <div class="flex items-center justify-end pr-5 lg:pr-0">
+                    <button type="button" class="inline-flex items-center text-primary-color text-[24px]/none" aria-label="Alternar tema" data-web-trigger="web-theme"></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main relative" role="main">
+        <!-- Hero -->
+        <section class="relative overflow-hidden bg-primary text-primary-color pt-[120px] md:pt-[130px] lg:pt-[160px] pb-[80px]">
+            <div class="container relative z-10">
+                <div class="mx-auto max-w-[780px] text-center">
+                    <h1 class="mb-6 text-3xl font-bold leading-snug text-primary-color sm:text-4xl lg:text-5xl">Calculadora de Multa Rescisória</h1>
+                    <p class="text-lg opacity-90 text-primary-color">Faça o cálculo proporcional exato baseado na Lei do Inquilinato.</p>
+                </div>
+            </div>
+            <div class="absolute -left-9 bottom-0 z-0">
+                <img src="../img/dots.svg" class="w-[120px] opacity-75" alt="" />
+            </div>
+            <div class="absolute -right-6 -top-6 z-0">
+                <img src="../img/dots.svg" class="w-[120px] opacity-75" alt="" />
+            </div>
+        </section>
+
+        <!-- Calculadora Area -->
+        <section class="section-area py-16 bg-body-light-1 dark:bg-body-dark-1">
+            <div class="container">
+                <div class="row flex-wrap lg:flex-nowrap gap-10">
+                    
+                    <!-- Left Col: Formulario -->
+                    <div class="w-full lg:w-7/12">
+                        <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-card-1 p-8 sm:p-10 border border-gray-100 dark:border-alpha-dark">
+                            <h2 class="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
+                                <i class="lni lni-calculator"></i> Insira os dados do contrato
+                            </h2>
+                            
+                            <form id="calc-form" class="space-y-6">
+                                <!-- Valor do Aluguel -->
+                                <div>
+                                    <label class="block text-sm font-semibold text-body-light-11 dark:text-body-dark-11 mb-2">Valor mensal do aluguel (R$)</label>
+                                    <div class="relative">
+                                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                            <span class="text-gray-500 font-medium">R$</span>
+                                        </div>
+                                        <input type="text" id="ipt-rent" class="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-body-dark-1 text-lg font-medium focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="0,00" />
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <!-- Qtd Meses Multa -->
+                                    <div>
+                                        <label class="block text-sm font-semibold text-body-light-11 dark:text-body-dark-11 mb-2">Multa integral do contrato</label>
+                                        <div class="relative">
+                                            <input type="number" id="ipt-penalty-months" value="3" class="w-full pl-4 pr-16 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-body-dark-1 text-lg font-medium focus:border-primary focus:ring-1 focus:ring-primary" />
+                                            <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                                                <span class="text-gray-500 font-medium">meses</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Prazo Total -->
+                                    <div>
+                                        <label class="block text-sm font-semibold text-body-light-11 dark:text-body-dark-11 mb-2">Prazo total em contrato</label>
+                                        <div class="relative">
+                                            <input type="number" id="ipt-total-months" value="30" class="w-full pl-4 pr-16 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-body-dark-1 text-lg font-medium focus:border-primary focus:ring-1 focus:ring-primary" />
+                                            <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                                                <span class="text-gray-500 font-medium">meses</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Meses Cumpridos -->
+                                <div>
+                                    <label class="block text-sm font-semibold text-body-light-11 dark:text-body-dark-11 mb-2">Tempo de moradia já cumprido</label>
+                                    <div class="relative mb-1">
+                                        <input type="number" id="ipt-elapsed-months" value="0" class="w-full pl-4 pr-16 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-body-dark-1 text-lg font-medium focus:border-primary focus:ring-1 focus:ring-primary" />
+                                        <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                                            <span class="text-gray-500 font-medium">meses</span>
+                                        </div>
+                                    </div>
+                                    <p class="text-[11px] text-body-light-9 dark:text-body-dark-9">
+                                        Nota: A isenção de multa após 12 meses não é lei automática. Ela só vale se houver uma cláusula de isenção escrita no seu contrato.
+                                    </p>
+                                </div>
+
+                                <!-- Botão Calcular -->
+                                <div class="pt-2">
+                                    <button type="button" id="btn-calculate" class="w-full bg-primary hover:bg-primary-light-10 dark:hover:bg-primary-dark-10 text-primary-color font-bold py-4 rounded-lg shadow-md transition-colors text-lg flex items-center justify-center gap-2">
+                                        <i class="lni lni-calculator"></i> Calcular Multa
+                                    </button>
+                                </div>
+                            </form>
+                            <p class="text-xs text-body-light-11 mt-4 italic"><i class="lni lni-warning"></i> Dica: O cálculo é refeito automaticamente a cada número digitado.</p>
+                        </div>
+                        
+                        <!-- Conteúdo Didático -->
+                        <div class="mt-10 p-6 bg-primary/5 rounded-xl border border-primary/20">
+                            <h3 class="text-lg font-bold mb-3 text-primary"><i class="lni lni-graduation"></i> O que diz a lei?</h3>
+                            <p class="text-sm">O artigo 4º da Lei nº 8.245/91 (Lei do Inquilinato) determina que a multa por devolução antecipada do imóvel deve ser <strong>proporcional ao tempo estipulado</strong>. Qualquer cláusula que exija a cobrança do valor cheio independentemente do tempo de moradia é considerada nula (abusiva).</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Col: Resultado e Hooks -->
+                    <div class="w-full lg:w-5/12 flex flex-col gap-6">
+                        
+                        <!-- Card Resultado -->
+                        <div class="bg-primary text-white rounded-2xl shadow-card-1 p-8 text-center relative overflow-hidden">
+                            <div class="relative z-10">
+                                <h3 class="text-xl font-medium mb-6 opacity-90 text-white">Multa a pagar</h3>
+                                
+                                <div class="mb-4">
+                                    <p class="text-sm opacity-70 mb-1">Valor se a multa fosse integral:</p>
+                                    <p id="lbl-full-penalty" class="line-through text-lg text-red-200 font-medium">R$ 0,00</p>
+                                </div>
+                                
+                                <div class="bg-white/10 rounded-xl py-6 px-4 backdrop-blur border border-white/20">
+                                    <p class="text-sm font-semibold uppercase tracking-wider mb-2 opacity-80">Valor Proporcional (Justo)</p>
+                                    <p id="lbl-proportional-penalty" class="text-4xl sm:text-5xl font-bold text-green-300 break-words">R$ 0,00</p>
+                                </div>
+                                
+                                <div class="mt-6 flex items-center justify-center gap-3 text-sm opacity-80">
+                                    <i class="lni lni-timer text-xl"></i>
+                                    <span id="lbl-remaining-months">Faltam 30 meses</span>
+                                </div>
+                            </div>
+                            <!-- Efeito background do card -->
+                            <i class="lni lni-wallet absolute -bottom-10 -right-10 text-[180px] opacity-10 rotate-12"></i>
+                        </div>
+
+                        <!-- Hook Afiliado (Crédito) -->
+                        <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-md p-6 border-l-4 border-yellow-400">
+                            <div class="flex gap-4">
+                                <div class="text-yellow-400 text-3xl"><i class="lni lni-coin"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-2">Faltou dinheiro para a rescisão?</h4>
+                                    <p class="text-sm text-body-light-11 dark:text-body-dark-11 mb-4">Descubra as melhores taxas de crédito para limpar seu nome, pagar a multa e bancar o frete da nova mudança.</p>
+                                    <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">Simular Empréstimo sem compromisso &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hook AluguelOK -->
+                        <div class="bg-body-light-2 dark:bg-body-dark-2 rounded-2xl shadow-sm p-6 text-center border border-gray-200 dark:border-gray-700">
+                            <img src="../img/logo/aluguelok-blue.png" class="h-8 mx-auto mb-4" alt="AluguelOK" />
+                            <h4 class="font-bold text-lg mb-2">Automatize suas cobranças</h4>
+                            <p class="text-sm text-body-light-11 dark:text-body-dark-11 mb-4">Cansado de calcular rescisões e cobrar multas na mão? A AluguelOK faz a gestão financeira completa e automatizada do seu contrato.</p>
+                            <a href="../index.html" class="inline-block px-5 py-2 bg-primary text-white text-sm font-medium rounded hover:bg-opacity-90 transition">Conhecer Plataforma</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary-dark-2 text-white" role="contentinfo">
+        <center>
+            <div class="w-full pt-16 pb-6">
+                <a href="../index.html" class="inline-block mb-5">
+                    <img src="../img/logo/aluguelok-white.png" width="256" alt="Logo AluguelOK" />
+                </a>
+            </div>
+            <div class="w-full pb-16">
+                <p class="opacity-80">© 2026 AluguelOK. Todos os direitos reservados.</p>
+            </div>
+        </center>
+    </footer>
+
+    <!-- Script Principal do Site -->
+    <script src="../js/main.js"></script>
+    
+    <!-- Script da Calculadora e Layout -->
+    <script>
+        // Logica de Sticky Menu Navbar
+        document.addEventListener("DOMContentLoaded", () => {
+            const header = document.querySelector(".ic-navbar");
+            const logoImg = document.querySelector(".ic-navbar-logo img");
+            const logoTopo = "../img/logo/aluguelok-white.png";
+            const logoSticky = "../img/logo/aluguelok-blue.png";
+
+            if (header && logoImg) {
+                const handleMutation = (mutationsList) => {
+                    for (const mutation of mutationsList) {
+                        if (mutation.type === "attributes" && mutation.attributeName === "class") {
+                            const isSticky = header.classList.contains("sticky");
+                            logoImg.src = isSticky ? logoSticky : logoTopo;
+                        }
+                    }
+                };
+                const observer = new MutationObserver(handleMutation);
+                observer.observe(header, { attributes: true, attributeFilter: ["class"] });
+            }
+            
+            // Mascara e Calculadora
+            const inputRent = document.getElementById('ipt-rent');
+            const inputPenalty = document.getElementById('ipt-penalty-months');
+            const inputTotal = document.getElementById('ipt-total-months');
+            const inputElapsed = document.getElementById('ipt-elapsed-months');
+
+            const lblFullPenalty = document.getElementById('lbl-full-penalty');
+            const lblProportionalPenalty = document.getElementById('lbl-proportional-penalty');
+            const lblRemaining = document.getElementById('lbl-remaining-months');
+
+            // Formatação de moeda no input (apenas mascarar)
+            inputRent.addEventListener('input', function(e) {
+                let rawValue = e.target.value.replace(/\D/g, '');
+                if (rawValue.length > 0) {
+                    let num = parseFloat(rawValue) / 100;
+                    e.target.value = num.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                } else {
+                    e.target.value = '';
+                }
+                calculate();
+            });
+
+            const btnCalculate = document.getElementById('btn-calculate');
+
+            [inputPenalty, inputTotal, inputElapsed].forEach(el => {
+                el.addEventListener('input', calculate);
+            });
+            btnCalculate.addEventListener('click', calculate);
+
+            function formatCurrency(val) {
+                return val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            }
+
+            function calculate() {
+                // Remove formatacao do input de aluguel
+                let rawRent = inputRent.value.replace(/\./g, '').replace(',', '.');
+                let rent = parseFloat(rawRent);
+                let penaltyMonths = parseFloat(inputPenalty.value) || 0;
+                let totalMonths = parseInt(inputTotal.value) || 0;
+                let elapsedMonths = parseInt(inputElapsed.value) || 0;
+
+                if (isNaN(rent) || rent <= 0 || totalMonths <= 0) {
+                    lblFullPenalty.innerText = 'R$ 0,00';
+                    lblProportionalPenalty.innerText = 'R$ 0,00';
+                    lblRemaining.innerText = `Faltam ${totalMonths} meses`;
+                    return;
+                }
+
+                // Protecao matematica
+                if (elapsedMonths > totalMonths) elapsedMonths = totalMonths;
+
+                let remainingMonths = totalMonths - elapsedMonths;
+                lblRemaining.innerText = `Faltam ${remainingMonths} ${remainingMonths === 1 ? 'mês' : 'meses'}`;
+
+                let fullPenaltyAmount = rent * penaltyMonths;
+                lblFullPenalty.innerText = formatCurrency(fullPenaltyAmount);
+
+                let proportionalPenaltyAmount = (fullPenaltyAmount / totalMonths) * remainingMonths;
+                lblProportionalPenalty.innerText = formatCurrency(proportionalPenaltyAmount);
+            }
+
+            // Calculo inicial
+            calculate();
+        });
+    </script>
+</body>
+</html>
