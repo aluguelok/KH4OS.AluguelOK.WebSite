@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
@@ -179,7 +179,7 @@
                                 <div id="box-result">
                                     <div class="mb-4 text-sm opacity-80 flex justify-center items-center gap-2">
                                         <i class="lni lni-bar-chart"></i>
-                                        <span>Taxa acumulada (12m): <strong id="lbl-accumulated-rate">0,00%</strong></span>
+                                        <span>Taxa acumulada (12m): <strong id="lbl-accumulated-rate" class="text-white">0,00%</strong></span>
                                     </div>
                                     
                                     <div class="bg-white/10 rounded-xl py-6 px-4 backdrop-blur border border-white/20 mb-4">
@@ -189,7 +189,7 @@
                                     
                                     <div class="flex items-center justify-center gap-2 text-sm opacity-80">
                                         <i class="lni lni-arrow-up"></i>
-                                        <span>Aumento de <strong id="lbl-diff">R$ 0,00</strong></span>
+                                        <span>Aumento de <strong id="lbl-diff" class="text-white">R$ 0,00</strong></span>
                                     </div>
                                 </div>
 
@@ -310,14 +310,22 @@
                 btnText.innerText = inputIndex.value === 'manual' ? 'Calcular Manualmente' : 'Consultar BCB e Calcular';
             }
 
-            function showResult(rent, newRent, ratePercentage) {
-                boxError.classList.add('hidden');
+            function showResult(rent, newRent, ratePercentage, missingMonthsCount = 0) {
                 boxResult.classList.remove('hidden');
                 
                 lblNewRent.innerText = formatCurrency(newRent);
                 lblDiff.innerText = formatCurrency(newRent - rent);
                 lblRate.innerText = ratePercentage.toFixed(4).replace('.', ',') + '%';
                 
+                if (missingMonthsCount > 0) {
+                    boxError.classList.remove('hidden');
+                    boxError.classList.add('mt-4');
+                    lblErrorMsg.innerText = `O IBGE/FGV ainda não divulgou a inflação de ${missingMonthsCount} mês(es) deste período. O valor acima é um cálculo parcial.`;
+                } else {
+                    boxError.classList.add('hidden');
+                    boxError.classList.remove('mt-4');
+                }
+
                 btnCalculate.disabled = false;
                 btnText.innerText = inputIndex.value === 'manual' ? 'Calcular Manualmente' : 'Consultar BCB e Calcular';
             }
@@ -376,8 +384,10 @@
                         }
                     }
 
-                    if (matchedRates.length < 12) {
-                        showError("Dados Incompletos: O IBGE/FGV ainda não divulgou todos os índices para os meses que antecedem este aniversário.");
+                    let missingMonthsCount = 12 - matchedRates.length;
+
+                    if (matchedRates.length === 0) {
+                        showError("Dados Incompletos: O IBGE/FGV ainda não divulgou nenhum índice para este período.");
                         return;
                     }
 
@@ -390,7 +400,7 @@
                     let newRent = rent * accumulatedFactor;
                     let accumulatedPercentage = (accumulatedFactor - 1) * 100;
 
-                    showResult(rent, newRent, accumulatedPercentage);
+                    showResult(rent, newRent, accumulatedPercentage, missingMonthsCount);
 
                 } catch (e) {
                     showError("Falha ao comunicar com os servidores do Banco Central. Tente novamente ou use a opção Manual.");
