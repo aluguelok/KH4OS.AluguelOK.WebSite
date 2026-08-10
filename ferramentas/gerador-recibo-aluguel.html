@@ -1,0 +1,392 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de Recibo de Aluguel | AluguelOK</title>
+    <meta name="description" content="Gere recibos de aluguel grátis com validade legal. Preencha os dados e imprima ou salve em PDF um documento formatado profissionalmente." />
+    <meta name="keywords" content="gerador de recibo de aluguel pdf, recibo de aluguel, modelo recibo aluguel, imprimir recibo aluguel" />
+    <meta name="author" content="AluguelOK" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.aluguelok.com.br/ferramentas/gerador-recibo-aluguel.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Gerador de Recibo de Aluguel em PDF | AluguelOK" />
+    <meta property="og:description" content="Preencha os dados e gere na hora um recibo de locação com validade legal, valor por extenso automático e formatação comercial." />
+    <meta property="og:url" content="https://www.aluguelok.com.br/ferramentas/gerador-recibo-aluguel.html" />
+    <meta property="og:site_name" content="AluguelOK" />
+    <meta property="og:image" content="https://www.aluguelok.com.br/img/aluguelok-cover.png" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png" />
+    <link rel="manifest" href="../favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+
+    <style>
+        @media print {
+            body { background-color: #fff; color: #000; margin: 0; padding: 0; }
+            .no-print, header, footer, .main > section:first-child { display: none !important; }
+            .section-area, .container, .row { margin: 0; padding: 0; width: 100%; max-width: 100%; box-shadow: none; background: transparent; }
+            
+            #print-area {
+                display: block !important;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                margin: 0;
+                padding: 2cm; /* Margem de impressão A4 */
+                box-shadow: none !important;
+                border: none !important;
+                border-radius: 0 !important;
+            }
+            @page { margin: 0; size: A4 portrait; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    [
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Gerador de Recibo de Aluguel",
+          "operatingSystem": "Web",
+          "applicationCategory": "BusinessApplication",
+          "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "BRL" },
+          "description": "Ferramenta para emitir recibos de aluguel formatados, prontos para impressão ou PDF com validade legal."
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "O que precisa ter em um recibo de aluguel?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Um recibo de aluguel com validade legal deve conter o nome e documento (CPF/CNPJ) de quem recebe e de quem paga, o valor numérico e por extenso, o endereço do imóvel, a que mês o pagamento se refere, e a data e assinatura do recebedor."
+              }
+            }
+          ]
+        }
+    ]
+    </script>
+</head>
+<body class="bg-body-light-1 text-body-light-12">
+    <!-- Navbar (escondida na impressão) -->
+    <header class="ic-navbar absolute left-0 top-0 z-40 flex w-full items-center bg-transparent no-print" role="banner">
+        <div class="container">
+            <div class="ic-navbar-container relative -mx-5 flex items-center justify-between">
+                <div class="w-60 lg:w-56 max-w-full px-5">
+                    <a href="../index.html" class="ic-navbar-logo block w-full py-5 text-primary-color">
+                        <img src="../img/logo/aluguelok-white.png" width="256" alt="Logo AluguelOK" />
+                    </a>
+                </div>
+                <div class="flex items-center justify-end pr-5 lg:pr-0">
+                    <button type="button" class="inline-flex items-center text-primary-color text-[24px]/none" aria-label="Alternar tema" data-web-trigger="web-theme"></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main relative" role="main">
+        <section class="relative overflow-hidden bg-primary text-primary-color pt-[120px] md:pt-[130px] lg:pt-[160px] pb-[80px] no-print">
+            <div class="container relative z-10">
+                <div class="mx-auto max-w-[780px] text-center">
+                    <h1 class="mb-6 text-3xl font-bold leading-snug text-primary-color sm:text-4xl lg:text-5xl">Gerador de Recibo de Aluguel</h1>
+                    <p class="text-lg opacity-90 text-primary-color">Emita gratuitamente o seu documento comercial. Pronto para impressão ou PDF.</p>
+                </div>
+            </div>
+            <div class="absolute -left-9 bottom-0 z-0"><img src="../img/dots.svg" class="w-[120px] opacity-75" alt="" /></div>
+            <div class="absolute -right-6 -top-6 z-0"><img src="../img/dots.svg" class="w-[120px] opacity-75" alt="" /></div>
+        </section>
+
+        <section class="section-area py-12 bg-body-light-1 dark:bg-body-dark-1">
+            <div class="container">
+                <div class="flex flex-wrap lg:flex-nowrap gap-10">
+                    
+                    <!-- Lado Esquerdo: Formulário (Oculto na impressão) -->
+                    <div class="w-full lg:w-5/12 no-print space-y-6">
+                        <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-card-1 p-8 border border-gray-100 dark:border-alpha-dark">
+                            <h2 class="text-xl font-bold mb-6 text-primary border-b pb-4"><i class="lni lni-pencil-alt"></i> Preencha os Dados</h2>
+                            
+                            <form id="frm-receipt" class="space-y-5">
+                                <!-- Valor -->
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Valor do Pagamento</label>
+                                    <div class="relative">
+                                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span class="text-gray-500 font-medium">R$</span></div>
+                                        <input type="text" id="inp-valor" class="w-full pl-10 pr-3 py-2 rounded border border-gray-300 focus:border-primary focus:ring-1 focus:ring-primary font-medium" placeholder="0,00" />
+                                    </div>
+                                </div>
+
+                                <!-- Recebedor -->
+                                <div class="p-4 bg-gray-50 dark:bg-body-dark-2 rounded-lg border border-gray-200 dark:border-gray-700 space-y-4">
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500">Dados do Recebedor (Locador/Imobiliária)</label>
+                                    <input type="text" id="inp-locador-nome" class="w-full px-3 py-2 rounded border border-gray-300 focus:border-primary" placeholder="Nome completo ou Razão Social" />
+                                    <input type="text" id="inp-locador-doc" class="w-full px-3 py-2 rounded border border-gray-300 focus:border-primary" placeholder="CPF ou CNPJ" />
+                                </div>
+
+                                <!-- Pagador -->
+                                <div class="p-4 bg-gray-50 dark:bg-body-dark-2 rounded-lg border border-gray-200 dark:border-gray-700 space-y-4">
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500">Dados de Quem Paga (Locatário)</label>
+                                    <input type="text" id="inp-locatario-nome" class="w-full px-3 py-2 rounded border border-gray-300 focus:border-primary" placeholder="Nome completo ou Razão Social" />
+                                    <input type="text" id="inp-locatario-doc" class="w-full px-3 py-2 rounded border border-gray-300 focus:border-primary" placeholder="CPF ou CNPJ" />
+                                </div>
+
+                                <!-- Imóvel e Ref -->
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Endereço do Imóvel</label>
+                                    <input type="text" id="inp-endereco" class="w-full px-3 py-2 rounded border border-gray-300 focus:border-primary mb-4" placeholder="Ex: Rua das Flores, 123, Apto 41 - São Paulo/SP" />
+
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Referente a (Mês/Período)</label>
+                                    <input type="text" id="inp-referencia" class="w-full px-3 py-2 rounded border border-gray-300 focus:border-primary" placeholder="Ex: Aluguel de Agosto/2026 e IPTU" />
+                                </div>
+
+                                <!-- Emissão -->
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Cidade</label>
+                                        <input type="text" id="inp-cidade" class="w-full px-3 py-2 rounded border border-gray-300 focus:border-primary" placeholder="Sua Cidade" />
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Data</label>
+                                        <input type="date" id="inp-data" class="w-full px-3 py-2 rounded border border-gray-300 focus:border-primary" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Hooks Ocultos na Impressão -->
+                        <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-md p-6 border-l-4 border-blue-400">
+                            <h4 class="font-bold text-lg mb-2">Assinatura Digital</h4>
+                            <p class="text-sm text-body-light-11 dark:text-body-dark-11 mb-4">Evite imprimir papeis. Salve o arquivo gerado em PDF e assine legalmente usando uma ferramenta homologada.</p>
+                            <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">Abrir conta Clicksign &rarr;</a>
+                        </div>
+
+                        <div class="bg-body-light-2 dark:bg-body-dark-2 rounded-2xl shadow-sm p-6 text-center border border-gray-200 dark:border-gray-700">
+                            <img src="../img/logo/aluguelok-blue.png" class="h-8 mx-auto mb-4" alt="AluguelOK" />
+                            <h4 class="font-bold text-lg mb-2">Esqueça os recibos manuais</h4>
+                            <p class="text-sm text-body-light-11 dark:text-body-dark-11 mb-4">Receba aluguéis por Pix na AluguelOK e nós geramos os comprovantes automáticos (com validade DIMOB) para você e seu inquilino.</p>
+                            <a href="../index.html" class="inline-block px-5 py-2 bg-primary text-white text-sm font-medium rounded hover:bg-opacity-90 transition">Conhecer a Plataforma</a>
+                        </div>
+                    </div>
+
+                    <!-- Lado Direito: Preview (Impresso) -->
+                    <div class="w-full lg:w-7/12">
+                        <!-- Toolbar (Oculta na impressão) -->
+                        <div class="flex justify-between items-center mb-4 no-print">
+                            <h3 class="text-lg font-bold text-body-light-12 dark:text-body-dark-12"><i class="lni lni-eye"></i> Visualização Real</h3>
+                            <button id="btn-print" class="px-6 py-2 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg shadow transition flex items-center gap-2">
+                                <i class="lni lni-printer"></i> Gerar PDF / Imprimir
+                            </button>
+                        </div>
+
+                        <!-- O Papel do Recibo -->
+                        <div id="print-area" class="bg-white text-black p-10 md:p-14 shadow-2xl rounded-sm border border-gray-300 min-h-[600px] text-[15px] leading-relaxed relative">
+                            
+                            <div class="flex justify-between items-center border-b-2 border-black pb-6 mb-8">
+                                <h1 class="text-3xl font-bold uppercase tracking-widest text-gray-800">Recibo</h1>
+                                <div class="bg-gray-100 border border-gray-300 px-6 py-3 rounded">
+                                    <span class="text-sm uppercase tracking-wider text-gray-600 font-bold block mb-1">Valor</span>
+                                    <span class="text-2xl font-bold" id="out-valor">R$ 0,00</span>
+                                </div>
+                            </div>
+
+                            <p class="text-justify mb-8 text-lg leading-loose">
+                                Recebi(emos) de <strong id="out-locatario-nome" class="uppercase border-b border-gray-400 px-2 inline-block min-w-[200px]">(Nome do Locatário)</strong>, 
+                                inscrito(a) no CPF/CNPJ sob o nº <strong id="out-locatario-doc" class="border-b border-gray-400 px-2 inline-block min-w-[150px]">(Documento)</strong>, 
+                                a importância supra de <strong id="out-extenso" class="bg-yellow-50 px-2 border-b border-gray-400 italic">(Valor por extenso)</strong>,
+                                referente ao pagamento do aluguel e/ou encargos do imóvel situado na <strong id="out-endereco" class="border-b border-gray-400 px-2">(Endereço do Imóvel)</strong>, 
+                                relativo ao período de <strong id="out-referencia" class="border-b border-gray-400 px-2">(Mês/Referência)</strong>.
+                            </p>
+
+                            <p class="mb-16 text-lg">
+                                Por ser verdade, firmo(amos) o presente recibo para que produza os seus efeitos legais.
+                            </p>
+
+                            <div class="text-right mb-16">
+                                <span id="out-cidade" class="capitalize">(Cidade)</span>, <span id="out-data">(Data)</span>.
+                            </div>
+
+                            <div class="w-full max-w-[400px] mx-auto text-center mt-12">
+                                <div class="border-t border-black pt-2">
+                                    <strong id="out-locador-nome" class="block uppercase text-lg">(Nome do Locador)</strong>
+                                    <span class="block text-gray-600">CPF/CNPJ: <span id="out-locador-doc">(Documento)</span></span>
+                                    <span class="block text-gray-600 text-sm mt-1">Locador / Recebedor</span>
+                                </div>
+                            </div>
+
+                            <!-- Watermark / Footer na impressão -->
+                            <div class="absolute bottom-6 left-0 w-full text-center text-xs text-gray-400 font-mono">
+                                Documento gerado gratuitamente via plataforma AluguelOK (www.aluguelok.com.br)
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Oculto na Impressão -->
+    <footer class="bg-primary-dark-2 text-white no-print" role="contentinfo">
+        <center>
+            <div class="w-full pt-16 pb-6">
+                <a href="../index.html" class="inline-block mb-5">
+                    <img src="../img/logo/aluguelok-white.png" width="256" alt="Logo AluguelOK" />
+                </a>
+            </div>
+            <div class="w-full pb-16"><p class="opacity-80">© 2026 AluguelOK.</p></div>
+        </center>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Conversor de Valor para Extenso (Simplificado, atende 99.9% dos recibos de aluguel)
+            const unidades = ["", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove"];
+            const dezAteDezenove = ["dez", "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"];
+            const dezenas = ["", "", "vinte", "trinta", "quarenta", "cinquenta", "sessenta", "setenta", "oitenta", "noventa"];
+            const centenas = ["", "cento", "duzentos", "trezentos", "quatrocentos", "quinhentos", "seiscentos", "setecentos", "oitocentos", "novecentos"];
+
+            function converterCentena(n) {
+                if (n === 100) return "cem";
+                let c = Math.floor(n / 100);
+                let d = Math.floor((n % 100) / 10);
+                let u = n % 10;
+                
+                let res = [];
+                if (c > 0) res.push(centenas[c]);
+                if (d === 1) {
+                    res.push(dezAteDezenove[u]);
+                } else {
+                    if (d > 1) res.push(dezenas[d]);
+                    if (u > 0) res.push(unidades[u]);
+                }
+                return res.join(" e ");
+            }
+
+            function numeroParaExtenso(valorStr) {
+                let val = parseFloat(valorStr.replace(/\./g, '').replace(',', '.'));
+                if (isNaN(val) || val <= 0) return "(Zero reais)";
+
+                let reais = Math.floor(val);
+                let centavos = Math.round((val - reais) * 100);
+
+                let extenso = "";
+
+                if (reais > 0) {
+                    let milhoes = Math.floor(reais / 1000000);
+                    let milhares = Math.floor((reais % 1000000) / 1000);
+                    let unidadesReais = reais % 1000;
+
+                    let partes = [];
+                    if (milhoes > 0) {
+                        partes.push(converterCentena(milhoes) + (milhoes === 1 ? " milhão" : " milhões"));
+                    }
+                    if (milhares > 0) {
+                        partes.push(converterCentena(milhares) + " mil");
+                    }
+                    if (unidadesReais > 0) {
+                        partes.push(converterCentena(unidadesReais));
+                    }
+                    extenso = partes.join(" e ");
+                    extenso += reais === 1 ? " real" : " reais";
+                }
+
+                if (centavos > 0) {
+                    let extCentavos = converterCentena(centavos);
+                    extCentavos += centavos === 1 ? " centavo" : " centavos";
+                    if (extenso !== "") {
+                        extenso += " e " + extCentavos;
+                    } else {
+                        extenso = extCentavos;
+                    }
+                }
+
+                return extenso.charAt(0).toUpperCase() + extenso.slice(1);
+            }
+
+            // Bind Elements
+            const inputs = {
+                valor: document.getElementById('inp-valor'),
+                locadorNome: document.getElementById('inp-locador-nome'),
+                locadorDoc: document.getElementById('inp-locador-doc'),
+                locatarioNome: document.getElementById('inp-locatario-nome'),
+                locatarioDoc: document.getElementById('inp-locatario-doc'),
+                endereco: document.getElementById('inp-endereco'),
+                referencia: document.getElementById('inp-referencia'),
+                cidade: document.getElementById('inp-cidade'),
+                data: document.getElementById('inp-data')
+            };
+
+            const outputs = {
+                valor: document.getElementById('out-valor'),
+                extenso: document.getElementById('out-extenso'),
+                locadorNome: document.getElementById('out-locador-nome'),
+                locadorDoc: document.getElementById('out-locador-doc'),
+                locatarioNome: document.getElementById('out-locatario-nome'),
+                locatarioDoc: document.getElementById('out-locatario-doc'),
+                endereco: document.getElementById('out-endereco'),
+                referencia: document.getElementById('out-referencia'),
+                cidade: document.getElementById('out-cidade'),
+                data: document.getElementById('out-data')
+            };
+
+            // Mascara de Moeda
+            inputs.valor.addEventListener('input', function(e) {
+                let rawValue = e.target.value.replace(/\D/g, '');
+                if (rawValue.length > 0) {
+                    let num = parseFloat(rawValue) / 100;
+                    e.target.value = num.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                } else {
+                    e.target.value = '';
+                }
+                updatePreview();
+            });
+
+            // Date Formatting
+            function formatDatePTBR(dateString) {
+                if (!dateString) return "(Data)";
+                let [y, m, d] = dateString.split('-');
+                return `${d}/${m}/${y}`;
+            }
+
+            // Updater
+            function updatePreview() {
+                outputs.valor.innerText = inputs.valor.value ? "R$ " + inputs.valor.value : "R$ 0,00";
+                outputs.extenso.innerText = inputs.valor.value ? numeroParaExtenso(inputs.valor.value) : "(Valor por extenso)";
+                
+                outputs.locadorNome.innerText = inputs.locadorNome.value || "(Nome do Locador)";
+                outputs.locadorDoc.innerText = inputs.locadorDoc.value || "(Documento)";
+                
+                outputs.locatarioNome.innerText = inputs.locatarioNome.value || "(Nome do Locatário)";
+                outputs.locatarioDoc.innerText = inputs.locatarioDoc.value || "(Documento)";
+                
+                outputs.endereco.innerText = inputs.endereco.value || "(Endereço do Imóvel)";
+                outputs.referencia.innerText = inputs.referencia.value || "(Mês/Referência)";
+                
+                outputs.cidade.innerText = inputs.cidade.value || "(Cidade)";
+                outputs.data.innerText = formatDatePTBR(inputs.data.value);
+            }
+
+            // Listeners
+            Object.values(inputs).forEach(input => {
+                if(input !== inputs.valor) {
+                    input.addEventListener('input', updatePreview);
+                }
+            });
+
+            // Print Action
+            document.getElementById('btn-print').addEventListener('click', () => {
+                window.print();
+            });
+        });
+    </script>
+</body>
+</html>
