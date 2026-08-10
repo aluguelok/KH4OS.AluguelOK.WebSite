@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador de Caução e Rendimento na Poupança | AluguelOK</title>
+    <meta name="description" content="Saiba exatamente quanto deve ser devolvido da sua caução de aluguel. Calculamos automaticamente o rendimento da poupança usando dados oficiais do Banco Central." />
+    <meta name="keywords" content="rendimento caução aluguel, calcular poupança caução, devolução caução, juros caução, lei do inquilinato caução" />
+    <meta name="author" content="AluguelOK" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.aluguelok.com.br/ferramentas/simulador-rendimento-caucao-aluguel.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Simulador de Caução e Rendimento na Poupança | AluguelOK" />
+    <meta property="og:description" content="Saiba exatamente quanto deve ser devolvido da sua caução. Calculamos automaticamente o rendimento da poupança usando dados oficiais do BCB." />
+    <meta property="og:url" content="https://www.aluguelok.com.br/ferramentas/simulador-rendimento-caucao-aluguel.html" />
+    <meta property="og:site_name" content="AluguelOK" />
+    <meta property="og:image" content="https://www.aluguelok.com.br/img/aluguelok-cover.png" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png" />
+    <link rel="manifest" href="../favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+
+    <script type="application/ld+json">
+    [
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Simulador de Caução de Aluguel",
+          "operatingSystem": "Web",
+          "applicationCategory": "FinanceApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "BRL"
+          },
+          "description": "Calculadora que apura o rendimento exato da poupança sobre o valor da caução locatícia, conectando-se diretamente à base de dados do Banco Central do Brasil."
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Como devolver a caução de aluguel?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A devolução da caução deve ser feita no término do contrato. A Lei do Inquilinato exige que o dinheiro depositado originalmente seja corrigido com os juros equivalentes aos da caderneta de poupança ao longo de todo o período."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "A caução deve render poupança?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim. O artigo 38 da Lei nº 8.245/91 obriga o locador a depositar a caução (de até 3 meses de aluguel) em uma conta poupança. Todos os rendimentos gerados por essa conta pertencem ao inquilino no momento do resgate."
+              }
+            }
+          ]
+        }
+    ]
+    </script>
+</head>
+<body class="bg-body-light-1 text-body-light-12">
+    <header class="ic-navbar absolute left-0 top-0 z-40 flex w-full items-center bg-transparent" role="banner">
+        <div class="container">
+            <div class="ic-navbar-container relative -mx-5 flex items-center justify-between">
+                <div class="w-60 lg:w-56 max-w-full px-5">
+                    <a href="../index.html" class="ic-navbar-logo block w-full py-5 text-primary-color">
+                        <img src="../img/logo/aluguelok-white.png" width="256" alt="Logo AluguelOK" />
+                    </a>
+                </div>
+                <div class="flex items-center justify-end pr-5 lg:pr-0">
+                    <button type="button" class="inline-flex items-center text-primary-color text-[24px]/none" aria-label="Alternar tema" data-web-trigger="web-theme"></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main relative" role="main">
+        <section class="relative overflow-hidden bg-primary text-primary-color pt-[120px] md:pt-[130px] lg:pt-[160px] pb-[80px]">
+            <div class="container relative z-10">
+                <div class="mx-auto max-w-[780px] text-center">
+                    <h1 class="mb-6 text-3xl font-bold leading-snug text-primary-color sm:text-4xl lg:text-5xl">Devolução de Caução Justa</h1>
+                    <p class="text-lg opacity-90 text-primary-color">Cálculo oficial conectado aos juros da Poupança do Banco Central do Brasil.</p>
+                </div>
+            </div>
+            <div class="absolute -left-9 bottom-0 z-0">
+                <img src="../img/dots.svg" class="w-[120px] opacity-75" alt="" />
+            </div>
+            <div class="absolute -right-6 -top-6 z-0">
+                <img src="../img/dots.svg" class="w-[120px] opacity-75" alt="" />
+            </div>
+        </section>
+
+        <section class="section-area py-16 bg-body-light-1 dark:bg-body-dark-1">
+            <div class="container">
+                <div class="row flex-wrap lg:flex-nowrap gap-10">
+                    <div class="w-full lg:w-7/12">
+                        <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-card-1 p-8 sm:p-10 border border-gray-100 dark:border-alpha-dark">
+                            <h2 class="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
+                                <i class="lni lni-piggy-bank"></i> Dados da Locação
+                            </h2>
+                            
+                            <form id="calc-form" class="space-y-6">
+                                <div>
+                                    <label class="block text-sm font-semibold text-body-light-11 dark:text-body-dark-11 mb-2">Valor depositado como Caução (R$)</label>
+                                    <div class="relative">
+                                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                            <span class="text-gray-500 font-medium">R$</span>
+                                        </div>
+                                        <input type="text" id="ipt-deposit" class="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-body-dark-1 text-lg font-medium focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="0,00" />
+                                    </div>
+                                    <p class="text-[11px] text-body-light-9 dark:text-body-dark-9 mt-1">Normalmente equivalente a 1 até 3 meses de aluguel no momento da assinatura.</p>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-body-light-11 dark:text-body-dark-11 mb-2">Início do Contrato (Depósito)</label>
+                                        <input type="month" id="ipt-start" class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-body-dark-1 text-lg font-medium focus:border-primary focus:ring-1 focus:ring-primary text-gray-700 dark:text-gray-300" />
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-semibold text-body-light-11 dark:text-body-dark-11 mb-2">Fim do Contrato (Resgate)</label>
+                                        <input type="month" id="ipt-end" class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-body-dark-1 text-lg font-medium focus:border-primary focus:ring-1 focus:ring-primary text-gray-700 dark:text-gray-300" />
+                                    </div>
+                                </div>
+
+                                <div class="pt-2">
+                                    <button type="button" id="btn-calculate" class="w-full bg-primary hover:bg-primary-light-10 dark:hover:bg-primary-dark-10 text-white font-bold py-4 rounded-lg shadow-md transition-colors text-lg flex items-center justify-center gap-2">
+                                        <i class="lni lni-reload"></i> <span id="btn-text">Calcular Rendimento BCB</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="mt-10 p-6 bg-primary/5 rounded-xl border border-primary/20">
+                            <h3 class="text-lg font-bold mb-3 text-primary"><i class="lni lni-graduation"></i> O que diz a lei?</h3>
+                            <p class="text-sm">
+                                O artigo 38, parágrafo 2º da <strong>Lei nº 8.245/91 (Lei do Inquilinato)</strong> determina que o valor da caução deve ser guardado numa caderneta de poupança conjunta. Ao final da locação, todo o dinheiro, <strong>acrescido de todos os juros e correção monetária</strong> gerados no período, deve ser devolvido ao inquilino.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-5/12 flex flex-col gap-6">
+                        <div class="bg-primary text-white rounded-2xl shadow-card-1 p-8 text-center relative overflow-hidden">
+                            <div class="relative z-10">
+                                <h3 class="text-xl font-medium mb-4 opacity-90 text-white">Valor a Devolver</h3>
+                                
+                                <div id="box-result">
+                                    <div class="mb-4 text-sm opacity-80 flex justify-center items-center gap-2">
+                                        <i class="lni lni-bar-chart"></i>
+                                        <span>Lucro da poupança no período: <strong id="lbl-accumulated-rate" class="text-white">0,00%</strong></span>
+                                    </div>
+                                    
+                                    <div class="bg-white/10 rounded-xl py-6 px-4 backdrop-blur border border-white/20 mb-4">
+                                        <p class="text-sm font-semibold uppercase tracking-wider mb-2 opacity-80 text-white">Total Corrigido</p>
+                                        <p id="lbl-total" class="text-4xl sm:text-5xl font-bold text-green-300 break-words">R$ 0,00</p>
+                                    </div>
+                                    
+                                    <div class="flex flex-col gap-1 text-sm opacity-80">
+                                        <div class="flex justify-between border-b border-white/10 pb-1">
+                                            <span>Valor Original Depositado:</span>
+                                            <span id="lbl-original" class="font-bold text-white">R$ 0,00</span>
+                                        </div>
+                                        <div class="flex justify-between pt-1">
+                                            <span>Rendimento (Juros Compostos):</span>
+                                            <span id="lbl-interest" class="font-bold text-green-300">+ R$ 0,00</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="box-error" class="hidden mt-4 bg-red-500/20 rounded-xl py-6 px-4 backdrop-blur border border-red-500/30">
+                                    <p class="text-red-100 font-medium mb-2"><i class="lni lni-warning text-2xl mb-1 block"></i> Aviso do BCB</p>
+                                    <p id="lbl-error-msg" class="text-sm text-red-100/80">Mensagem de erro aqui.</p>
+                                </div>
+                            </div>
+                            <i class="lni lni-coin absolute -bottom-10 -right-10 text-[180px] opacity-10 rotate-12"></i>
+                        </div>
+
+                        <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-md p-6 border-l-4 border-orange-400">
+                            <div class="flex gap-4">
+                                <div class="text-orange-400 text-3xl"><i class="lni lni-revenue"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-2">Seu dinheiro está parado?</h4>
+                                    <p class="text-sm text-body-light-11 dark:text-body-dark-11 mb-4">Locadores, não deixem o dinheiro da caução perder valor. Abram uma conta rápida e gratuita em corretoras confiáveis para rentabilizar de verdade.</p>
+                                    <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">Abrir conta na Rico &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-body-light-2 dark:bg-body-dark-2 rounded-2xl shadow-sm p-6 text-center border border-gray-200 dark:border-gray-700">
+                            <img src="../img/logo/aluguelok-blue.png" class="h-8 mx-auto mb-4" alt="AluguelOK" />
+                            <h4 class="font-bold text-lg mb-2">Transparência Total</h4>
+                            <p class="text-sm text-body-light-11 dark:text-body-dark-11 mb-4">Extratos transparentes para inquilino e proprietário saberem exatamente o saldo da caução. Democratize sua gestão.</p>
+                            <a href="../index.html" class="inline-block px-5 py-2 bg-primary text-white text-sm font-medium rounded hover:bg-opacity-90 transition">Conhecer a Plataforma</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-primary-dark-2 text-white" role="contentinfo">
+        <center>
+            <div class="w-full pt-16 pb-6">
+                <a href="../index.html" class="inline-block mb-5">
+                    <img src="../img/logo/aluguelok-white.png" width="256" alt="Logo AluguelOK" />
+                </a>
+            </div>
+            <div class="w-full pb-16">
+                <p class="opacity-80">© 2026 AluguelOK. Todos os direitos reservados.</p>
+            </div>
+        </center>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const header = document.querySelector(".ic-navbar");
+            const logoImg = document.querySelector(".ic-navbar-logo img");
+            const logoTopo = "../img/logo/aluguelok-white.png";
+            const logoSticky = "../img/logo/aluguelok-blue.png";
+
+            if (header && logoImg) {
+                const handleMutation = (mutationsList) => {
+                    for (const mutation of mutationsList) {
+                        if (mutation.type === "attributes" && mutation.attributeName === "class") {
+                            const isSticky = header.classList.contains("sticky");
+                            logoImg.src = isSticky ? logoSticky : logoTopo;
+                        }
+                    }
+                };
+                const observer = new MutationObserver(handleMutation);
+                observer.observe(header, { attributes: true, attributeFilter: ["class"] });
+            }
+
+            const inputDeposit = document.getElementById('ipt-deposit');
+            const inputStart = document.getElementById('ipt-start');
+            const inputEnd = document.getElementById('ipt-end');
+            const btnCalculate = document.getElementById('btn-calculate');
+            const btnText = document.getElementById('btn-text');
+
+            const boxResult = document.getElementById('box-result');
+            const boxError = document.getElementById('box-error');
+            const lblTotal = document.getElementById('lbl-total');
+            const lblOriginal = document.getElementById('lbl-original');
+            const lblInterest = document.getElementById('lbl-interest');
+            const lblRate = document.getElementById('lbl-accumulated-rate');
+            const lblErrorMsg = document.getElementById('lbl-error-msg');
+
+            // Set default end month to current month
+            const today = new Date();
+            const currentMonthStr = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0');
+            inputEnd.value = currentMonthStr;
+
+            inputDeposit.addEventListener('input', function(e) {
+                let rawValue = e.target.value.replace(/\D/g, '');
+                if (rawValue.length > 0) {
+                    let num = parseFloat(rawValue) / 100;
+                    e.target.value = num.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                } else {
+                    e.target.value = '';
+                }
+            });
+
+            function formatCurrency(val) {
+                return val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            }
+
+            function showError(msg) {
+                boxResult.classList.add('hidden');
+                boxError.classList.remove('hidden');
+                boxError.classList.remove('mt-4'); // without result, it doesn't need mt-4
+                lblErrorMsg.innerText = msg;
+                btnCalculate.disabled = false;
+                btnText.innerText = 'Calcular Rendimento BCB';
+            }
+
+            function showResult(deposit, total, ratePercentage, missingMonthsCount = 0) {
+                boxResult.classList.remove('hidden');
+                
+                lblOriginal.innerText = formatCurrency(deposit);
+                lblInterest.innerText = '+ ' + formatCurrency(total - deposit);
+                lblTotal.innerText = formatCurrency(total);
+                lblRate.innerText = ratePercentage.toFixed(4).replace('.', ',') + '%';
+                
+                if (missingMonthsCount > 0) {
+                    boxError.classList.remove('hidden');
+                    boxError.classList.add('mt-4');
+                    lblErrorMsg.innerText = `O BCB ainda não consolidou o rendimento de ${missingMonthsCount} mês(es) do período selecionado. O valor acima reflete os rendimentos até a última atualização disponível.`;
+                } else {
+                    boxError.classList.add('hidden');
+                    boxError.classList.remove('mt-4');
+                }
+
+                btnCalculate.disabled = false;
+                btnText.innerText = 'Calcular Rendimento BCB';
+            }
+
+            async function performCalculation() {
+                let rawDep = inputDeposit.value.replace(/\./g, '').replace(',', '.');
+                let deposit = parseFloat(rawDep);
+
+                if (isNaN(deposit) || deposit <= 0) {
+                    showError("Informe um valor válido para a caução.");
+                    return;
+                }
+
+                if (!inputStart.value || !inputEnd.value) {
+                    showError("Preencha as datas de início e fim do contrato.");
+                    return;
+                }
+
+                let [sY, sM] = inputStart.value.split('-');
+                let [eY, eM] = inputEnd.value.split('-');
+                let startDate = new Date(parseInt(sY), parseInt(sM) - 1, 1);
+                let endDate = new Date(parseInt(eY), parseInt(eM) - 1, 1);
+
+                if (endDate <= startDate) {
+                    showError("A data final (resgate) deve ser posterior à data inicial.");
+                    return;
+                }
+
+                btnCalculate.disabled = true;
+                btnText.innerText = 'Consultando BCB...';
+
+                // BCB SGS 195 (Rentabilidade da Poupança) exige dataInicial e dataFinal por ser diária
+                let dtInicialStr = `01/${String(startDate.getMonth() + 1).padStart(2, '0')}/${startDate.getFullYear()}`;
+                let dtFinalStr = `01/${String(endDate.getMonth() + 1).padStart(2, '0')}/${endDate.getFullYear()}`;
+                const url = `https://api.bcb.gov.br/dados/serie/bcdata.sgs.195/dados?formato=json&dataInicial=${dtInicialStr}&dataFinal=${dtFinalStr}`;
+
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) throw new Error("Erro na API do BCB.");
+                    const data = await response.json();
+
+                    let targetDates = [];
+                    let curr = new Date(startDate);
+                    while (curr < endDate) {
+                        let mStr = String(curr.getMonth() + 1).padStart(2, '0');
+                        let yStr = curr.getFullYear();
+                        targetDates.push(`01/${mStr}/${yStr}`);
+                        curr.setMonth(curr.getMonth() + 1);
+                    }
+
+                    let matchedRates = [];
+                    for (let tDate of targetDates) {
+                        let found = data.find(d => d.data === tDate);
+                        if (found) {
+                            matchedRates.push(parseFloat(found.valor));
+                        }
+                    }
+
+                    let missingMonthsCount = targetDates.length - matchedRates.length;
+
+                    if (matchedRates.length === 0) {
+                        showError("Nenhum dado de poupança encontrado para este período no BCB.");
+                        return;
+                    }
+
+                    // Juros compostos
+                    let accumulatedFactor = 1;
+                    matchedRates.forEach(rate => {
+                        accumulatedFactor *= (1 + (rate / 100));
+                    });
+
+                    let finalAmount = deposit * accumulatedFactor;
+                    let accumulatedPercentage = (accumulatedFactor - 1) * 100;
+
+                    showResult(deposit, finalAmount, accumulatedPercentage, missingMonthsCount);
+
+                } catch (e) {
+                    showError("Falha ao conectar aos servidores do Banco Central. Tente novamente mais tarde.");
+                }
+            }
+
+            btnCalculate.addEventListener('click', performCalculation);
+        });
+    </script>
+</body>
+</html>
