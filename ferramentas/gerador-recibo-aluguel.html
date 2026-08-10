@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
@@ -144,18 +144,43 @@
                                     <input type="text" id="inp-endereco" class="w-full px-3 py-2 rounded border border-gray-300 focus:border-primary mb-4" placeholder="Ex: Rua das Flores, 123, Apto 41 - São Paulo/SP" />
 
                                     <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Referente a (Mês/Período)</label>
-                                    <input type="text" id="inp-referencia" class="w-full px-3 py-2 rounded border border-gray-300 focus:border-primary" placeholder="Ex: Aluguel de Agosto/2026 e IPTU" />
+                                    <div class="flex gap-2">
+                                        <div class="relative w-3/5">
+                                            <select id="inp-ref-month" class="w-full px-3 py-2 rounded border border-gray-300 focus:border-primary appearance-none cursor-pointer">
+                                                <option value="" disabled selected>Mês</option>
+                                                <option value="Janeiro">Janeiro</option>
+                                                <option value="Fevereiro">Fevereiro</option>
+                                                <option value="Março">Março</option>
+                                                <option value="Abril">Abril</option>
+                                                <option value="Maio">Maio</option>
+                                                <option value="Junho">Junho</option>
+                                                <option value="Julho">Julho</option>
+                                                <option value="Agosto">Agosto</option>
+                                                <option value="Setembro">Setembro</option>
+                                                <option value="Outubro">Outubro</option>
+                                                <option value="Novembro">Novembro</option>
+                                                <option value="Dezembro">Dezembro</option>
+                                            </select>
+                                            <div class="absolute inset-y-0 right-0 pr-2 flex items-center pointer-events-none text-gray-500">
+                                                <i class="lni lni-chevron-down"></i>
+                                            </div>
+                                        </div>
+                                        <div class="relative w-2/5">
+                                            <input type="number" id="inp-ref-year" class="w-full px-3 py-2 rounded border border-gray-300 focus:border-primary appearance-none" min="2000" max="2100" placeholder="Ano" />
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <!-- Emissão -->
                                 <div class="grid grid-cols-2 gap-4">
                                     <div>
                                         <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Cidade</label>
-                                        <input type="text" id="inp-cidade" class="w-full px-3 py-2 rounded border border-gray-300 focus:border-primary" placeholder="Sua Cidade" />
+                                        <input type="text" id="inp-cidade" list="cidades-list" class="w-full px-3 py-2 rounded border border-gray-300 focus:border-primary" placeholder="Sua Cidade" />
+                                        <datalist id="cidades-list"></datalist>
                                     </div>
                                     <div>
                                         <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Data</label>
-                                        <input type="date" id="inp-data" class="w-full px-3 py-2 rounded border border-gray-300 focus:border-primary" />
+                                        <input type="date" id="inp-data" class="w-full px-3 py-2 rounded border border-gray-300 focus:border-primary" min="2000-01-01" max="2099-12-31" />
                                     </div>
                                 </div>
                             </form>
@@ -320,7 +345,8 @@
                 locatarioNome: document.getElementById('inp-locatario-nome'),
                 locatarioDoc: document.getElementById('inp-locatario-doc'),
                 endereco: document.getElementById('inp-endereco'),
-                referencia: document.getElementById('inp-referencia'),
+                refMonth: document.getElementById('inp-ref-month'),
+                refYear: document.getElementById('inp-ref-year'),
                 cidade: document.getElementById('inp-cidade'),
                 data: document.getElementById('inp-data')
             };
@@ -369,7 +395,11 @@
                 outputs.locatarioDoc.innerText = inputs.locatarioDoc.value || "(Documento)";
                 
                 outputs.endereco.innerText = inputs.endereco.value || "(Endereço do Imóvel)";
-                outputs.referencia.innerText = inputs.referencia.value || "(Mês/Referência)";
+                
+                let refMonthStr = inputs.refMonth.value || "";
+                let refYearStr = inputs.refYear.value || "";
+                let refText = refMonthStr && refYearStr ? `${refMonthStr} de ${refYearStr}` : "(Mês/Referência)";
+                outputs.referencia.innerText = refText;
                 
                 outputs.cidade.innerText = inputs.cidade.value || "(Cidade)";
                 outputs.data.innerText = formatDatePTBR(inputs.data.value);
@@ -381,6 +411,19 @@
                     input.addEventListener('input', updatePreview);
                 }
             });
+
+            // Fetch Cidades IBGE SP
+            fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados/SP/municipios')
+                .then(r => r.json())
+                .then(data => {
+                    const datalist = document.getElementById('cidades-list');
+                    data.forEach(mun => {
+                        const opt = document.createElement('option');
+                        opt.value = mun.nome;
+                        datalist.appendChild(opt);
+                    });
+                })
+                .catch(err => console.error("Falha ao buscar cidades:", err));
 
             // Print Action
             document.getElementById('btn-print').addEventListener('click', () => {
