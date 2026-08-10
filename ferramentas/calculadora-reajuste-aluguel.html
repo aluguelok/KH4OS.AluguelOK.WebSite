@@ -120,8 +120,31 @@
                                 
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
-                                        <label class="block text-sm font-semibold text-body-light-11 dark:text-body-dark-11 mb-2">Mês do Reajuste (Aniversário)</label>
-                                        <input type="month" id="ipt-month" class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-body-dark-1 text-lg font-medium focus:border-primary focus:ring-1 focus:ring-primary text-gray-700 dark:text-gray-300" />
+                                        <label class="block text-sm font-semibold text-body-light-11 dark:text-body-dark-11 mb-2">Mês/Ano do Reajuste (Aniversário)</label>
+                                        <div class="flex gap-2">
+                                            <div class="relative w-3/5">
+                                                <select id="ipt-month-sel" class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-body-dark-1 text-lg font-medium focus:border-primary focus:ring-1 focus:ring-primary appearance-none cursor-pointer">
+                                                    <option value="01">Janeiro</option>
+                                                    <option value="02">Fevereiro</option>
+                                                    <option value="03">Março</option>
+                                                    <option value="04">Abril</option>
+                                                    <option value="05">Maio</option>
+                                                    <option value="06">Junho</option>
+                                                    <option value="07">Julho</option>
+                                                    <option value="08">Agosto</option>
+                                                    <option value="09">Setembro</option>
+                                                    <option value="10">Outubro</option>
+                                                    <option value="11">Novembro</option>
+                                                    <option value="12">Dezembro</option>
+                                                </select>
+                                                <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-gray-500">
+                                                    <i class="lni lni-chevron-down"></i>
+                                                </div>
+                                            </div>
+                                            <div class="relative w-2/5">
+                                                <input type="number" id="ipt-year-inp" class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-body-dark-1 text-lg font-medium focus:border-primary focus:ring-1 focus:ring-primary appearance-none" min="1990" max="2100" />
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div>
@@ -194,7 +217,7 @@
                                 </div>
 
                                 <div id="box-error" class="hidden bg-red-500/20 rounded-xl py-6 px-4 backdrop-blur border border-red-500/30">
-                                    <p class="text-red-100 font-medium mb-2"><i class="lni lni-warning text-2xl mb-1 block"></i> Dados Incompletos</p>
+                                    <p class="text-red-100 font-medium mb-2"><i class="lni lni-warning text-2xl mb-1 block"></i> Atenção</p>
                                     <p id="lbl-error-msg" class="text-sm text-red-100/80">O IBGE/FGV ainda não divulgou os índices oficiais para os meses necessários desse período.</p>
                                 </div>
                             </div>
@@ -259,7 +282,8 @@
             }
 
             const inputRent = document.getElementById('ipt-rent');
-            const inputMonth = document.getElementById('ipt-month');
+            const inputMonthSel = document.getElementById('ipt-month-sel');
+            const inputYearInp = document.getElementById('ipt-year-inp');
             const inputIndex = document.getElementById('ipt-index');
             const manualContainer = document.getElementById('manual-rate-container');
             const inputManual = document.getElementById('ipt-manual-rate');
@@ -273,10 +297,16 @@
             const lblRate = document.getElementById('lbl-accumulated-rate');
             const lblErrorMsg = document.getElementById('lbl-error-msg');
 
-            // Default to current month
+            // Default to current month/year
             const today = new Date();
-            const currentMonthStr = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0');
-            inputMonth.value = currentMonthStr;
+            const currentYear = today.getFullYear();
+
+            inputMonthSel.value = String(today.getMonth() + 1).padStart(2, '0');
+            inputYearInp.value = String(currentYear);
+
+            function getSelectedMonth() {
+                return `${inputYearInp.value}-${inputMonthSel.value}`;
+            }
 
             inputRent.addEventListener('input', function(e) {
                 let rawValue = e.target.value.replace(/\D/g, '');
@@ -339,7 +369,9 @@
                     return;
                 }
 
-                if (!inputMonth.value) {
+                let selectedMonth = getSelectedMonth();
+
+                if (!selectedMonth) {
                     showError("Selecione o mês de aniversário do contrato.");
                     return;
                 }
@@ -364,7 +396,7 @@
                     const data = await response.json();
 
                     // Mapear datas alvo (12 meses ANTERIORES ao mes do input)
-                    let [yyyy, mm] = inputMonth.value.split('-');
+                    let [yyyy, mm] = selectedMonth.split('-');
                     let targetDateObj = new Date(parseInt(yyyy), parseInt(mm) - 1, 1);
                     
                     let targetDates = [];
