@@ -210,7 +210,8 @@
   .ic-navbar.menu-show .ic-navbar-collapse {
     @apply block -z-[1];
   }
-  .ic-navbar.sticky .ic-page-scroll {
+  .ic-navbar.sticky .ic-page-scroll,
+  .ic-navbar.sticky .ic-nav-link {
     @apply lg:text-body-light-12 lg:dark:text-body-dark-12 lg:hover:text-primary lg:hover:opacity-100;
   }
   .ic-page-scroll.active {

@@ -108,12 +108,12 @@
         <section class="section-area py-12 bg-body-light-1 dark:bg-body-dark-1">
             <div class="container">
                 <div class="flex flex-wrap lg:flex-nowrap gap-10">
-                    
+
                     <!-- Lado Esquerdo: Formulário (Oculto na impressão) -->
                     <div class="w-full lg:w-5/12 no-print space-y-6">
                         <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-card-1 p-8 border border-gray-100 dark:border-alpha-dark">
                             <h2 class="text-xl font-bold mb-6 text-primary border-b pb-4"><i class="lni lni-pencil-alt"></i> Preencha os Dados</h2>
-                            
+
                             <form id="frm-receipt" class="space-y-5">
                                 <!-- Valor -->
                                 <div>
@@ -183,14 +183,16 @@
                                         <input type="date" id="inp-data" class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-body-dark-1 text-base focus:border-primary focus:ring-1 focus:ring-primary" min="2000-01-01" max="2099-12-31" />
                                     </div>
                                 </div>
+
+                                <!-- Botão Calcular -->
+                                <div class="pt-2">
+                                    <button type="button" id="btn-fill" class="w-full bg-primary hover:bg-primary-light-10 dark:hover:bg-primary-dark-10 text-primary-color font-bold py-4 rounded-lg shadow-md transition-colors text-lg flex items-center justify-center gap-2">
+                                        <i class="lni lni-calculator"></i> Preencher Recibo
+                                    </button>
+                                </div>
                             </form>
-                        </div>
-                        
-                        <!-- Hooks Ocultos na Impressão -->
-                        <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-md p-6 border-l-4 border-blue-400">
-                            <h4 class="font-bold text-lg mb-2">Assinatura Digital</h4>
-                            <p class="text-sm text-body-light-11 dark:text-body-dark-11 mb-4">Evite imprimir papeis. Salve o arquivo gerado em PDF e assine legalmente usando uma ferramenta homologada.</p>
-                            <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">Abrir conta Clicksign &rarr;</a>
+                            <p class="text-xs text-body-light-11 mt-4 italic"><i class="lni lni-warning"></i> Dica: O preenchimento é refeito automaticamente a cada caractere digitado.</p>
+                            </form>
                         </div>
 
                         <div class="bg-body-light-2 dark:bg-body-dark-2 rounded-2xl shadow-sm p-6 text-center border border-gray-200 dark:border-gray-700">
@@ -213,7 +215,7 @@
 
                         <!-- O Papel do Recibo -->
                         <div id="print-area" class="bg-white text-black p-10 md:p-14 shadow-2xl rounded-sm border border-gray-300 min-h-[600px] text-[15px] leading-relaxed relative">
-                            
+
                             <div class="flex justify-between items-center border-b-2 border-black pb-6 mb-8">
                                 <h1 class="text-3xl font-bold uppercase tracking-widest text-gray-800">Recibo</h1>
                                 <div class="bg-gray-100 border border-gray-300 px-6 py-3 rounded">
@@ -223,10 +225,10 @@
                             </div>
 
                             <p class="text-justify mb-8 text-lg leading-loose">
-                                Recebi(emos) de <strong id="out-locatario-nome" class="uppercase border-b border-gray-400 px-2 inline-block min-w-[200px]">(Nome do Locatário)</strong>, 
-                                inscrito(a) no CPF/CNPJ sob o nº <strong id="out-locatario-doc" class="border-b border-gray-400 px-2 inline-block min-w-[150px]">(Documento)</strong>, 
+                                Recebi(emos) de <strong id="out-locatario-nome" class="uppercase border-b border-gray-400 px-2 inline-block min-w-[200px]">(Nome do Locatário)</strong>,
+                                inscrito(a) no CPF/CNPJ sob o nº <strong id="out-locatario-doc" class="border-b border-gray-400 px-2 inline-block min-w-[150px]">(Documento)</strong>,
                                 a importância supra de <strong id="out-extenso" class="bg-yellow-50 px-2 border-b border-gray-400 italic">(Valor por extenso)</strong>,
-                                referente ao pagamento do aluguel e/ou encargos do imóvel situado na <strong id="out-endereco" class="border-b border-gray-400 px-2">(Endereço do Imóvel)</strong>, 
+                                referente ao pagamento do aluguel e/ou encargos do imóvel situado na <strong id="out-endereco" class="border-b border-gray-400 px-2">(Endereço do Imóvel)</strong>,
                                 relativo ao período de <strong id="out-referencia" class="border-b border-gray-400 px-2">(Mês/Referência)</strong>.
                             </p>
 
@@ -252,6 +254,12 @@
                             </div>
                         </div>
 
+                        <!-- Hooks Ocultos na Impressão -->
+                        <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-md p-6 border-l-4 border-blue-400 mt-4">
+                            <h4 class="font-bold text-lg mb-2">Assinatura Digital</h4>
+                            <p class="text-sm text-body-light-11 dark:text-body-dark-11 mb-4">Evite imprimir papeis. Salve o arquivo gerado em PDF e assine legalmente usando uma ferramenta homologada.</p>
+                            <a href="https://indiquei.app/YBANGVL" class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">Assinar com ZapSign &rarr;</a>
+                        </div>
                     </div>
                 </div>
             </div>
