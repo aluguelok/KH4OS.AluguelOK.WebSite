@@ -388,6 +388,18 @@
                 updatePreview();
             });
 
+            // Lógica do botão adicionado
+            const btnFill = document.getElementById('btn-fill');
+            if (btnFill) {
+                btnFill.addEventListener('click', () => {
+                    updatePreview();
+                    const printArea = document.getElementById('print-area');
+                    if (printArea) {
+                        printArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            }
+
             // Mascara e Validacao de CPF/CNPJ
             function validaCPF(cpf) {
                 cpf = cpf.replace(/[^\d]+/g,'');
