@@ -377,15 +377,98 @@
             });
 
             // Mascara e Validacao de CPF/CNPJ
+            function validaCPF(cpf) {
+                cpf = cpf.replace(/[^\d]+/g,'');
+                if(cpf == '' || cpf.length != 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+                let soma = 0, resto;
+                for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i-1, i)) * (11 - i);
+                resto = (soma * 10) % 11;
+                if ((resto == 10) || (resto == 11)) resto = 0;
+                if (resto != parseInt(cpf.substring(9, 10))) return false;
+                soma = 0;
+                for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i-1, i)) * (12 - i);
+                resto = (soma * 10) % 11;
+                if ((resto == 10) || (resto == 11)) resto = 0;
+                if (resto != parseInt(cpf.substring(10, 11))) return false;
+                return true;
+            }
+
+            function charToNumber(char) {
+                let code = char.charCodeAt(0);
+                if (code >= 48 && code <= 57) return code - 48; // Numeros
+                if (code >= 65 && code <= 90) return code - 48; // Letras A-Z
+                return 0;
+            }
+
+            function validaCNPJ(cnpj) {
+                cnpj = cnpj.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
+                if (cnpj.length != 14) return false;
+                if (/^(\d)\1{13}$/.test(cnpj)) return false;
+
+                let tamanho = cnpj.length - 2;
+                let numeros = cnpj.substring(0, tamanho);
+                let digitos = cnpj.substring(tamanho);
+                let soma = 0;
+                let pos = tamanho - 7;
+                for (let i = tamanho; i >= 1; i--) {
+                    soma += charToNumber(numeros.charAt(tamanho - i)) * pos--;
+                    if (pos < 2) pos = 9;
+                }
+                let resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+                if (resultado != charToNumber(digitos.charAt(0))) return false;
+
+                tamanho = tamanho + 1;
+                numeros = cnpj.substring(0, tamanho);
+                soma = 0;
+                pos = tamanho - 7;
+                for (let i = tamanho; i >= 1; i--) {
+                    soma += charToNumber(numeros.charAt(tamanho - i)) * pos--;
+                    if (pos < 2) pos = 9;
+                }
+                resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+                if (resultado != charToNumber(digitos.charAt(1))) return false;
+
+                return true;
+            }
+
+            function setFieldStatus(inputElement, isValid, isComplete) {
+                if (!isComplete) {
+                    inputElement.classList.remove('border-red-500', 'border-green-500', 'text-red-600', 'focus:ring-red-500', 'focus:ring-green-500', 'focus:border-red-500', 'focus:border-green-500');
+                    inputElement.classList.add('border-gray-200', 'focus:border-primary', 'focus:ring-primary');
+                    return;
+                }
+                if (isValid) {
+                    inputElement.classList.remove('border-red-500', 'text-red-600', 'border-gray-200', 'focus:border-primary', 'focus:ring-primary', 'focus:ring-red-500', 'focus:border-red-500');
+                    inputElement.classList.add('border-green-500', 'focus:border-green-500', 'focus:ring-green-500');
+                } else {
+                    inputElement.classList.remove('border-green-500', 'border-gray-200', 'focus:border-primary', 'focus:ring-primary', 'focus:ring-green-500', 'focus:border-green-500');
+                    inputElement.classList.add('border-red-500', 'text-red-600', 'focus:border-red-500', 'focus:ring-red-500');
+                }
+            }
+
+            function handleDocValidation(e) {
+                let val = e.target.value.replace(/[^A-Za-z0-9]/g, '');
+                let isComplete = false;
+                let isValid = false;
+
+                if (val.length === 11 && !/[A-Za-z]/.test(val)) {
+                    isComplete = true;
+                    isValid = validaCPF(val);
+                } else if (val.length === 14) {
+                    isComplete = true;
+                    isValid = validaCNPJ(val);
+                }
+                
+                setFieldStatus(e.target, isValid, isComplete);
+            }
+
             function maskDoc(v) {
                 v = v.replace(/[^A-Za-z0-9]/g, '');
-                // Se for numerico e <= 11 ou nao tiver letras, é CPF
                 if (v.length <= 11 && !/[A-Za-z]/.test(v)) {
                     v = v.replace(/(\d{3})(\d)/, '$1.$2');
                     v = v.replace(/(\d{3})(\d)/, '$1.$2');
                     v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
                 } else {
-                    // CNPJ Alfanumérico
                     v = v.replace(/^(.{2})(.+)/, '$1.$2');
                     v = v.replace(/^(.{6})(.+)/, '$1.$2');
                     v = v.replace(/^(.{10})(.+)/, '$1/$2');
@@ -397,11 +480,13 @@
 
             inputs.locadorDoc.addEventListener('input', function(e) {
                 e.target.value = maskDoc(e.target.value);
+                handleDocValidation(e);
                 updatePreview();
             });
 
             inputs.locatarioDoc.addEventListener('input', function(e) {
                 e.target.value = maskDoc(e.target.value);
+                handleDocValidation(e);
                 updatePreview();
             });
 
@@ -441,18 +526,36 @@
                 }
             });
 
-            // Fetch Cidades IBGE SP
+            // Fetch Cidades IBGE SP (Inteligente com UF e Filtro sem Acento)
+            let ibgeCidades = [];
             fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados/SP/municipios')
                 .then(r => r.json())
                 .then(data => {
-                    const datalist = document.getElementById('cidades-list');
-                    data.forEach(mun => {
-                        const opt = document.createElement('option');
-                        opt.value = mun.nome;
-                        datalist.appendChild(opt);
-                    });
+                    ibgeCidades = data.map(mun => mun.nome + " - SP");
+                    atualizarDatalist("");
                 })
                 .catch(err => console.error("Falha ao buscar cidades:", err));
+
+            function removerAcentos(str) {
+                return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            }
+
+            function atualizarDatalist(termo) {
+                const datalist = document.getElementById('cidades-list');
+                datalist.innerHTML = "";
+                const termoNorm = removerAcentos(termo.toLowerCase());
+                const filtradas = ibgeCidades.filter(c => removerAcentos(c.toLowerCase()).includes(termoNorm)).slice(0, 50); // limit 50
+                filtradas.forEach(c => {
+                    const opt = document.createElement('option');
+                    opt.value = c;
+                    datalist.appendChild(opt);
+                });
+            }
+
+            inputs.cidade.addEventListener('input', (e) => {
+                atualizarDatalist(e.target.value);
+                updatePreview();
+            });
 
             // Print Action
             document.getElementById('btn-print').addEventListener('click', () => {
