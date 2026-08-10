@@ -173,10 +173,10 @@
 
                                 <!-- Emissão -->
                                 <div class="grid grid-cols-2 gap-4">
-                                    <div>
+                                    <div class="relative">
                                         <label class="block text-sm font-semibold text-body-light-11 dark:text-body-dark-11 mb-2">Cidade</label>
-                                        <input type="text" id="inp-cidade" list="cidades-list" class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-body-dark-1 text-base focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Sua Cidade" />
-                                        <datalist id="cidades-list"></datalist>
+                                        <input type="text" id="inp-cidade" class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-body-dark-1 text-base focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Sua Cidade" autocomplete="off" />
+                                        <ul id="cidades-list" class="absolute z-50 w-full bg-white dark:bg-body-dark-2 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg max-h-60 overflow-y-auto hidden mt-1"></ul>
                                     </div>
                                     <div>
                                         <label class="block text-sm font-semibold text-body-light-11 dark:text-body-dark-11 mb-2">Data</label>
@@ -526,13 +526,12 @@
                 }
             });
 
-            // Fetch Cidades IBGE SP (Inteligente com UF e Filtro sem Acento)
+            // Fetch Cidades IBGE SP (Autocomplete customizado)
             let ibgeCidades = [];
             fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados/SP/municipios')
                 .then(r => r.json())
                 .then(data => {
                     ibgeCidades = data.map(mun => mun.nome + " - SP");
-                    atualizarDatalist("");
                 })
                 .catch(err => console.error("Falha ao buscar cidades:", err));
 
@@ -540,21 +539,51 @@
                 return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
             }
 
-            function atualizarDatalist(termo) {
-                const datalist = document.getElementById('cidades-list');
-                datalist.innerHTML = "";
+            const inputCidade = document.getElementById('inp-cidade');
+            const listaCidades = document.getElementById('cidades-list');
+
+            function atualizarLista(termo) {
+                listaCidades.innerHTML = "";
                 const termoNorm = removerAcentos(termo.toLowerCase());
-                const filtradas = ibgeCidades.filter(c => removerAcentos(c.toLowerCase()).includes(termoNorm)).slice(0, 50); // limit 50
+                
+                if (!termoNorm) {
+                    listaCidades.classList.add('hidden');
+                    return;
+                }
+
+                const filtradas = ibgeCidades.filter(c => removerAcentos(c.toLowerCase()).includes(termoNorm)).slice(0, 15);
+                
+                if (filtradas.length === 0) {
+                    listaCidades.classList.add('hidden');
+                    return;
+                }
+
                 filtradas.forEach(c => {
-                    const opt = document.createElement('option');
-                    opt.value = c;
-                    datalist.appendChild(opt);
+                    const li = document.createElement('li');
+                    li.className = "px-4 py-2 hover:bg-gray-100 dark:hover:bg-body-dark-3 cursor-pointer text-sm text-gray-700 dark:text-gray-300";
+                    li.innerText = c;
+                    li.addEventListener('mousedown', () => { // mousedown dispara antes do blur do input
+                        inputCidade.value = c;
+                        listaCidades.classList.add('hidden');
+                        updatePreview();
+                    });
+                    listaCidades.appendChild(li);
                 });
+                
+                listaCidades.classList.remove('hidden');
             }
 
-            inputs.cidade.addEventListener('input', (e) => {
-                atualizarDatalist(e.target.value);
+            inputCidade.addEventListener('input', (e) => {
+                atualizarLista(e.target.value);
                 updatePreview();
+            });
+
+            inputCidade.addEventListener('blur', () => {
+                listaCidades.classList.add('hidden');
+            });
+
+            inputCidade.addEventListener('focus', (e) => {
+                if (e.target.value) atualizarLista(e.target.value);
             });
 
             // Print Action
