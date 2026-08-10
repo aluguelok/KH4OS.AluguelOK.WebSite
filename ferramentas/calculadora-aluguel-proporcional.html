@@ -137,6 +137,13 @@
                                 </div>
                             </form>
                         </div>
+
+                        <div class="mt-10 p-6 bg-primary/5 rounded-xl border border-primary/20">
+                            <h3 class="text-lg font-bold mb-3 text-primary"><i class="lni lni-graduation"></i> O que diz a lei?</h3>
+                            <p class="text-sm">
+                                Segundo a <strong>Lei nº 8.245/91 (Lei do Inquilinato)</strong>, a cobrança do aluguel deve ser sempre proporcional aos dias de efetiva ocupação do imóvel. A convenção de "mês comercial" (30 dias) ou "dias exatos" não está expressa em lei, devendo ser observada a regra contratual firmada no início da locação para evitar cobranças abusivas no primeiro ou no último mês (o famoso boleto quebrado).
+                            </p>
+                        </div>
                     </div>
 
                     <!-- Right Col: Resultado e Ganchos -->
@@ -150,25 +157,26 @@
                         </div>
 
                         <!-- Card Afiliado: GetNinjas e Mudança -->
-                        <div class="bg-primary/5 border border-primary/10 rounded-xl p-6 hidden" id="hook-mudanca">
-                            <h4 class="font-bold text-primary mb-3 flex items-center gap-2"><i class="lni lni-delivery"></i> Precisa organizar a mudança?</h4>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Evite dores de cabeça ao sair ou entrar. Contrate profissionais de frete e pequenos reparos pelo <b>GetNinjas</b>, ou compre seus kits de plástico bolha e caixas de papelão na <b>Amazon</b> com desconto.</p>
-                            <div class="flex flex-col gap-2">
-                                <a href="#" class="text-xs font-bold uppercase tracking-widest text-primary hover:underline">Ver profissionais GetNinjas &rarr;</a>
-                                <a href="#" class="text-xs font-bold uppercase tracking-widest text-primary hover:underline">Comprar kit mudança Amazon &rarr;</a>
+                        <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-md p-6 border-l-4 border-orange-400">
+                            <div class="flex gap-4">
+                                <div class="text-orange-400 text-3xl"><i class="lni lni-delivery"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-2">Precisa organizar a mudança?</h4>
+                                    <p class="text-sm text-body-light-11 dark:text-body-dark-11 mb-4">Evite dores de cabeça ao sair ou entrar. Contrate profissionais de frete e pequenos reparos pelo <b>GetNinjas</b>, ou compre kits na <b>Amazon</b>.</p>
+                                    <div class="flex flex-col gap-2">
+                                        <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">Ver profissionais GetNinjas &rarr;</a>
+                                        <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">Comprar kit mudança Amazon &rarr;</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Card AluguelOK App -->
-                        <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-6 shadow-md text-white">
-                            <div class="flex items-start gap-4">
-                                <div class="bg-white/20 p-3 rounded-lg"><img src="../img/logo/aluguelok-white.png" class="w-12" alt="Ícone"></div>
-                                <div>
-                                    <h4 class="font-bold mb-1">Cálculo chato nunca mais</h4>
-                                    <p class="text-sm text-blue-100 leading-relaxed mb-3">Na plataforma AluguelOK, nós calculamos a proporção automaticamente e aplicamos o "split" instantâneo: a imobiliária recebe sua taxa de setup e o locador recebe a fração livre na hora, sem contas manuais.</p>
-                                    <a href="#" class="text-sm font-semibold text-white underline decoration-blue-300 hover:decoration-white transition-all">Conheça o plano Imobiliária &rarr;</a>
-                                </div>
-                            </div>
+                        <div class="bg-body-light-2 dark:bg-body-dark-2 rounded-2xl shadow-sm p-6 text-center border border-gray-200 dark:border-gray-700">
+                            <img src="../img/logo/aluguelok-blue.png" class="h-8 mx-auto mb-4" alt="AluguelOK" />
+                            <h4 class="font-bold text-lg mb-2">Cálculo chato nunca mais</h4>
+                            <p class="text-sm text-body-light-11 dark:text-body-dark-11 mb-4">Na plataforma AluguelOK, nós calculamos a proporção automaticamente e aplicamos o "split" instantâneo da taxa de setup.</p>
+                            <a href="../index.html" class="inline-block px-5 py-2 bg-primary text-white text-sm font-medium rounded hover:bg-opacity-90 transition">Conhecer a Plataforma</a>
                         </div>
                     </div>
                 </div>
@@ -192,7 +200,6 @@
             const checkboxIndicator = document.getElementById('checkbox-indicator');
             
             const resultBox = document.getElementById('result-box');
-            const hookMudanca = document.getElementById('hook-mudanca');
 
             // Mascara Moeda
             iptRent.addEventListener('input', function(e) {
@@ -277,7 +284,6 @@
             }
 
             function renderPartial() {
-                hookMudanca.classList.add('hidden');
                 resultBox.className = 'bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-card-1 p-8 border-t-4 border-yellow-400 dark:border-alpha-dark text-center';
                 resultBox.innerHTML = `
                     <i class="lni lni-warning text-4xl text-yellow-400 mb-4 block"></i>
@@ -287,13 +293,12 @@
             }
 
             function renderResult(days, val, totalRent, base, type) {
-                hookMudanca.classList.remove('hidden');
                 resultBox.className = 'bg-primary text-white rounded-2xl shadow-card-1 p-8 text-center';
                 
                 let textType = type === 'inicio' ? "de moradia no primeiro mês" : "até a rescisão do contrato";
                 
                 resultBox.innerHTML = `
-                    <div class="mb-2 text-primary-200 font-semibold uppercase tracking-wider text-sm">Valor Proporcional Devido</div>
+                    <div class="mb-2 text-primary-200 font-semibold tracking-wider text-sm">Valor Proporcional Devido</div>
                     <div class="text-4xl md:text-5xl font-black mb-6">
                         <span class="text-xl inline-block align-top mt-1 font-normal opacity-80">R$</span>
                         ${val.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
