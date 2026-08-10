@@ -144,25 +144,60 @@
                     </article>
 
                 </div>
-            </div>
-        </section>
-
-        <!-- CTA Inferior -->
-        <section class="py-12 bg-primary/5 dark:bg-body-dark-12/5 mt-8 border-y border-gray-200 dark:border-gray-800">
-            <div class="container text-center">
-                <h3 class="text-2xl font-bold mb-4">Cansado de fazer cálculos manuais?</h3>
-                <p class="text-body-light-11 dark:text-body-dark-11 mb-6 max-w-2xl mx-auto">Com a AluguelOK, todos esses processos são 100% automatizados. A imobiliária e o proprietário não precisam calcular multas nem reajustes nunca mais.</p>
-                <a href="../index.html" class="inline-block px-8 py-3 bg-primary text-white font-bold rounded-lg shadow-md hover:bg-primary-dark transition-all">Conhecer Plataforma AluguelOK</a>
+                
+                <div class="text-center mt-16">
+                    <a href="../index.html" class="inline-flex items-center justify-center rounded-md bg-primary-color text-primary px-8 py-3 text-center text-base font-bold shadow-md hover:bg-primary-light-5 transition-colors">Voltar para a Home</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer base -->
-    <footer class="bg-white dark:bg-body-dark-12/10 py-10 text-center border-t border-gray-100 dark:border-alpha-dark mt-16">
-        <p class="text-gray-500 text-sm">© 2026 AluguelOK. Todos os direitos reservados.</p>
+    <footer class="bg-primary-dark-2 text-white" role="contentinfo">
+        <center>
+            <div class="w-full pt-16 pb-6">
+                <a href="../index.html" class="inline-block mb-5" aria-label="Página Inicial">
+                    <img src="../img/logo/aluguelok-white.png" width="256" alt="Logo AluguelOK" />
+                </a>
+            </div>
+            <div class="w-full pb-16">
+                <a href="javascript:void(0)" class="px-3 text-body-dark-11 hover:text-primary text-[22px] leading-none" aria-label="Facebook"><i class="lni lni-facebook-fill" aria-hidden="true"></i></a>
+                <a href="javascript:void(0)" class="px-3 text-body-dark-11 hover:text-primary text-[22px] leading-none" aria-label="Twitter"><i class="lni lni-twitter-original" aria-hidden="true"></i></a>
+                <a href="javascript:void(0)" class="px-3 text-body-dark-11 hover:text-primary text-[22px] leading-none" aria-label="Instagram"><i class="lni lni-instagram-original" aria-hidden="true"></i></a>
+                <a href="javascript:void(0)" class="px-3 text-body-dark-11 hover:text-primary text-[22px] leading-none" aria-label="LinkedIn"><i class="lni lni-linkedin-original" aria-hidden="true"></i></a>
+            </div>
+        </center>
     </footer>
+
+    <button type="button" class="inline-flex w-12 h-12 rounded-md items-center justify-center text-lg/none bg-primary text-primary-color hover:bg-primary-light-10 dark:hover:bg-primary-dark-10 fixed bottom-[117px] right-[20px] hover:-translate-y-1 opacity-100 visible z-50 is-hided" data-web-trigger="scroll-top" aria-label="Rolar para o topo">
+        <i class="lni lni-chevron-up" aria-hidden="true"></i>
+    </button>
 
     <!-- Scripts -->
     <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const header = document.querySelector(".ic-navbar");
+            const logoImg = document.querySelector(".ic-navbar-logo img");
+            const logoTopo = "../img/logo/aluguelok-white.png";
+            const logoSticky = "../img/logo/aluguelok-blue.png";
+
+            if (!header || !logoImg) return;
+
+            const handleMutation = (mutationsList) => {
+                for (const mutation of mutationsList) {
+                    if (mutation.type === "attributes" && mutation.attributeName === "class") {
+                        const isSticky = header.classList.contains("sticky");
+                        logoImg.src = isSticky ? logoSticky : logoTopo;
+                    }
+                }
+            };
+
+            const observer = new MutationObserver(handleMutation);
+            observer.observe(header, {
+                attributes: true,
+                attributeFilter: ["class"]
+            });
+        });
+    </script>
 </body>
 </html>
