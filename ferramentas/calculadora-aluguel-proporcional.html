@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <script type="module" src="../parceiros/mercadolivre/js/components/mercadolivre-banner.js"></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,29 +31,29 @@
 
     <!-- Schema.org -->
     <script type="application/ld+json">
-    [
-        {
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          "name": "Calculadora de Aluguel Proporcional",
-          "operatingSystem": "Web",
-          "applicationCategory": "BusinessApplication",
-          "offers": {
-            "@type": "Offer",
-            "price": "0.00",
-            "priceCurrency": "BRL"
-          },
-          "description": "Calculadora online para pro-rata e fração de dias de aluguel. Ideal para cobrar exatamente os dias ocupados no primeiro boleto de locação ou no último boleto de rescisão."
-        }
-    ]
+        [
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "Calculadora de Aluguel Proporcional",
+              "operatingSystem": "Web",
+              "applicationCategory": "BusinessApplication",
+              "offers": {
+                "@type": "Offer",
+                "price": "0.00",
+                "priceCurrency": "BRL"
+              },
+              "description": "Calculadora online para pro-rata e fração de dias de aluguel. Ideal para cobrar exatamente os dias ocupados no primeiro boleto de locação ou no último boleto de rescisão."
+            }
+        ]
     </script>
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "y18bdk5t96");
+                        (function(c,l,a,r,i,t,y){
+                            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                        })(window, document, "clarity", "script", "y18bdk5t96");
     </script>
 </head>
 <body class="bg-body-light-1 dark:bg-primary-dark-1 text-body-light-12 dark:text-body-dark-12">
@@ -189,21 +190,32 @@
                     </div>
                 </div>
             </div>
-            <!-- Leitura Recomendada -->
-            <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-card-1 p-6 sm:p-8 border border-gray-100 dark:border-alpha-dark mt-10">
+                        <div class="container mt-10">
+                <!-- Mercado Livre Banner -->
+                <mercadolivre-banner></mercadolivre-banner>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Leitura Recomendada (Card layout, perfectly spaced) -->
+    <div class="w-full pb-6">
+        <div class="container">
+            <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-card-1 p-6 sm:p-8 border border-gray-100 dark:border-alpha-dark w-full">
                 <h3 class="text-xl font-bold mb-5 flex items-center gap-2 text-body-light-12 dark:text-body-dark-12">
                     <i class="lni lni-library text-primary"></i> Leitura Recomendada
                 </h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+
+
                     <a href="../artigos/pagar-para-morar-ou-morar-para-pagar.html" class="group block p-5 rounded-xl bg-body-light-1 dark:bg-body-dark-2 hover:bg-primary/5 dark:hover:bg-primary/10 border border-gray-100 dark:border-gray-700 transition-all">
                         <h4 class="font-bold text-body-light-12 dark:text-body-dark-12 group-hover:text-primary transition-colors mb-2">Pagar para morar ou morar para pagar?</h4>
                         <p class="text-sm text-body-light-11 dark:text-body-dark-11">Entenda de uma vez por todas como funciona o ciclo de cobrança do aluguel e evite cobranças abusivas.</p>
                     </a>
-                </div>
+                                </div>
             </div>
-        </section>
-
-    </main>
+        </div>
+    </div>
 
     <footer class="bg-primary-dark-2 text-white" role="contentinfo">
         <center>
@@ -226,135 +238,136 @@
     </button>
 
     <!-- Scripts -->
-    <script>document.addEventListener('DOMContentLoaded', () => {
-            const iptRent = document.getElementById('ipt-rent');
-            const iptType = document.getElementById('ipt-type');
-            const iptDate = document.getElementById('ipt-date');
-            const iptCommercial = document.getElementById('ipt-commercial');
-            const checkboxIndicator = document.getElementById('checkbox-indicator');
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+                            const iptRent = document.getElementById('ipt-rent');
+                            const iptType = document.getElementById('ipt-type');
+                            const iptDate = document.getElementById('ipt-date');
+                            const iptCommercial = document.getElementById('ipt-commercial');
+                            const checkboxIndicator = document.getElementById('checkbox-indicator');
 
-            const resultBox = document.getElementById('result-box');
+                            const resultBox = document.getElementById('result-box');
 
-            // Mascara Moeda
-            iptRent.addEventListener('input', function(e) {
-                let rawValue = e.target.value.replace(/\D/g, '');
-                if (rawValue.length > 0) {
-                    let num = parseFloat(rawValue) / 100;
-                    e.target.value = num.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-                } else {
-                    e.target.value = '';
-                }
-                calculate();
-            });
+                            // Mascara Moeda
+                            iptRent.addEventListener('input', function(e) {
+                                let rawValue = e.target.value.replace(/\D/g, '');
+                                if (rawValue.length > 0) {
+                                    let num = parseFloat(rawValue) / 100;
+                                    e.target.value = num.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                                } else {
+                                    e.target.value = '';
+                                }
+                                calculate();
+                            });
 
-            iptType.addEventListener('change', calculate);
-            iptDate.addEventListener('input', calculate);
+                            iptType.addEventListener('change', calculate);
+                            iptDate.addEventListener('input', calculate);
 
-            // Custom Checkbox Logic
-            iptCommercial.addEventListener('change', (e) => {
-                if (e.target.checked) {
-                    checkboxIndicator.classList.remove('opacity-0');
-                    checkboxIndicator.classList.add('opacity-100');
-                } else {
-                    checkboxIndicator.classList.remove('opacity-100');
-                    checkboxIndicator.classList.add('opacity-0');
-                }
-                calculate();
-            });
+                            // Custom Checkbox Logic
+                            iptCommercial.addEventListener('change', (e) => {
+                                if (e.target.checked) {
+                                    checkboxIndicator.classList.remove('opacity-0');
+                                    checkboxIndicator.classList.add('opacity-100');
+                                } else {
+                                    checkboxIndicator.classList.remove('opacity-100');
+                                    checkboxIndicator.classList.add('opacity-0');
+                                }
+                                calculate();
+                            });
 
-            function getDaysInMonth(year, month) {
-                // month in js date is 1-indexed for the '0' trick to get last day of prev month
-                // e.g. new Date(2026, 8, 0) gives Aug 31. So month variable should be the actual month number (1-12)
-                return new Date(year, month, 0).getDate();
-            }
+                            function getDaysInMonth(year, month) {
+                                // month in js date is 1-indexed for the '0' trick to get last day of prev month
+                                // e.g. new Date(2026, 8, 0) gives Aug 31. So month variable should be the actual month number (1-12)
+                                return new Date(year, month, 0).getDate();
+                            }
 
-            function calculate() {
-                let rawRent = iptRent.value.replace(/\D/g, '');
-                let dateVal = iptDate.value; // "YYYY-MM-DD"
+                            function calculate() {
+                                let rawRent = iptRent.value.replace(/\D/g, '');
+                                let dateVal = iptDate.value; // "YYYY-MM-DD"
 
-                if (!rawRent || !dateVal) {
-                    renderPartial();
-                    return;
-                }
+                                if (!rawRent || !dateVal) {
+                                    renderPartial();
+                                    return;
+                                }
 
-                let rent = parseFloat(rawRent) / 100;
-                let type = iptType.value; // "inicio" ou "fim"
-                let commercial = iptCommercial.checked;
+                                let rent = parseFloat(rawRent) / 100;
+                                let type = iptType.value; // "inicio" ou "fim"
+                                let commercial = iptCommercial.checked;
 
-                let [year, month, day] = dateVal.split('-').map(Number);
-                let actualDaysInMonth = getDaysInMonth(year, month);
-                let baseDays = commercial ? 30 : actualDaysInMonth;
-                let occupiedDays = 0;
+                                let [year, month, day] = dateVal.split('-').map(Number);
+                                let actualDaysInMonth = getDaysInMonth(year, month);
+                                let baseDays = commercial ? 30 : actualDaysInMonth;
+                                let occupiedDays = 0;
 
-                if (type === 'inicio') {
-                    // Start of contract. Count includes the start day.
-                    // If month has 31 days and entered on 15th: 31 - 15 + 1 = 17.
-                    occupiedDays = (actualDaysInMonth - day) + 1;
-                } else {
-                    // End of contract.
-                    // If left on 15th: 15 days occupied.
-                    occupiedDays = day;
-                }
+                                if (type === 'inicio') {
+                                    // Start of contract. Count includes the start day.
+                                    // If month has 31 days and entered on 15th: 31 - 15 + 1 = 17.
+                                    occupiedDays = (actualDaysInMonth - day) + 1;
+                                } else {
+                                    // End of contract.
+                                    // If left on 15th: 15 days occupied.
+                                    occupiedDays = day;
+                                }
 
-                // If commercial is forced, cap logic
-                if (commercial) {
-                    if (type === 'inicio') {
-                        // Commercial logic for start: (30 - day) + 1
-                        // If day is 31, we assume they entered on the last day, occupied = 1 day (or 0 if ignoring 31st)
-                        // Market standard: 30 - min(day, 30) + 1
-                        let cDay = Math.min(day, 30);
-                        occupiedDays = (30 - cDay) + 1;
-                    } else {
-                        // Commercial logic for end: just cap to 30.
-                        occupiedDays = Math.min(day, 30);
-                    }
-                }
+                                // If commercial is forced, cap logic
+                                if (commercial) {
+                                    if (type === 'inicio') {
+                                        // Commercial logic for start: (30 - day) + 1
+                                        // If day is 31, we assume they entered on the last day, occupied = 1 day (or 0 if ignoring 31st)
+                                        // Market standard: 30 - min(day, 30) + 1
+                                        let cDay = Math.min(day, 30);
+                                        occupiedDays = (30 - cDay) + 1;
+                                    } else {
+                                        // Commercial logic for end: just cap to 30.
+                                        occupiedDays = Math.min(day, 30);
+                                    }
+                                }
 
-                // Value calc
-                let valPerDay = rent / baseDays;
-                let finalVal = valPerDay * occupiedDays;
+                                // Value calc
+                                let valPerDay = rent / baseDays;
+                                let finalVal = valPerDay * occupiedDays;
 
-                renderResult(occupiedDays, finalVal, rent, baseDays, type);
-            }
+                                renderResult(occupiedDays, finalVal, rent, baseDays, type);
+                            }
 
-            function renderPartial() {
-                resultBox.className = 'bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-card-1 p-8 border-t-4 border-yellow-400 dark:border-alpha-dark text-center';
-                resultBox.innerHTML = `
-                    <i class="lni lni-warning text-4xl text-yellow-400 mb-4 block"></i>
-                    <h3 class="text-xl font-bold mb-2">Atenção</h3>
-                    <p class="text-gray-500">Preencha o valor do aluguel e a data exata da entrega das chaves ao lado.</p>
-                `;
-            }
+                            function renderPartial() {
+                                resultBox.className = 'bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-card-1 p-8 border-t-4 border-yellow-400 dark:border-alpha-dark text-center';
+                                resultBox.innerHTML = `
+                                    <i class="lni lni-warning text-4xl text-yellow-400 mb-4 block"></i>
+                                    <h3 class="text-xl font-bold mb-2">Atenção</h3>
+                                    <p class="text-gray-500">Preencha o valor do aluguel e a data exata da entrega das chaves ao lado.</p>
+                                `;
+                            }
 
-            function renderResult(days, val, totalRent, base, type) {
-                resultBox.className = 'bg-primary text-white rounded-2xl shadow-card-1 p-8 text-center';
+                            function renderResult(days, val, totalRent, base, type) {
+                                resultBox.className = 'bg-primary text-white rounded-2xl shadow-card-1 p-8 text-center';
 
-                let textType = type === 'inicio' ? "de moradia no primeiro mês" : "até a rescisão do contrato";
+                                let textType = type === 'inicio' ? "de moradia no primeiro mês" : "até a rescisão do contrato";
 
-                resultBox.innerHTML = `
-                    <div class="mb-2 text-primary-200 font-semibold tracking-wider text-sm">Valor Proporcional Devido</div>
-                    <div class="text-4xl md:text-5xl font-black mb-6">
-                        <span class="text-xl inline-block align-top mt-1 font-normal opacity-80">R$</span>
-                        ${val.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                    </div>
+                                resultBox.innerHTML = `
+                                    <div class="mb-2 text-primary-200 font-semibold tracking-wider text-sm">Valor Proporcional Devido</div>
+                                    <div class="text-4xl md:text-5xl font-black mb-6">
+                                        <span class="text-xl inline-block align-top mt-1 font-normal opacity-80">R$</span>
+                                        ${val.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                    </div>
 
-                    <div class="bg-black/20 rounded-lg p-4 text-left">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-primary-100 text-sm">Base de Cálculo:</span>
-                            <span class="font-bold">${base} dias</span>
-                        </div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-primary-100 text-sm">Dias cobrados (${textType}):</span>
-                            <span class="font-bold">${days} dias</span>
-                        </div>
-                        <div class="text-xs text-primary-200 border-t border-white/10 pt-3 flex items-center justify-center gap-1">
-                            <i class="lni lni-calculator text-sm"></i>
-                            Fórmula: (R$ ${totalRent.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} / ${base}) × ${days}
-                        </div>
-                    </div>
-                `;
-            }
-        });</script>
+                                    <div class="bg-black/20 rounded-lg p-4 text-left">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="text-primary-100 text-sm">Base de Cálculo:</span>
+                                            <span class="font-bold">${base} dias</span>
+                                        </div>
+                                        <div class="flex justify-between items-center mb-4">
+                                            <span class="text-primary-100 text-sm">Dias cobrados (${textType}):</span>
+                                            <span class="font-bold">${days} dias</span>
+                                        </div>
+                                        <div class="text-xs text-primary-200 border-t border-white/10 pt-3 flex items-center justify-center gap-1">
+                                            <i class="lni lni-calculator text-sm"></i>
+                                            Fórmula: (R$ ${totalRent.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} / ${base}) × ${days}
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                        });</script>
 
     <script src="../js/main.js"></script>
 </body>

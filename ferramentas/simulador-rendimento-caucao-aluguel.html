@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <script type="module" src="../parceiros/mercadolivre/js/components/mercadolivre-banner.js"></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -258,12 +259,24 @@
                     </div>
                 </div>
             </div>
-            <!-- Leitura Recomendada -->
-            <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-card-1 p-6 sm:p-8 border border-gray-100 dark:border-alpha-dark mt-10">
+                        <div class="container mt-10">
+                <!-- Mercado Livre Banner -->
+                <mercadolivre-banner></mercadolivre-banner>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Leitura Recomendada (Card layout, perfectly spaced) -->
+    <div class="w-full pb-6">
+        <div class="container">
+            <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-card-1 p-6 sm:p-8 border border-gray-100 dark:border-alpha-dark w-full">
                 <h3 class="text-xl font-bold mb-5 flex items-center gap-2 text-body-light-12 dark:text-body-dark-12">
                     <i class="lni lni-library text-primary"></i> Leitura Recomendada
                 </h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+
+
                     <a href="../artigos/qual-e-a-melhor-garantia-para-o-proprietario.html" class="group block p-5 rounded-xl bg-body-light-1 dark:bg-body-dark-2 hover:bg-primary/5 dark:hover:bg-primary/10 border border-gray-100 dark:border-gray-700 transition-all">
                         <h4 class="font-bold text-body-light-12 dark:text-body-dark-12 group-hover:text-primary transition-colors mb-2">A melhor garantia para o Proprietário</h4>
                         <p class="text-sm text-body-light-11 dark:text-body-dark-11">Saiba como proteger seu patrimônio escolhendo a garantia locatícia ideal.</p>
@@ -272,10 +285,10 @@
                         <h4 class="font-bold text-body-light-12 dark:text-body-dark-12 group-hover:text-primary transition-colors mb-2">A melhor garantia para o Inquilino</h4>
                         <p class="text-sm text-body-light-11 dark:text-body-dark-11">Como alugar um imóvel com facilidade e sem depender de favores de fiadores.</p>
                     </a>
-                </div>
+                                                            </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
     <footer class="bg-primary-dark-2 text-white" role="contentinfo">
         <center>

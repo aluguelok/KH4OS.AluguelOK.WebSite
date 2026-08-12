@@ -35,7 +35,7 @@ class MercadoLivreBanner extends HTMLElement {
 
     renderInitialStructure() {
         this.innerHTML = `
-            <div style="background-color: #ffe600; height: 100px;" class="relative w-full flex flex-row items-center my-8 shadow-md overflow-hidden group">
+            <div style="background-color: #ffe600; height: 100px;" class="relative w-full max-w-5xl mx-auto rounded-xl flex flex-row items-center my-8 shadow-md overflow-hidden group">
                 <!-- Left side (Logo) -->
                 <div style="width: 25%;" class="h-full flex items-center justify-start pl-4 md:pl-8 shrink-0">
                     <img src="/parceiros/mercadolivre/img/logo.png" alt="Mercado Livre" style="height: 45px;" class="w-auto object-contain" />
