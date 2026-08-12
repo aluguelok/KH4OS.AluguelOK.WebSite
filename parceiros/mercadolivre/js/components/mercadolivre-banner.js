@@ -11,7 +11,7 @@ class MercadoLivreBanner extends HTMLElement {
         
         try {
             // Fetch data (using absolute path for stability across subfolders)
-            const response = await fetch('/js/data/mercadolivre.json');
+            const response = await fetch('/parceiros/mercadolivre/js/data/mercadolivre.json');
             this.products = await response.json();
             
             if (this.products && this.products.length > 0) {
@@ -38,7 +38,7 @@ class MercadoLivreBanner extends HTMLElement {
             <div style="background-color: #ffe600; height: 100px;" class="relative w-full flex flex-row items-center my-8 shadow-md overflow-hidden group">
                 <!-- Left side (Logo) -->
                 <div style="width: 25%;" class="h-full flex items-center justify-start pl-4 md:pl-8 shrink-0">
-                    <img src="/img/parceiros/mercadolivre/logo.png" alt="Mercado Livre" style="height: 45px;" class="w-auto object-contain" />
+                    <img src="/parceiros/mercadolivre/img/logo.png" alt="Mercado Livre" style="height: 45px;" class="w-auto object-contain" />
                 </div>
 
                 <!-- Center side (Phrase) -->
