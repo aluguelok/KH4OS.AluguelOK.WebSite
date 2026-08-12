@@ -125,11 +125,11 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6059759279861580" crossorigin="anonymous"></script>
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "y18bdk5t96");
+                (function(c,l,a,r,i,t,y){
+                    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window, document, "clarity", "script", "y18bdk5t96");
     </script>
 </head>
 <body>
@@ -207,7 +207,11 @@
                         </p>
                     </div>
 
-                                        <!-- CTA Block -->
+                    <div class="mb-10">
+                        <mercadolivre-banner></mercadolivre-banner>
+                    </div>
+
+                    <!-- CTA Block -->
                     <div class="my-10 p-6 sm:p-8 bg-primary/5 dark:bg-primary/10 border border-primary/20 rounded-2xl flex flex-col md:flex-row items-center gap-6 shadow-sm">
                         <div class="w-16 h-16 shrink-0 bg-white dark:bg-body-dark-1 border border-primary/10 rounded-full flex items-center justify-center text-primary text-3xl shadow-sm">
                             <i class="lni lni-coin"></i>
@@ -367,29 +371,29 @@
     <!-- Scripts -->
     <script src="../js/main.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const header = document.querySelector(".ic-navbar");
-            const logoImg = document.querySelector(".ic-navbar-logo img");
-            const logoTopo = "../img/logo/aluguelok-white.png";
-            const logoSticky = "../img/logo/aluguelok-blue.png";
+                document.addEventListener("DOMContentLoaded", () => {
+                    const header = document.querySelector(".ic-navbar");
+                    const logoImg = document.querySelector(".ic-navbar-logo img");
+                    const logoTopo = "../img/logo/aluguelok-white.png";
+                    const logoSticky = "../img/logo/aluguelok-blue.png";
 
-            if (!header || !logoImg) return;
+                    if (!header || !logoImg) return;
 
-            const handleMutation = (mutationsList) => {
-                for (const mutation of mutationsList) {
-                    if (mutation.type === "attributes" && mutation.attributeName === "class") {
-                        const isSticky = header.classList.contains("sticky");
-                        logoImg.src = isSticky ? logoSticky : logoTopo;
-                    }
-                }
-            };
+                    const handleMutation = (mutationsList) => {
+                        for (const mutation of mutationsList) {
+                            if (mutation.type === "attributes" && mutation.attributeName === "class") {
+                                const isSticky = header.classList.contains("sticky");
+                                logoImg.src = isSticky ? logoSticky : logoTopo;
+                            }
+                        }
+                    };
 
-            const observer = new MutationObserver(handleMutation);
-            observer.observe(header, {
-                attributes: true,
-                attributeFilter: ["class"]
-            });
-        });
+                    const observer = new MutationObserver(handleMutation);
+                    observer.observe(header, {
+                        attributes: true,
+                        attributeFilter: ["class"]
+                    });
+                });
     </script>
 </body>
 </html>
