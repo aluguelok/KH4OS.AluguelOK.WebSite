@@ -15,8 +15,8 @@ class MercadoLivreBanner extends HTMLElement {
             this.products = await response.json();
             
             if (this.products && this.products.length > 0) {
-                // Pick a random product initially
-                this.currentIndex = Math.floor(Math.random() * this.products.length);
+                // Start with the first product
+                this.currentIndex = 0;
                 this.updateContent(this.products[this.currentIndex]);
                 
                 // Start slider interval
@@ -62,12 +62,8 @@ class MercadoLivreBanner extends HTMLElement {
     nextProduct() {
         if (!this.products || this.products.length <= 1) return;
         
-        let nextIndex;
-        do {
-            nextIndex = Math.floor(Math.random() * this.products.length);
-        } while (nextIndex === this.currentIndex);
-        
-        this.currentIndex = nextIndex;
+        // Loop sequentially
+        this.currentIndex = (this.currentIndex + 1) % this.products.length;
         this.updateContent(this.products[this.currentIndex]);
     }
 
