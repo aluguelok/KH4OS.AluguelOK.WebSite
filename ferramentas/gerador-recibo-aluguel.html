@@ -29,10 +29,26 @@
 
     <style>
         @media print {
-            body { background-color: #fff; color: #000; margin: 0; padding: 0; }
-            .no-print, header, footer, .main > section:first-child { display: none !important; }
-            .section-area, .container, .row { margin: 0; padding: 0; width: 100%; max-width: 100%; box-shadow: none; background: transparent; }
-            
+            body {
+                background-color: #fff;
+                color: #000;
+                margin: 0;
+                padding: 0;
+            }
+
+            .no-print, header, footer, .main > section:first-child {
+                display: none !important;
+            }
+
+            .section-area, .container, .row {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                max-width: 100%;
+                box-shadow: none;
+                background: transparent;
+            }
+
             #print-area {
                 display: block !important;
                 position: absolute;
@@ -45,44 +61,48 @@
                 border: none !important;
                 border-radius: 0 !important;
             }
-            @page { margin: 0; size: A4 portrait; }
+
+            @page {
+                margin: 0;
+                size: A4 portrait;
+            }
         }
     </style>
 
     <script type="application/ld+json">
-    [
-        {
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          "name": "Gerador de Recibo de Aluguel",
-          "operatingSystem": "Web",
-          "applicationCategory": "BusinessApplication",
-          "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "BRL" },
-          "description": "Ferramenta para emitir recibos de aluguel formatados, prontos para impressão ou PDF com validade legal."
-        },
-        {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
+        [
             {
-              "@type": "Question",
-              "name": "O que precisa ter em um recibo de aluguel?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Um recibo de aluguel com validade legal deve conter o nome e documento (CPF/CNPJ) de quem recebe e de quem paga, o valor numérico e por extenso, o endereço do imóvel, a que mês o pagamento se refere, e a data e assinatura do recebedor."
-              }
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "Gerador de Recibo de Aluguel",
+              "operatingSystem": "Web",
+              "applicationCategory": "BusinessApplication",
+              "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "BRL" },
+              "description": "Ferramenta para emitir recibos de aluguel formatados, prontos para impressão ou PDF com validade legal."
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "O que precisa ter em um recibo de aluguel?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Um recibo de aluguel com validade legal deve conter o nome e documento (CPF/CNPJ) de quem recebe e de quem paga, o valor numérico e por extenso, o endereço do imóvel, a que mês o pagamento se refere, e a data e assinatura do recebedor."
+                  }
+                }
+              ]
             }
-          ]
-        }
-    ]
+        ]
     </script>
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "y18bdk5t96");
+                        (function(c,l,a,r,i,t,y){
+                            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                        })(window, document, "clarity", "script", "y18bdk5t96");
     </script>
 </head>
 <body class="bg-body-light-1 text-body-light-12">
@@ -201,14 +221,6 @@
                                 </div>
                             </form>
                             <p class="text-xs text-body-light-11 mt-4 italic"><i class="lni lni-warning"></i> Dica: O preenchimento é refeito automaticamente a cada caractere digitado.</p>
-                            </form>
-                        </div>
-
-                        <div class="bg-body-light-2 dark:bg-body-dark-2 rounded-2xl shadow-sm p-6 text-center border border-gray-200 dark:border-gray-700">
-                            <img src="../img/logo/aluguelok-blue.png" class="h-8 mx-auto mb-4" alt="AluguelOK" />
-                            <h4 class="font-bold text-lg mb-2">Esqueça os recibos manuais</h4>
-                            <p class="text-sm text-body-light-11 dark:text-body-dark-11 mb-4">Receba aluguéis por Pix na AluguelOK e nós geramos os comprovantes automáticos (com validade DIMOB) para você e seu inquilino.</p>
-                            <a href="../index.html" class="inline-block px-5 py-2 bg-primary text-white text-sm font-medium rounded hover:bg-opacity-90 transition">Conhecer a Plataforma</a>
                         </div>
                     </div>
 
@@ -263,7 +275,7 @@
                             </div>
                         </div>
 
-                        <!-- Hooks Ocultos na Impressão -->
+                        <!-- Hook Afiliado -->
                         <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-md p-6 border-l-4 border-blue-400 mt-4">
                             <h4 class="font-bold text-lg mb-2">Assinatura Digital</h4>
                             <p class="text-sm text-body-light-11 dark:text-body-dark-11 mb-4">Evite imprimir papeis. Salve o arquivo gerado em PDF e assine legalmente usando uma ferramenta homologada.</p>
@@ -272,13 +284,13 @@
                     </div>
                 </div>
             </div>
-                        <div class="container mt-10">
+            <div class="container mt-10">
                 <!-- Mercado Livre Banner -->
                 <mercadolivre-banner></mercadolivre-banner>
             </div>
         </section>
     </main>
-    
+
     <!-- Leitura Recomendada (Card layout, perfectly spaced) -->
     <div class="w-full pb-6">
         <div class="container">
@@ -298,7 +310,7 @@
                         <h4 class="font-bold text-body-light-12 dark:text-body-dark-12 group-hover:text-primary transition-colors mb-2">Deveres e Direitos na Locação</h4>
                         <p class="text-sm text-body-light-11 dark:text-body-dark-11">Um guia completo sobre as responsabilidades financeiras de ambas as partes na Lei do Inquilinato.</p>
                     </a>
-                                                            </div>
+                </div>
             </div>
         </div>
     </div>
@@ -321,337 +333,337 @@
 
     <script src="../js/main.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Conversor de Valor para Extenso (Simplificado, atende 99.9% dos recibos de aluguel)
-            const unidades = ["", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove"];
-            const dezAteDezenove = ["dez", "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"];
-            const dezenas = ["", "", "vinte", "trinta", "quarenta", "cinquenta", "sessenta", "setenta", "oitenta", "noventa"];
-            const centenas = ["", "cento", "duzentos", "trezentos", "quatrocentos", "quinhentos", "seiscentos", "setecentos", "oitocentos", "novecentos"];
+                        document.addEventListener("DOMContentLoaded", () => {
+                            // Conversor de Valor para Extenso (Simplificado, atende 99.9% dos recibos de aluguel)
+                            const unidades = ["", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove"];
+                            const dezAteDezenove = ["dez", "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"];
+                            const dezenas = ["", "", "vinte", "trinta", "quarenta", "cinquenta", "sessenta", "setenta", "oitenta", "noventa"];
+                            const centenas = ["", "cento", "duzentos", "trezentos", "quatrocentos", "quinhentos", "seiscentos", "setecentos", "oitocentos", "novecentos"];
 
-            function converterCentena(n) {
-                if (n === 100) return "cem";
-                let c = Math.floor(n / 100);
-                let d = Math.floor((n % 100) / 10);
-                let u = n % 10;
-                
-                let res = [];
-                if (c > 0) res.push(centenas[c]);
-                if (d === 1) {
-                    res.push(dezAteDezenove[u]);
-                } else {
-                    if (d > 1) res.push(dezenas[d]);
-                    if (u > 0) res.push(unidades[u]);
-                }
-                return res.join(" e ");
-            }
+                            function converterCentena(n) {
+                                if (n === 100) return "cem";
+                                let c = Math.floor(n / 100);
+                                let d = Math.floor((n % 100) / 10);
+                                let u = n % 10;
 
-            function numeroParaExtenso(valorStr) {
-                let val = parseFloat(valorStr.replace(/\./g, '').replace(',', '.'));
-                if (isNaN(val) || val <= 0) return "(Zero reais)";
+                                let res = [];
+                                if (c > 0) res.push(centenas[c]);
+                                if (d === 1) {
+                                    res.push(dezAteDezenove[u]);
+                                } else {
+                                    if (d > 1) res.push(dezenas[d]);
+                                    if (u > 0) res.push(unidades[u]);
+                                }
+                                return res.join(" e ");
+                            }
 
-                let reais = Math.floor(val);
-                let centavos = Math.round((val - reais) * 100);
+                            function numeroParaExtenso(valorStr) {
+                                let val = parseFloat(valorStr.replace(/\./g, '').replace(',', '.'));
+                                if (isNaN(val) || val <= 0) return "(Zero reais)";
 
-                let extenso = "";
+                                let reais = Math.floor(val);
+                                let centavos = Math.round((val - reais) * 100);
 
-                if (reais > 0) {
-                    let milhoes = Math.floor(reais / 1000000);
-                    let milhares = Math.floor((reais % 1000000) / 1000);
-                    let unidadesReais = reais % 1000;
+                                let extenso = "";
 
-                    let partes = [];
-                    if (milhoes > 0) {
-                        partes.push(converterCentena(milhoes) + (milhoes === 1 ? " milhão" : " milhões"));
-                    }
-                    if (milhares > 0) {
-                        partes.push(converterCentena(milhares) + " mil");
-                    }
-                    if (unidadesReais > 0) {
-                        partes.push(converterCentena(unidadesReais));
-                    }
-                    extenso = partes.join(" e ");
-                    extenso += reais === 1 ? " real" : " reais";
-                }
+                                if (reais > 0) {
+                                    let milhoes = Math.floor(reais / 1000000);
+                                    let milhares = Math.floor((reais % 1000000) / 1000);
+                                    let unidadesReais = reais % 1000;
 
-                if (centavos > 0) {
-                    let extCentavos = converterCentena(centavos);
-                    extCentavos += centavos === 1 ? " centavo" : " centavos";
-                    if (extenso !== "") {
-                        extenso += " e " + extCentavos;
-                    } else {
-                        extenso = extCentavos;
-                    }
-                }
+                                    let partes = [];
+                                    if (milhoes > 0) {
+                                        partes.push(converterCentena(milhoes) + (milhoes === 1 ? " milhão" : " milhões"));
+                                    }
+                                    if (milhares > 0) {
+                                        partes.push(converterCentena(milhares) + " mil");
+                                    }
+                                    if (unidadesReais > 0) {
+                                        partes.push(converterCentena(unidadesReais));
+                                    }
+                                    extenso = partes.join(" e ");
+                                    extenso += reais === 1 ? " real" : " reais";
+                                }
 
-                return extenso.charAt(0).toUpperCase() + extenso.slice(1);
-            }
+                                if (centavos > 0) {
+                                    let extCentavos = converterCentena(centavos);
+                                    extCentavos += centavos === 1 ? " centavo" : " centavos";
+                                    if (extenso !== "") {
+                                        extenso += " e " + extCentavos;
+                                    } else {
+                                        extenso = extCentavos;
+                                    }
+                                }
 
-            // Bind Elements
-            const inputs = {
-                valor: document.getElementById('inp-valor'),
-                locadorNome: document.getElementById('inp-locador-nome'),
-                locadorDoc: document.getElementById('inp-locador-doc'),
-                locatarioNome: document.getElementById('inp-locatario-nome'),
-                locatarioDoc: document.getElementById('inp-locatario-doc'),
-                endereco: document.getElementById('inp-endereco'),
-                refMonth: document.getElementById('inp-ref-month'),
-                refYear: document.getElementById('inp-ref-year'),
-                cidade: document.getElementById('inp-cidade'),
-                data: document.getElementById('inp-data')
-            };
+                                return extenso.charAt(0).toUpperCase() + extenso.slice(1);
+                            }
 
-            const outputs = {
-                valor: document.getElementById('out-valor'),
-                extenso: document.getElementById('out-extenso'),
-                locadorNome: document.getElementById('out-locador-nome'),
-                locadorDoc: document.getElementById('out-locador-doc'),
-                locatarioNome: document.getElementById('out-locatario-nome'),
-                locatarioDoc: document.getElementById('out-locatario-doc'),
-                endereco: document.getElementById('out-endereco'),
-                referencia: document.getElementById('out-referencia'),
-                cidade: document.getElementById('out-cidade'),
-                data: document.getElementById('out-data')
-            };
+                            // Bind Elements
+                            const inputs = {
+                                valor: document.getElementById('inp-valor'),
+                                locadorNome: document.getElementById('inp-locador-nome'),
+                                locadorDoc: document.getElementById('inp-locador-doc'),
+                                locatarioNome: document.getElementById('inp-locatario-nome'),
+                                locatarioDoc: document.getElementById('inp-locatario-doc'),
+                                endereco: document.getElementById('inp-endereco'),
+                                refMonth: document.getElementById('inp-ref-month'),
+                                refYear: document.getElementById('inp-ref-year'),
+                                cidade: document.getElementById('inp-cidade'),
+                                data: document.getElementById('inp-data')
+                            };
 
-            // Mascara de Moeda
-            inputs.valor.addEventListener('input', function(e) {
-                let rawValue = e.target.value.replace(/\D/g, '');
-                if (rawValue.length > 0) {
-                    let num = parseFloat(rawValue) / 100;
-                    e.target.value = num.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-                } else {
-                    e.target.value = '';
-                }
-                updatePreview();
-            });
+                            const outputs = {
+                                valor: document.getElementById('out-valor'),
+                                extenso: document.getElementById('out-extenso'),
+                                locadorNome: document.getElementById('out-locador-nome'),
+                                locadorDoc: document.getElementById('out-locador-doc'),
+                                locatarioNome: document.getElementById('out-locatario-nome'),
+                                locatarioDoc: document.getElementById('out-locatario-doc'),
+                                endereco: document.getElementById('out-endereco'),
+                                referencia: document.getElementById('out-referencia'),
+                                cidade: document.getElementById('out-cidade'),
+                                data: document.getElementById('out-data')
+                            };
 
-            // Lógica do botão adicionado
-            const btnFill = document.getElementById('btn-fill');
-            if (btnFill) {
-                btnFill.addEventListener('click', () => {
-                    updatePreview();
-                    const printArea = document.getElementById('print-area');
-                    if (printArea) {
-                        printArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
-            }
+                            // Mascara de Moeda
+                            inputs.valor.addEventListener('input', function(e) {
+                                let rawValue = e.target.value.replace(/\D/g, '');
+                                if (rawValue.length > 0) {
+                                    let num = parseFloat(rawValue) / 100;
+                                    e.target.value = num.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                                } else {
+                                    e.target.value = '';
+                                }
+                                updatePreview();
+                            });
 
-            // Mascara e Validacao de CPF/CNPJ
-            function validaCPF(cpf) {
-                cpf = cpf.replace(/[^\d]+/g,'');
-                if(cpf == '' || cpf.length != 11 || /^(\d)\1{10}$/.test(cpf)) return false;
-                let soma = 0, resto;
-                for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i-1, i)) * (11 - i);
-                resto = (soma * 10) % 11;
-                if ((resto == 10) || (resto == 11)) resto = 0;
-                if (resto != parseInt(cpf.substring(9, 10))) return false;
-                soma = 0;
-                for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i-1, i)) * (12 - i);
-                resto = (soma * 10) % 11;
-                if ((resto == 10) || (resto == 11)) resto = 0;
-                if (resto != parseInt(cpf.substring(10, 11))) return false;
-                return true;
-            }
+                            // Lógica do botão adicionado
+                            const btnFill = document.getElementById('btn-fill');
+                            if (btnFill) {
+                                btnFill.addEventListener('click', () => {
+                                    updatePreview();
+                                    const printArea = document.getElementById('print-area');
+                                    if (printArea) {
+                                        printArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                    }
+                                });
+                            }
 
-            function charToNumber(char) {
-                let code = char.charCodeAt(0);
-                if (code >= 48 && code <= 57) return code - 48; // Numeros
-                if (code >= 65 && code <= 90) return code - 48; // Letras A-Z
-                return 0;
-            }
+                            // Mascara e Validacao de CPF/CNPJ
+                            function validaCPF(cpf) {
+                                cpf = cpf.replace(/[^\d]+/g,'');
+                                if(cpf == '' || cpf.length != 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+                                let soma = 0, resto;
+                                for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i-1, i)) * (11 - i);
+                                resto = (soma * 10) % 11;
+                                if ((resto == 10) || (resto == 11)) resto = 0;
+                                if (resto != parseInt(cpf.substring(9, 10))) return false;
+                                soma = 0;
+                                for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i-1, i)) * (12 - i);
+                                resto = (soma * 10) % 11;
+                                if ((resto == 10) || (resto == 11)) resto = 0;
+                                if (resto != parseInt(cpf.substring(10, 11))) return false;
+                                return true;
+                            }
 
-            function validaCNPJ(cnpj) {
-                cnpj = cnpj.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
-                if (cnpj.length != 14) return false;
-                if (/^(\d)\1{13}$/.test(cnpj)) return false;
+                            function charToNumber(char) {
+                                let code = char.charCodeAt(0);
+                                if (code >= 48 && code <= 57) return code - 48; // Numeros
+                                if (code >= 65 && code <= 90) return code - 48; // Letras A-Z
+                                return 0;
+                            }
 
-                let tamanho = cnpj.length - 2;
-                let numeros = cnpj.substring(0, tamanho);
-                let digitos = cnpj.substring(tamanho);
-                let soma = 0;
-                let pos = tamanho - 7;
-                for (let i = tamanho; i >= 1; i--) {
-                    soma += charToNumber(numeros.charAt(tamanho - i)) * pos--;
-                    if (pos < 2) pos = 9;
-                }
-                let resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-                if (resultado != charToNumber(digitos.charAt(0))) return false;
+                            function validaCNPJ(cnpj) {
+                                cnpj = cnpj.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
+                                if (cnpj.length != 14) return false;
+                                if (/^(\d)\1{13}$/.test(cnpj)) return false;
 
-                tamanho = tamanho + 1;
-                numeros = cnpj.substring(0, tamanho);
-                soma = 0;
-                pos = tamanho - 7;
-                for (let i = tamanho; i >= 1; i--) {
-                    soma += charToNumber(numeros.charAt(tamanho - i)) * pos--;
-                    if (pos < 2) pos = 9;
-                }
-                resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-                if (resultado != charToNumber(digitos.charAt(1))) return false;
+                                let tamanho = cnpj.length - 2;
+                                let numeros = cnpj.substring(0, tamanho);
+                                let digitos = cnpj.substring(tamanho);
+                                let soma = 0;
+                                let pos = tamanho - 7;
+                                for (let i = tamanho; i >= 1; i--) {
+                                    soma += charToNumber(numeros.charAt(tamanho - i)) * pos--;
+                                    if (pos < 2) pos = 9;
+                                }
+                                let resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+                                if (resultado != charToNumber(digitos.charAt(0))) return false;
 
-                return true;
-            }
+                                tamanho = tamanho + 1;
+                                numeros = cnpj.substring(0, tamanho);
+                                soma = 0;
+                                pos = tamanho - 7;
+                                for (let i = tamanho; i >= 1; i--) {
+                                    soma += charToNumber(numeros.charAt(tamanho - i)) * pos--;
+                                    if (pos < 2) pos = 9;
+                                }
+                                resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+                                if (resultado != charToNumber(digitos.charAt(1))) return false;
 
-            function setFieldStatus(inputElement, isValid, isComplete) {
-                if (!isComplete) {
-                    inputElement.classList.remove('border-red-500', 'border-green-500', 'text-red-600', 'focus:ring-red-500', 'focus:ring-green-500', 'focus:border-red-500', 'focus:border-green-500');
-                    inputElement.classList.add('border-gray-200', 'focus:border-primary', 'focus:ring-primary');
-                    return;
-                }
-                if (isValid) {
-                    inputElement.classList.remove('border-red-500', 'text-red-600', 'border-gray-200', 'focus:border-primary', 'focus:ring-primary', 'focus:ring-red-500', 'focus:border-red-500');
-                    inputElement.classList.add('border-green-500', 'focus:border-green-500', 'focus:ring-green-500');
-                } else {
-                    inputElement.classList.remove('border-green-500', 'border-gray-200', 'focus:border-primary', 'focus:ring-primary', 'focus:ring-green-500', 'focus:border-green-500');
-                    inputElement.classList.add('border-red-500', 'text-red-600', 'focus:border-red-500', 'focus:ring-red-500');
-                }
-            }
+                                return true;
+                            }
 
-            function handleDocValidation(e) {
-                let val = e.target.value.replace(/[^A-Za-z0-9]/g, '');
-                let isComplete = false;
-                let isValid = false;
+                            function setFieldStatus(inputElement, isValid, isComplete) {
+                                if (!isComplete) {
+                                    inputElement.classList.remove('border-red-500', 'border-green-500', 'text-red-600', 'focus:ring-red-500', 'focus:ring-green-500', 'focus:border-red-500', 'focus:border-green-500');
+                                    inputElement.classList.add('border-gray-200', 'focus:border-primary', 'focus:ring-primary');
+                                    return;
+                                }
+                                if (isValid) {
+                                    inputElement.classList.remove('border-red-500', 'text-red-600', 'border-gray-200', 'focus:border-primary', 'focus:ring-primary', 'focus:ring-red-500', 'focus:border-red-500');
+                                    inputElement.classList.add('border-green-500', 'focus:border-green-500', 'focus:ring-green-500');
+                                } else {
+                                    inputElement.classList.remove('border-green-500', 'border-gray-200', 'focus:border-primary', 'focus:ring-primary', 'focus:ring-green-500', 'focus:border-green-500');
+                                    inputElement.classList.add('border-red-500', 'text-red-600', 'focus:border-red-500', 'focus:ring-red-500');
+                                }
+                            }
 
-                if (val.length === 11 && !/[A-Za-z]/.test(val)) {
-                    isComplete = true;
-                    isValid = validaCPF(val);
-                } else if (val.length === 14) {
-                    isComplete = true;
-                    isValid = validaCNPJ(val);
-                }
-                
-                setFieldStatus(e.target, isValid, isComplete);
-            }
+                            function handleDocValidation(e) {
+                                let val = e.target.value.replace(/[^A-Za-z0-9]/g, '');
+                                let isComplete = false;
+                                let isValid = false;
 
-            function maskDoc(v) {
-                v = v.replace(/[^A-Za-z0-9]/g, '');
-                if (v.length <= 11 && !/[A-Za-z]/.test(v)) {
-                    v = v.replace(/(\d{3})(\d)/, '$1.$2');
-                    v = v.replace(/(\d{3})(\d)/, '$1.$2');
-                    v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
-                } else {
-                    v = v.replace(/^(.{2})(.+)/, '$1.$2');
-                    v = v.replace(/^(.{6})(.+)/, '$1.$2');
-                    v = v.replace(/^(.{10})(.+)/, '$1/$2');
-                    v = v.replace(/^(.{15})(.+)/, '$1-$2');
-                    if (v.length > 18) v = v.substring(0, 18);
-                }
-                return v.toUpperCase();
-            }
+                                if (val.length === 11 && !/[A-Za-z]/.test(val)) {
+                                    isComplete = true;
+                                    isValid = validaCPF(val);
+                                } else if (val.length === 14) {
+                                    isComplete = true;
+                                    isValid = validaCNPJ(val);
+                                }
 
-            inputs.locadorDoc.addEventListener('input', function(e) {
-                e.target.value = maskDoc(e.target.value);
-                handleDocValidation(e);
-                updatePreview();
-            });
+                                setFieldStatus(e.target, isValid, isComplete);
+                            }
 
-            inputs.locatarioDoc.addEventListener('input', function(e) {
-                e.target.value = maskDoc(e.target.value);
-                handleDocValidation(e);
-                updatePreview();
-            });
+                            function maskDoc(v) {
+                                v = v.replace(/[^A-Za-z0-9]/g, '');
+                                if (v.length <= 11 && !/[A-Za-z]/.test(v)) {
+                                    v = v.replace(/(\d{3})(\d)/, '$1.$2');
+                                    v = v.replace(/(\d{3})(\d)/, '$1.$2');
+                                    v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+                                } else {
+                                    v = v.replace(/^(.{2})(.+)/, '$1.$2');
+                                    v = v.replace(/^(.{6})(.+)/, '$1.$2');
+                                    v = v.replace(/^(.{10})(.+)/, '$1/$2');
+                                    v = v.replace(/^(.{15})(.+)/, '$1-$2');
+                                    if (v.length > 18) v = v.substring(0, 18);
+                                }
+                                return v.toUpperCase();
+                            }
 
-            // Date Formatting
-            function formatDatePTBR(dateString) {
-                if (!dateString) return "(Data)";
-                let [y, m, d] = dateString.split('-');
-                return `${d}/${m}/${y}`;
-            }
+                            inputs.locadorDoc.addEventListener('input', function(e) {
+                                e.target.value = maskDoc(e.target.value);
+                                handleDocValidation(e);
+                                updatePreview();
+                            });
 
-            // Updater
-            function updatePreview() {
-                outputs.valor.innerText = inputs.valor.value ? "R$ " + inputs.valor.value : "R$ 0,00";
-                outputs.extenso.innerText = inputs.valor.value ? numeroParaExtenso(inputs.valor.value) : "(Valor por extenso)";
-                
-                outputs.locadorNome.innerText = inputs.locadorNome.value || "(Nome do Locador)";
-                outputs.locadorDoc.innerText = inputs.locadorDoc.value || "(Documento)";
-                
-                outputs.locatarioNome.innerText = inputs.locatarioNome.value || "(Nome do Locatário)";
-                outputs.locatarioDoc.innerText = inputs.locatarioDoc.value || "(Documento)";
-                
-                outputs.endereco.innerText = inputs.endereco.value || "(Endereço do Imóvel)";
-                
-                let refMonthStr = inputs.refMonth.value || "";
-                let refYearStr = inputs.refYear.value || "";
-                let refText = refMonthStr && refYearStr ? `${refMonthStr} de ${refYearStr}` : "(Mês/Referência)";
-                outputs.referencia.innerText = refText;
-                
-                outputs.cidade.innerText = inputs.cidade.value || "(Cidade)";
-                outputs.data.innerText = formatDatePTBR(inputs.data.value);
-            }
+                            inputs.locatarioDoc.addEventListener('input', function(e) {
+                                e.target.value = maskDoc(e.target.value);
+                                handleDocValidation(e);
+                                updatePreview();
+                            });
 
-            // Listeners
-            Object.values(inputs).forEach(input => {
-                if(input !== inputs.valor) {
-                    input.addEventListener('input', updatePreview);
-                }
-            });
+                            // Date Formatting
+                            function formatDatePTBR(dateString) {
+                                if (!dateString) return "(Data)";
+                                let [y, m, d] = dateString.split('-');
+                                return `${d}/${m}/${y}`;
+                            }
 
-            // Fetch Cidades IBGE SP (Autocomplete customizado)
-            let ibgeCidades = [];
-            fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados/SP/municipios')
-                .then(r => r.json())
-                .then(data => {
-                    ibgeCidades = data.map(mun => mun.nome + " - SP");
-                })
-                .catch(err => console.error("Falha ao buscar cidades:", err));
+                            // Updater
+                            function updatePreview() {
+                                outputs.valor.innerText = inputs.valor.value ? "R$ " + inputs.valor.value : "R$ 0,00";
+                                outputs.extenso.innerText = inputs.valor.value ? numeroParaExtenso(inputs.valor.value) : "(Valor por extenso)";
 
-            function removerAcentos(str) {
-                return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-            }
+                                outputs.locadorNome.innerText = inputs.locadorNome.value || "(Nome do Locador)";
+                                outputs.locadorDoc.innerText = inputs.locadorDoc.value || "(Documento)";
 
-            const inputCidade = document.getElementById('inp-cidade');
-            const listaCidades = document.getElementById('cidades-list');
+                                outputs.locatarioNome.innerText = inputs.locatarioNome.value || "(Nome do Locatário)";
+                                outputs.locatarioDoc.innerText = inputs.locatarioDoc.value || "(Documento)";
 
-            function atualizarLista(termo) {
-                listaCidades.innerHTML = "";
-                const termoNorm = removerAcentos(termo.toLowerCase());
-                
-                if (!termoNorm) {
-                    listaCidades.classList.add('hidden');
-                    return;
-                }
+                                outputs.endereco.innerText = inputs.endereco.value || "(Endereço do Imóvel)";
 
-                const filtradas = ibgeCidades.filter(c => removerAcentos(c.toLowerCase()).includes(termoNorm)).slice(0, 15);
-                
-                if (filtradas.length === 0) {
-                    listaCidades.classList.add('hidden');
-                    return;
-                }
+                                let refMonthStr = inputs.refMonth.value || "";
+                                let refYearStr = inputs.refYear.value || "";
+                                let refText = refMonthStr && refYearStr ? `${refMonthStr} de ${refYearStr}` : "(Mês/Referência)";
+                                outputs.referencia.innerText = refText;
 
-                filtradas.forEach(c => {
-                    const li = document.createElement('li');
-                    li.className = "px-4 py-2 hover:bg-gray-100 dark:hover:bg-body-dark-3 cursor-pointer text-sm text-gray-700 dark:text-gray-300";
-                    li.innerText = c;
-                    li.addEventListener('mousedown', () => { // mousedown dispara antes do blur do input
-                        inputCidade.value = c;
-                        listaCidades.classList.add('hidden');
-                        updatePreview();
-                    });
-                    listaCidades.appendChild(li);
-                });
-                
-                listaCidades.classList.remove('hidden');
-            }
+                                outputs.cidade.innerText = inputs.cidade.value || "(Cidade)";
+                                outputs.data.innerText = formatDatePTBR(inputs.data.value);
+                            }
 
-            inputCidade.addEventListener('input', (e) => {
-                atualizarLista(e.target.value);
-                updatePreview();
-            });
+                            // Listeners
+                            Object.values(inputs).forEach(input => {
+                                if(input !== inputs.valor) {
+                                    input.addEventListener('input', updatePreview);
+                                }
+                            });
 
-            inputCidade.addEventListener('blur', () => {
-                listaCidades.classList.add('hidden');
-            });
+                            // Fetch Cidades IBGE SP (Autocomplete customizado)
+                            let ibgeCidades = [];
+                            fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados/SP/municipios')
+                                .then(r => r.json())
+                                .then(data => {
+                                    ibgeCidades = data.map(mun => mun.nome + " - SP");
+                                })
+                                .catch(err => console.error("Falha ao buscar cidades:", err));
 
-            inputCidade.addEventListener('focus', (e) => {
-                if (e.target.value) atualizarLista(e.target.value);
-            });
+                            function removerAcentos(str) {
+                                return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                            }
 
-            // Print Action
-            document.getElementById('btn-print').addEventListener('click', () => {
-                window.print();
-            });
-        });
+                            const inputCidade = document.getElementById('inp-cidade');
+                            const listaCidades = document.getElementById('cidades-list');
+
+                            function atualizarLista(termo) {
+                                listaCidades.innerHTML = "";
+                                const termoNorm = removerAcentos(termo.toLowerCase());
+
+                                if (!termoNorm) {
+                                    listaCidades.classList.add('hidden');
+                                    return;
+                                }
+
+                                const filtradas = ibgeCidades.filter(c => removerAcentos(c.toLowerCase()).includes(termoNorm)).slice(0, 15);
+
+                                if (filtradas.length === 0) {
+                                    listaCidades.classList.add('hidden');
+                                    return;
+                                }
+
+                                filtradas.forEach(c => {
+                                    const li = document.createElement('li');
+                                    li.className = "px-4 py-2 hover:bg-gray-100 dark:hover:bg-body-dark-3 cursor-pointer text-sm text-gray-700 dark:text-gray-300";
+                                    li.innerText = c;
+                                    li.addEventListener('mousedown', () => { // mousedown dispara antes do blur do input
+                                        inputCidade.value = c;
+                                        listaCidades.classList.add('hidden');
+                                        updatePreview();
+                                    });
+                                    listaCidades.appendChild(li);
+                                });
+
+                                listaCidades.classList.remove('hidden');
+                            }
+
+                            inputCidade.addEventListener('input', (e) => {
+                                atualizarLista(e.target.value);
+                                updatePreview();
+                            });
+
+                            inputCidade.addEventListener('blur', () => {
+                                listaCidades.classList.add('hidden');
+                            });
+
+                            inputCidade.addEventListener('focus', (e) => {
+                                if (e.target.value) atualizarLista(e.target.value);
+                            });
+
+                            // Print Action
+                            document.getElementById('btn-print').addEventListener('click', () => {
+                                window.print();
+                            });
+                        });
     </script>
 </body>
 </html>
