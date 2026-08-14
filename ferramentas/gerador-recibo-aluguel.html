@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <script type="module" src="../parceiros/mercadolivre/js/components/mercadolivre-banner.js"></script>
@@ -60,12 +60,26 @@
                 box-shadow: none !important;
                 border: none !important;
                 border-radius: 0 !important;
+                font-family: Arial, Helvetica, sans-serif;
             }
 
             @page {
                 margin: 0;
                 size: A4 portrait;
             }
+        }
+        
+        /* Força a cor do texto no recibo para não inverter no dark mode */
+        html[data-web-theme="dark"] #print-area strong,
+        html[data-web-theme="dark"] #print-area span,
+        html[data-web-theme="dark"] #print-area p,
+        html[data-web-theme="dark"] #print-area h1 {
+            color: #111827 !important; /* text-gray-900 */
+        }
+        
+        html[data-web-theme="dark"] #print-area .text-gray-600,
+        html[data-web-theme="dark"] #print-area .text-gray-800 {
+            color: #4b5563 !important; /* Keep grays legible */
         }
     </style>
 
@@ -284,7 +298,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container mt-10">
+            <div class="container mt-10 no-print">
                 <!-- Mercado Livre Banner -->
                 <mercadolivre-banner></mercadolivre-banner>
             </div>
@@ -292,7 +306,7 @@
     </main>
 
     <!-- Leitura Recomendada (Card layout, perfectly spaced) -->
-    <div class="w-full pb-6 bg-body-light-1 dark:bg-body-dark-1">
+    <div class="w-full pb-6 bg-body-light-1 dark:bg-body-dark-1 no-print">
         <div class="container">
             <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-card-1 p-6 sm:p-8 border border-gray-100 dark:border-alpha-dark w-full">
                 <h3 class="text-xl font-bold mb-5 flex items-center gap-2 text-body-light-12 dark:text-body-dark-12">
